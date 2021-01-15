@@ -9,3 +9,29 @@ recipes, and delete those recipes if wanted. They also have the ability to add t
 within their own profile.
 
 ***
+## Table of Contents:
+* [User Experience](#user-experience)
+   * [Project Goals](#project-goals)
+   * [User Stories](#user-stories)
+   * [Design](#design)
+       * [1. Colour Scheme](#1-color-scheme)
+       * [2. Font](#2-font)
+       * [3. Logo](#3-logo)
+       * [4. Geometry](#4-geometry)
+       * [5. Wireframes](#5-wireframes)
+* [Technologies Used](#technologies-used)
+* [Features](#features)
+   * [Existing Features](#future-features)
+   * [Future Features](#removed-features)
+* [Testing](#testing)
+* [Deployment](#deployment)
+    * [Hosting on Github Pages](#hosting-on-github-pages)
+    * [Running Project Locally](#running-project-locally)
+* [Credits](#credits)
+    * [Content](#content)
+    * [Code](#code)
+    * [Media](#media)
+* [Acknowledgements](#acknowledgements)
+* [Special Thanks](#special-thanks)
+* [Disclaimer](#disclaimer)
+***
