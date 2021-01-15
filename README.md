@@ -10,8 +10,8 @@ within their own profile.
 
 ***
 ## Table of Contents:
+* [What does it do and what does it need to fulfill?](#what-does-it-do-and-what-does-it-need-to-fulfill)
 * [User Experience](#user-experience)
-   * [Project Goals](#project-goals)
    * [User Stories](#user-stories)
    * [Design](#design)
        * [1. Colour Scheme](#1-color-scheme)
@@ -35,3 +35,26 @@ within their own profile.
 * [Special Thanks](#special-thanks)
 * [Disclaimer](#disclaimer)
 ***
+
+## ![SITE NAME Logo](assets/images/logo.png)
+
+### SITE NAME Logo
+
+***
+
+## **What does it do and what does it need to fulfill?**
+This is my third milestone project where I have designed, created and built a fully Mobile Responsive CRUD Web Application for users to
+store and share recipes. The project was built  with HTML, CSS, JavaScript, jQuery, Python, Flask, and MongoDB. The Materialize Framework was
+used along side these programming languages to help give the site a clear strucutre and ensure the site is as responsive as possible for use
+across various screen sizes, including desktop, tablet and mobile.
+Users will be able to register, see their profile, log out and log back in again. Registered users will be able to add new recipes, and use
+a toggle switch to show if a recipe is Gluten Free or Vegetarian. Users will be able to editrecipes, but only permitted to edit their own
+recipes, as well as the option to delete their own recipes.<br>
+My goals were to create a recipe site where users feel comfortable in easily browsing recipes and understanding the breakdown of ingredients
+and methods, without having to scroll through masses of content. Some recipe sites already created are too busy and can overwhelm the user,
+so this site was created to better a users experience. The target audience for this application is anyone who has an interest or passion for
+Italian food, not matter what their age or experience.
+
+## **User Experience**
+
+#### User Stories:
