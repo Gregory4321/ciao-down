@@ -58,3 +58,31 @@ Italian food, not matter what their age or experience.
 ## **User Experience**
 
 #### User Stories:
+
+* Generic User:
+
+    * As a user, I want to be able to navigate through the entire site, comfortably and securely.
+    * As a user, I want to be able to easily search for recipes by name or ingredients.
+    * As a user, I want to view the contents of recipes on the site.
+    * As a user, I want to have the possibility of printing a recipe.
+    * As a user, I want to be able to register/sign-up and create my own account on the site.
+
+* Registered User:
+
+    * As a registered user, I want to be able to easily log in to my account.
+    * As a registered user, I want to be able to create and submit my own recipes to the site.
+    * As a registered user, I want to be able to see my own recipes in one place.
+    * As a registered user, I want to be able to easily edit my own recipes.
+    * As a registered user, I want to be able to easily delete my own recipes.
+    * As a registered user, I want to be able to add ingredients from a recipe to my shopping list in my profile.
+    * As a registered user, I want to be able to easily edit my shopping list.
+    * As a registered user, I want to be able to print my own shopping list.
+    * As a registered user, I want to be able to easily log out of my account.
+
+* Site admin:
+
+    * As the site admin, I want to be able to do all that is possible for a generic user and registered user.
+    * As the site admin, I want to be able to access ALL recipes on the site, having the abilitly to edit any errors found, and delete
+    recipes in case of unsuitable content.
+    * As the site admin, I want to be able to add new categories to the site as the site expands.
+    * As the site admin, I want to be able to edit and remove categories as I see fit for user experience.
