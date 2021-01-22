@@ -86,4 +86,49 @@ Italian food, not matter what their age or experience.
     recipes in case of unsuitable content.
     * As the site admin, I want to be able to add new categories to the site as the site expands.
     * As the site admin, I want to be able to edit and remove categories as I see fit for user experience.
-    
+
+[Back to Top](#table-of-contents)
+
+#### Design
+##### 1. Colour Scheme
+
+I chose colours that were neutral but yet still gave a clear contrast between areas of the page and gave the user a feel of calmness. I used
+[Coolors](https://coolors.co/) to find colours that compliment each other and were minimalistic. This was important to me as the content of
+the site would be very colourful, so I didn’t want the colour scheme to make the page feel too busy and cluttered.
+
+Colours I used are:
+
+* 
+*
+*
+
+The primary colour, COLOUR, was 
+
+##### 2. Font
+
+I decided to use two fonts throughout my site. I wanted the main and secondary fonts to complement each other well throughout the site. I
+included these fonts by inserting an _import_ link of Google Fonts API into the top of my style.css.<br>
+The main font I chose was ‘FONT’, and the secondary font was ‘FONT’, both with a fall back of 'Sans-serif' should the site not load the
+import correctly.
+The main font ‘FONT’ explain
+The secondary font ‘FONT’ explain
+
+##### 3. Logo
+
+
+
+##### 4. Composition
+
+
+
+##### 5. Wireframes
+
+Wireframes for this project were created using [Figma](https://www.figma.com/). Initially, I sketched ideas onto paper to then bring them to life more on the computer using Figma. EXPLAIN SOME MORE
+
+* [Home Page Wireframe]()
+* [My Profile Wireframe]()
+* [My Shopping List]()
+* [Login Page Wireframe]()
+* [Registration Page Wireframe]()
+
+[Back to Top](#table-of-contents)
