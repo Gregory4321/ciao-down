@@ -18,7 +18,7 @@
         <!-- top navbar -->
         <nav class="nav-extended text-shadow nav-color">
             
-                <a href="#!" class="brand-logo center">Ciao Down</a>
+                <a href="{{ url_for('index') }}" class="brand-logo center">Ciao Down</a>
                 <a href="#" data-target="mobile-demo" class="sidenav-trigger show-on-large"><i class="fas fa-bars hamburger"></i></a>
                 <div class="navbar-entries">
                     <a href="#" class="navbar-entry">Log In</a>
@@ -41,10 +41,10 @@
             <li>
                 <h4 class="center-align text-color">Ciao Down</h4>
             </li>
-            <li><a href="#">Home</a></li>
+            <li><a href="{{ url_for('index') }}">Home</a></li>
             <ul class="collapsible collapsible-accordion">
                 <li>
-                    <a class="collapsible-header">Categories<i class="fas fa-chevron-down right"></i></a>
+                    <a class="collapsible-header">Categories<i class="fas fa-chevron-down right down-arrow"></i></a>
                     <div class="collapsible-body">
                         <ul>
                             <li><a href="#!">Starters</a></li>

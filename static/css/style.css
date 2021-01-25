@@ -1,0 +1,39 @@
+/* ----------------------------- Nav bar */
+
+.text-shadow {
+    text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
+}
+
+.nav-color {
+    background-color: #588967;
+}
+
+.hamburger:hover {
+    color: #000;
+}
+
+.navbar-entry {
+    text-decoration: underline;
+}
+
+.navbar-entry:hover{
+    color: #000;
+}
+
+/* ----------------------------- Sidenav */
+
+.sidenav .collapsible-header {
+    padding: 0 5px 0 32px;
+}
+
+.sidenav .collapsible-body li a {
+    padding: 0 55px;
+}
+
+/* ----------------------------- Media Queries */
+
+@media only screen and (max-width: 769px) {
+    .navbar-entries {
+        visibility: hidden;
+    }
+}
