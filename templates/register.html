@@ -2,6 +2,63 @@
 
 {% block content %}
 
+    <h3 class="center-align">Sign Up</h3>
 
+    <div class="row">
+        <form class="col s12 m8 offset-m2" method="POST" action="{{ url_for('sign_up') }}">
+            <div class="card-panel">
+                <!-- username -->
+                <div class="row form-row">
+                    <div class="input-field col s12">
+                        <i class="fas fa-user prefix prefix-colour"></i>
+                        <input id="username" name="username" type="text" class="validate" data-length="20" required>
+                        <label for="username">Username</label>
+                    </div>
+                </div>
+                <!-- email -->
+                <div class="row form-row">
+                    <div class="input-field col s12">
+                        <i class="fas fa-envelope prefix prefix-colour"></i>
+                        <input id="email" type="email" class="validate" required>
+                        <label for="email">Email</label>
+                    </div>
+                </div>
+                <!-- password -->
+                <div class="row form-row">
+                    <div class="input-field col s12">
+                        <i class="fas fa-unlock prefix prefix-colour"></i>
+                        <input id="password" name="password" type="password" class="validate" data-length="15" minlength="4" maxlength="15" required>
+                        <label for="password">Password</label>
+                        <!-- <span class="helper-text" data-error="wrong" data-success="right">4-15 Characters</span> -->
+                    </div>
+                </div>
+                <!-- confirm password -->
+                <div class="row form-row">
+                    <div class="input-field col s12">
+                        <i class="fas fa-lock prefix prefix-colour"></i>
+                        <input id="confirm-password" name="confirm-password" type="password" class="validate"  data-length="15" minlength="4" maxlength="15" required>
+                        <label for="confirm-password">Confirm Password</label>
+                        <!-- <span class="helper-text" data-error="wrong" data-success="right">4-15 Characters</span> -->
+
+                    </div>
+                </div>
+                <!-- checkbox -->
+                <div class="row">
+                    <div class="col s12 checkbox-margin">
+                        <label>
+                            <input type="checkbox" class="filled-in checkbox-green" required/>
+                            <span>By registering I Agree To The Terms and Conditions</span>
+                        </label>
+                    </div>
+                </div>
+                <!-- sign up button -->
+                <div class="row">
+                    <button type="submit" class="col s12 btn-large form-btn">
+                        Create Account <i class=" fas fa-sign-in-alt"></i>
+                    </button>
+                </div>
+            </div>
+        </form>
+    </div>
 
 {% endblock %}

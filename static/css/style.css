@@ -5,11 +5,16 @@ body {
     min-height: 100vh;
     flex-direction: column;
     font-family: 'Source Sans Pro', sans-serif;
-  }
+}
 
-  main {
+main {
     flex: 1 0 auto;
-  }
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Average', sans-serif;
+    text-decoration: underline;
+}
 
 /* ----------------------------- Nav bar */
 
@@ -41,6 +46,30 @@ body {
 
 .sidenav .collapsible-body li a {
     padding: 0 55px;
+}
+
+/* ----------------------------- Forms */
+
+.form-btn {
+    font-family: 'Average', sans-serif;
+    background-color: #588967;
+}
+
+.form-btn:hover {
+    background-color: #758d7c;
+    color: #000;
+}
+
+.prefix-colour {
+    color: #588967;
+}
+
+.form-row {
+    margin-bottom: 0;
+}
+
+.checkbox-margin {
+    margin-top: 15px;
 }
 
 /* ----------------------------- Footer */
