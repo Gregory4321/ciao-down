@@ -1,7 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Average&family=Source+Sans+Pro:wght@200;300;400;600;700&display=swap');
+
 body {
     display: flex;
     min-height: 100vh;
     flex-direction: column;
+    font-family: 'Source Sans Pro', sans-serif;
   }
 
   main {
