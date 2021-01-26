@@ -23,7 +23,7 @@
                 <div class="navbar-entries">
                     <a href="#" class="navbar-entry">Log In</a>
                     <span>/</span>
-                    <a href="#" class="navbar-entry">Sign Up</a>
+                    <a href="{{ url_for('register') }}" class="navbar-entry">Sign Up</a>
                 </div>
                 <!-- <ul class="right hide-on-med-and-down">
                     <li><a href="#">Home</a></li>
@@ -58,7 +58,7 @@
             <li><a href="#">Add Recipe</a></li>
             <li><a href="#">Profile</a></li>
             <li><a href="#">Log In</a></li>
-            <li><a href="#">Sign Up</a></li>
+            <li><a href="{{ url_for('register') }}">Sign Up</a></li>
         </ul>
     </header>
 
@@ -69,6 +69,27 @@
     </main>
 
     <footer class="page-footer">
+        <!-- <div class="container">
+            <div class="row">
+              <div class="col l6 s12">
+                <h5>Footer Content</h5>
+                <p class="text-lighten-4">You can use rows and columns here to organize your footer content.</p>
+              </div>
+              <div class="col l4 offset-l2 s12">
+                <h5>Links</h5>
+                <ul>
+                  <li><a class="text-lighten-3" href="#!">Link 1</a></li>
+                  <li><a class="text-lighten-3" href="#!">Link 2</a></li>
+                  <li><a class="text-lighten-3" href="#!">Link 3</a></li>
+                  <li><a class="text-lighten-3" href="#!">Link 4</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="footer-bottom">
+            <div class="container">
+                <div> -->
+            <!-- © 2021 Gregory Lewis -->
         <ul class="social-links">
             <li>
                 <a href="https://www.facebook.com" target="_blank" rel="noopener">
@@ -93,6 +114,9 @@
                     <i class="fab fa-pinterest-p" aria-hidden="true"></i></a>
             </li>
         </ul>
+        <!-- </div>
+            </div>
+          </div> -->
     </footer>
 
     
