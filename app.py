@@ -25,8 +25,29 @@ def index():
     return render_template("index.html", recipes=recipes)
 
 
-@app.route("/register", methods=["GET", "POST"])
-def register():
+@app.route("/sign_up", methods=["GET", "POST"])
+def sign_up():
+    if request.method == "POST":
+        # Check if username already exists in database
+        existing_user = mongo.db.users.find_one(
+            {"username": request.form.get("username").lower()})
+
+        if existing_user:
+            flash("Username already exists")
+            return redirect(url_for("sign_up"))
+
+        sign_up = {
+            "username": request.form.get("username").lower(),
+            "email": request.form.get("email").lower(),
+            "password": generate_password_hash(request.form.get("password")),
+            "confirm-password": generate_password_hash(
+                request.form.get("confirm-password"))
+        }
+        mongo.db.users.insert_one(sign_up)
+
+        # Put new user into 'session' cookie
+        session["user"] = request.form.get("username").lower()
+        
     return render_template("register.html")
 
 

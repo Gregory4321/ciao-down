@@ -9,36 +9,42 @@
             <div class="card-panel">
                 <!-- username -->
                 <div class="row form-row">
-                    <div class="input-field col s12">
+                    <div class="input-field col s12 ">
                         <i class="fas fa-user prefix prefix-colour"></i>
-                        <input id="username" name="username" type="text" class="validate" data-length="20" required>
+                        <input id="username" name="username" type="text" class="validate" data-length="20" minlength="5"
+                            maxlength="15" pattern="^[a-zA-Z0-9]{5,15}$" required>
                         <label for="username">Username</label>
+                        <span class="helper-text" data-error="wrong" data-success="right">5-20 Characters</span>
                     </div>
                 </div>
                 <!-- email -->
                 <div class="row form-row">
-                    <div class="input-field col s12">
+                    <div class="input-field col s12 ">
                         <i class="fas fa-envelope prefix prefix-colour"></i>
-                        <input id="email" type="email" class="validate" required>
+                        <input id="email" name="email" type="email" class="validate" required>
                         <label for="email">Email</label>
+                        <span class="helper-text" data-error="wrong" data-success="right">example123@example.co.uk</span>
+                        <span></span>
                     </div>
                 </div>
                 <!-- password -->
                 <div class="row form-row">
-                    <div class="input-field col s12">
+                    <div class="input-field col s12 ">
                         <i class="fas fa-unlock prefix prefix-colour"></i>
-                        <input id="password" name="password" type="password" class="validate" data-length="15" minlength="4" maxlength="15" required>
+                        <input id="password" name="password" type="password" class="validate" data-length="15" minlength="5"
+                            maxlength="15" pattern="^[a-zA-Z0-9]{5,15}$" required>
                         <label for="password">Password</label>
-                        <!-- <span class="helper-text" data-error="wrong" data-success="right">4-15 Characters</span> -->
+                        <span class="helper-text" data-error="wrong" data-success="right">4-15 Characters</span>
                     </div>
                 </div>
                 <!-- confirm password -->
                 <div class="row form-row">
-                    <div class="input-field col s12">
+                    <div class="input-field col s12 ">
                         <i class="fas fa-lock prefix prefix-colour"></i>
-                        <input id="confirm-password" name="confirm-password" type="password" class="validate"  data-length="15" minlength="4" maxlength="15" required>
+                        <input id="confirm-password" name="confirm-password" type="password" class="validate"  data-length="15"
+                            minlength="5" maxlength="15" pattern="^[a-zA-Z0-9]{5,15}$" required>
                         <label for="confirm-password">Confirm Password</label>
-                        <!-- <span class="helper-text" data-error="wrong" data-success="right">4-15 Characters</span> -->
+                        <span class="helper-text" data-error="wrong" data-success="right">4-15 Characters</span>
 
                     </div>
                 </div>
@@ -47,7 +53,7 @@
                     <div class="col s12 checkbox-margin">
                         <label>
                             <input type="checkbox" class="filled-in checkbox-green" required/>
-                            <span>By registering I Agree To The Terms and Conditions</span>
+                            <span>By registering you agree to our Terms and Conditions</span>
                         </label>
                     </div>
                 </div>
