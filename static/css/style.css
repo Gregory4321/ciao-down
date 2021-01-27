@@ -114,6 +114,16 @@ h1, h2, h3, h4, h5, h6 {
     color: #000;
 }
 
+/* ----------------------------- Flash Messages */
+
+.flashes h4 {
+    line-height: 2;
+}
+
+.custom-flash {
+    background-color: #EAF4F4;
+}
+
 /* ----------------------------- Media Queries */
 
 @media only screen and (max-width: 769px) {

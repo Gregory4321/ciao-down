@@ -23,7 +23,7 @@
                 <div class="navbar-entries">
                     <a href="#" class="navbar-entry">Log In</a>
                     <span>/</span>
-                    <a href="{{ url_for('register') }}" class="navbar-entry">Sign Up</a>
+                    <a href="{{ url_for('sign_up') }}" class="navbar-entry">Sign Up</a>
                 </div>
                 <!-- <ul class="right hide-on-med-and-down">
                     <li><a href="#">Home</a></li>
@@ -58,12 +58,24 @@
             <li><a href="#">Add Recipe</a></li>
             <li><a href="#">Profile</a></li>
             <li><a href="#">Log In</a></li>
-            <li><a href="{{ url_for('register') }}">Sign Up</a></li>
+            <li><a href="{{ url_for('sign_up') }}">Sign Up</a></li>
         </ul>
     </header>
 
+    <section>
+        <!-- flash messages-->
+        {% with messages = get_flashed_messages() %}
+            {% if messages %}
+                {% for message in messages %}
+                    <div class="row flashes">
+                        <h4 class="center-align custom-flash">{{ message }}</h4>
+                    </div>
+                {% endfor %}
+            {% endif %}
+        {% endwith %}
+    </section>
 
-    <main>
+    <main class="container">
         {% block content %}
         {% endblock %}
     </main>

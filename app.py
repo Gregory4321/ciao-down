@@ -47,7 +47,7 @@ def sign_up():
 
         # Put new user into 'session' cookie
         session["user"] = request.form.get("username").lower()
-        
+        flash("Account Created...Welcome!")
     return render_template("register.html")
 
 
