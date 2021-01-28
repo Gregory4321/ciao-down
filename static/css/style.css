@@ -47,7 +47,8 @@ h1, h2, h3, h4, h5, h6 {
     padding: 0 55px;
 }
 
-/* ----------------------------- Home Page */
+/* ------------------------------------------------ Home Page */
+/* ----------------------------- Hero Image */
 
 .hero-img-1 {
     height: 50vh;
@@ -57,6 +58,26 @@ h1, h2, h3, h4, h5, h6 {
     align-items: center;
     text-align: center;
     opacity: 0.7;
+}
+
+/* ----------------------------- Recipe cards */
+
+.card-overlay {
+    position: absolute;
+    bottom: 0;
+    background: linear-gradient(0deg, rgba(45, 45, 49, 0.897), rgba(103, 111, 121, 0.777) 55%, rgba(255, 255, 255, 0));
+    color: #f1f1f1;
+    width: 100%;
+    transition: 0.65s ease-in-out;
+    opacity: 0;
+    font-size: 20px;
+    padding: 20px 0 8px 0;
+    text-align: center;
+    text-shadow: 3px 3px 3px rgba(0, 0, 0, 0.7) /* maybe a red text-shadow HERE*/
+}
+
+.col:hover .card-overlay {
+    opacity: 1;
 }
 
 /* ----------------------------- Forms */
