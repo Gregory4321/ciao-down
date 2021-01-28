@@ -2,8 +2,9 @@
 
 {% block content %}
 
-    <h3 class="center-align page-heading">Sign Up</h3>
-
+    
+    <main class="container">
+        <h3 class="center-align page-heading">Sign Up</h3>
     <div class="row">
         <form class="col s12 m8 offset-m2" method="POST" action="{{ url_for('sign_up') }}">
             <div class="card-panel">
@@ -74,5 +75,5 @@
             </p>
         </div>
     </div>
-
+</main>
 {% endblock %}
