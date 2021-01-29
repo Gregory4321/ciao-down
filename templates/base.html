@@ -17,13 +17,15 @@
     <header>
         <!-- top navbar -->
         <nav class="nav-extended text-shadow top-nav-color">
-            
+            <div class="nav-wrapper">
                 <a href="{{ url_for('index') }}" class="brand-logo center">Ciao Down</a>
                 <a href="#" data-target="mobile-demo" class="sidenav-trigger show-on-large"><i class="fas fa-bars hamburger"></i></a>
                 <div class="navbar-entries">
+                {% if not session.user %}
                     <a href="{{ url_for('login') }}" class="navbar-entry">Log In</a>
                     <span>/</span>
                     <a href="{{ url_for('sign_up') }}" class="navbar-entry">Sign Up</a>
+                {% endif %}
                 </div>
                 <!-- <ul class="right hide-on-med-and-down">
                     <li><a href="#">Home</a></li>
@@ -33,7 +35,7 @@
                     <li><a href="#">Log In</a></li>
                     <li><a href="#">Sign Up</a></li>
                 </ul> -->
-            
+            </div>
         </nav>
         
         <!-- side navbar -->
@@ -55,10 +57,14 @@
                     </div>
                 </li>
             </ul>
-            <li><a href="#">Add Recipe</a></li>
-            <li><a href="{{ url_for('profile', username=session['user']) }}">Profile</a></li>
-            <li><a href="{{ url_for('login') }}">Log In</a></li>
-            <li><a href="{{ url_for('sign_up') }}">Sign Up</a></li>
+            {% if session.user %}
+                <li><a href="#">Add Recipe</a></li>
+                <li><a href="{{ url_for('profile', username=session['user']) }}">Profile</a></li>
+                <li><a href="{{ url_for('logout') }}">Log Out</a></li>
+            {% else %}
+                <li><a href="{{ url_for('login') }}">Log In</a></li>
+                <li><a href="{{ url_for('sign_up') }}">Sign Up</a></li>
+            {% endif %}
         </ul>
     </header>
 
