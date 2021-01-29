@@ -11,9 +11,9 @@ if os.path.exists("env.py"):
 
 app = Flask(__name__)
 
-app.config["MONGO_DBNAME"] = os.environ.get("MONGO_DBNAME")
-app.config["MONGO_URI"] = os.environ.get("MONGO_URI")
-app.secret_key = os.environ.get("SECRET_KEY")
+app.config["MONGO_DBNAME"] = os.getenv("MONGO_DBNAME")
+app.config["MONGO_URI"] = os.getenv("MONGO_URI")
+app.secret_key = os.getenv("SECRET_KEY")
 
 mongo = PyMongo(app)
 
@@ -21,8 +21,9 @@ mongo = PyMongo(app)
 @app.route("/")
 @app.route("/index")
 def index():
-    recipes = mongo.db.recipes.find()
-    return render_template("index.html", recipes=recipes)
+    # recipes = mongo.db.recipes.find()
+    return render_template("index.html")
+    # ***removed from within brackets above, recipes=recipes
 
 
 @app.route("/sign_up", methods=["GET", "POST"])
@@ -48,6 +49,7 @@ def sign_up():
         # Put new user into 'session' cookie
         session["user"] = request.form.get("username").lower()
         flash("Account Created...Welcome!")
+        return redirect(url_for("profile", username=session["user"]))
     return render_template("register.html")
 
 
@@ -63,7 +65,10 @@ def login():
             if check_password_hash(
                     existing_user["password"], request.form.get("password")):
                 session["user"] = request.form.get("username").lower()
-                flash("Welcome, {}".format(request.form.get("username")))
+                flash("Welcome, {}".format(
+                    request.form.get("username")))
+                return redirect(url_for(
+                    "profile", username=session["user"]))
             else:
                 # Invalid password match
                 flash("Incorrect Username and/or Password entered")
@@ -77,7 +82,16 @@ def login():
     return render_template("login.html")
 
 
+@app.route("/profile/<username>", methods=["GET", "POST"])
+def profile(username):
+    # Get session user's username from the database
+    username = mongo.db.users.find_one(
+        {"username": session["user"]})["username"]
+
+    return render_template("profile.html", username=username)
+
+
 if __name__ == "__main__":
-    app.run(host=os.environ.get("IP"),
-            port=int(os.environ.get("PORT")),
+    app.run(host=os.getenv("IP"),
+            port=int(os.getenv("PORT")),
             debug=True)
