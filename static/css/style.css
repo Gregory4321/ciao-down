@@ -29,12 +29,8 @@ h1, h2, h3, h4, h5, h6 {
     color: #000;
 }
 
-.navbar-entry {
+.navbar-entry:hover {
     text-decoration: underline;
-}
-
-.navbar-entry:hover{
-    color: #000;
 }
 
 /* ----------------------------- Sidenav */
@@ -81,6 +77,13 @@ h1, h2, h3, h4, h5, h6 {
 
 .col:hover .card-overlay {
     opacity: 1;
+}
+/* ------------------------------------------------ Profile Page */
+
+/* ----------------------------- Accordion Dropdown */
+
+.accordion-head {
+    background-color: #588967;
 }
 
 /* ----------------------------- Forms */

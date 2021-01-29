@@ -4,41 +4,37 @@
 
     
     <main class="container">
-        <div class="row">
-            <div class="col s12 m8 offset-m2">
-                <div class="card-panel">
-                    <h3 class="center-align page-heading">
-                        {{ username }}'s Profile
-                    </h3>
+        <!-- Page Title -->
+        <h3 class="center-align page-heading">
+            {{username}}'s Profile
+        </h3>
+    
+        <ul class="collapsible">
+            {% for recipe in recipes %}
+            <li>
+                <div class="collapsible-header accordion-head">
+                    <i class="fas fa-angle-down"></i>
+                    {{ recipe.recipe_title }} : 
                 </div>
-            </div>
-        </div>
-
-          <ul class="collapsible">
-    <li>
-      <div class="collapsible-header"><i class="fas fa-angle-down"></i>First</div>
-      <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
-    </li>
-    <li>
-      <div class="collapsible-header"><i class="fas fa-angle-down"></i>Second</div>
-      <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
-    </li>
-    <li>
-      <div class="collapsible-header"><i class="fas fa-angle-down"></i>Third</div>
-      <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
-    </li>
-  </ul>
+                <div class="collapsible-body">
+                    <p>Date added: {{ recipe.date_added }}</p>
+                    {{ recipe.category_name }}
+                    <p>{{ recipe.recipe_description }}</p>
+                    {% if recipe.is_vegetarian == "on" %}
+                        <i class="fab fa-vimeo-v"></i>
+                    {% endif %}
+                    {% if recipe.is_gluten_free == "on" %}
+                        <i class="fab fa-glide-g"></i>
+                    {% endif %}
+                    
+                </div>
+            </li>
+            {% endfor %}
+        </ul>
     </main>
 
     
 
-    <!-- {% for recipe in recipes %}
-        {{ recipe.category_name }}<br>
-        {{ recipe.recipe_title }}<br>
-        {{ recipe.recipe_description }}<br>
-        {{ recipe.is_vegetarian }}<br>
-        {{ recipe.is_gluten }}<br>
-        {{ recipe.date_added }}<br>
-    {% endfor %} -->
+    
 
 {% endblock %}
