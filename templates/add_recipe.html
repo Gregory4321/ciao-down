@@ -65,6 +65,18 @@
                             <label for="recipe_description">Recipe Description</label>
                         </div>
                     </div>
+                    <!-- Recipe category -->
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <select id="category_name" name="category_name" class="validate" required>
+                                <option value="" disabled selected>Choose a category</option>
+                                {% for category in categories %}
+                                    <option value="{{ category.category_name }}">{{ category.category_name }}</option>
+                                {% endfor %}
+                            </select>
+                            <label for="category_name">Recipe Category</label>
+                        </div>
+                    </div>
                     <!-- Recipe image -->
                     <div class="file-field input-field">
                         <div class="btn form-btn">
