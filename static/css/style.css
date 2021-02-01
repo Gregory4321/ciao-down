@@ -110,6 +110,10 @@ h1, h2, h3, h4, h5, h6 {
     margin: 3.1rem 0 0 0;
 }
 
+.form-bac {
+    background-color: rgb(245, 242, 242);
+}
+
 .form-btn {
     font-family: 'Average', sans-serif;
     background-color: #588967;

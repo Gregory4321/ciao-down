@@ -46,62 +46,113 @@
     <h3 class="center-align page-heading">Add Recipe</h3>
     
     <main class="container">
+        <!-- Recipe title -->
         <div class="row">
             <form class="col s12" method="POST" action="#">
-                <div class="card-panel">
+                <div class="card-panel form-bac">
                     <div class="row">
                         <div class="input-field col s12">
-                            <input id="recipe_title" type="text" class="validate" required>
+                            <input id="recipe_title" name="recipe_title" type="text" class="validate" minlength="3"
+                                maxlength="50" required>
                             <label for="recipe_title">Recipe Title</label>
                         </div>
+                    </div>
+                    <!-- Recipe description -->
+                    <div class="row">
                         <div class="input-field col s12">
-                            <input id="recipe_description" type="text" class="validate" required>
+                            <textarea id="recipe_description" name="recipe_description"
+                                class="materialize-textarea validate" minlength="5" maxlength="150" required></textarea>
                             <label for="recipe_description">Recipe Description</label>
                         </div>
-    
-                        <div class="input-field col s12">
-                            <select>
-                                <option value="" disabled selected>Choose a category</option>
-                                <option value="starters">Starters</option>
-                                <option value="mains">Mains</option>
-                                <option value="desserts">Desserts</option>
-                            </select>
-                            <label>Recipe Category</label>
+                    </div>
+                    <!-- Recipe image -->
+                    <div class="file-field input-field">
+                        <div class="btn form-btn">
+                            <span>Image</span>
+                            <input type="file" required>
                         </div>
-    
-                        <div class="input-field col s12">
-                            <input id="recipe_category" type="text" class="validate" required>
-                            <label for="recipe_category">Recipe Category</label>
+                        <div class="file-path-wrapper">
+                            <input class="file-path validate" type="text" id="image_url" name="image_url">
                         </div>
+                    </div>
+                    <!-- Recipe prep time -->
+                    <div class="row">
                         <div class="input-field col s6">
-                            <input id="prep_time" type="text" class="validate" required>
+                            <input id="prep_time" name="prep_time" type="text" class="validate"
+                                placeholder="Example: 10 minutes" required>
                             <label for="prep_time">Prep Time</label>
                         </div>
+                        <!-- Recipe cooking time -->
                         <div class="input-field col s6">
-                            <input id="cooking_time" type="text" class="validate" required>
+                            <input id="cooking_time" name="cooking_time" type="text" class="validate"
+                                placeholder="Example: 2 hours and 15 minutes" required>
                             <label for="cooking_time">Cooking TIme</label>
                         </div>
+                    </div>
+                    <!-- Recipe serves -->
+                    <div class="row">
                         <div class="input-field col s6">
-                            <input id="serves" type="text" class="validate" required>
+                            <input id="serves" name="serves" type="text" class="validate" placeholder="How many people does this serve"
+                                required>
                             <label for="serves">Serves</label>
                         </div>
+                        <!-- Recipe difficulty -->
                         <div class="input-field col s6">
-                            <input id="difficulty" type="text" class="validate" required>
+                            <input id="difficulty" name="difficulty" type="text" class="validate" placeholder="Easy/Medium/Hard" required>
                             <label for="difficulty">Difficulty</label>
                         </div>
+                    </div>
+                    <!-- Recipe ingredients -->
+                    <div class="row">
                         <div class="input-field col s12">
-                            <input id="ingredients" type="text" class="validate" required>
-                            <label for="ingredients">Ingredients</label>
+                            <textarea id="recipe_ingredients" name="recipe_ingredients" class="materialize-textarea validate"
+                                placeholder="Write each ingredient on a new line" required></textarea>
+                            <label for="recipe_ingredients">Ingredients</label>
                         </div>
+                    </div>
+                    <!-- Recipe method -->
+                    <div class="row">
                         <div class="input-field col s12">
-                            <input id="method" type="text" class="validate" required>
-                            <label for="method">Method</label>
+                            <textarea id="recipe_method" name="recipe_method" class="materialize-textarea validate"
+                                placeholder="Write each method on a new line" required></textarea>
+                            <label for="recipe_method">Method</label>
                         </div>
+                    </div>
+                    <!-- Gluten Free Switch -->
+                    <div class="row">
+                        <div class="input-field col s2">
+                            <div class="switch">
+                                <label for="is_gluten_free">
+                                    <input type="checkbox" id="is_gluten_free" name="is_gluten_free">
+                                    <span class="lever"></span>
+                                    Gluten Free
+                                </label>
+                            </div>
+                        </div>
+                        <!-- Vegetarian Switch -->
+                        <div class="input-field col s2">
+                            <div class="switch">
+                                <label for="is_vegetarian">
+                                    <input type="checkbox" id="is_vegetarian" name="is_vegetarian">
+                                    <span class="lever"></span>
+                                    Vegetarian
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Submit button -->
+                    <div class="row">
+                        <button type="submit" class="col s4 btn-large form-btn">
+                            Log In <i class=" fas fa-sign-in-alt"></i>
+                        </button>
+                        <!-- Clear button -->
+                        <button type="submit" class="col s4 btn-large form-btn">
+                            Log In <i class=" fas fa-sign-in-alt"></i>
+                        </button>
                     </div>
                 </div>
             </form>
         </div>
     </main>
-
 
 {% endblock %}

@@ -2,6 +2,8 @@ $(document).ready(function(){
     $(".sidenav").sidenav();
     $('.collapsible').collapsible();
     $('input#username, input#password, input#confirm-password').characterCounter();
+    $('.slider').slider();
+    $('select').formSelect();
   });
 
 /* 
