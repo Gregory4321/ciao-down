@@ -1,0 +1,107 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+    <div class="slider">
+        <ul class="slides">
+            <li>
+                <img src="static/images/tomato-pasta.jpg"> <!-- random image -->
+                <div class="caption center-align">
+                    <h3>This is our big Tagline!</h3>
+                    <h5 class="light grey-text text-lighten-3">Here's our small slogan.</h5>
+                </div>
+            </li>
+            <li>
+                <img src="static/images/pizza-making.jpg"> <!-- random image -->
+                <div class="caption center-align">
+                    <h3>This is our big Tagline!</h3>
+                    <h5 class="light grey-text text-lighten-3">Here's our small slogan.</h5>
+                </div>
+            </li>
+            <li>
+                <img src="static/images/fresh-spag.jpg"> <!-- random image -->
+                <div class="caption left-align">
+                    <h3>Left Aligned Caption</h3>
+                    <h5 class="light grey-text text-lighten-3">Here's our small slogan.</h5>
+                </div>
+            </li>
+            <li>
+                <img src="static/images/tom-salad.jpg"> <!-- random image -->
+                <div class="caption right-align">
+                    <h3>Right Aligned Caption</h3>
+                    <h5 class="light grey-text text-lighten-3">Here's our small slogan.</h5>
+                </div>
+            </li>
+            <li>
+                <img src="static/images/olive-ling.jpg"> <!-- random image -->
+                <div class="caption center-align">
+                    <h3>This is our big Tagline!</h3>
+                    <h5 class="light grey-text text-lighten-3">Here's our small slogan.</h5>
+                </div>
+            </li>
+        </ul>
+    </div>
+    
+    
+    <h3 class="center-align page-heading">Add Recipe</h3>
+    
+    <main class="container">
+        <div class="row">
+            <form class="col s12" method="POST" action="#">
+                <div class="card-panel">
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <input id="recipe_title" type="text" class="validate" required>
+                            <label for="recipe_title">Recipe Title</label>
+                        </div>
+                        <div class="input-field col s12">
+                            <input id="recipe_description" type="text" class="validate" required>
+                            <label for="recipe_description">Recipe Description</label>
+                        </div>
+    
+                        <div class="input-field col s12">
+                            <select>
+                                <option value="" disabled selected>Choose a category</option>
+                                <option value="starters">Starters</option>
+                                <option value="mains">Mains</option>
+                                <option value="desserts">Desserts</option>
+                            </select>
+                            <label>Recipe Category</label>
+                        </div>
+    
+                        <div class="input-field col s12">
+                            <input id="recipe_category" type="text" class="validate" required>
+                            <label for="recipe_category">Recipe Category</label>
+                        </div>
+                        <div class="input-field col s6">
+                            <input id="prep_time" type="text" class="validate" required>
+                            <label for="prep_time">Prep Time</label>
+                        </div>
+                        <div class="input-field col s6">
+                            <input id="cooking_time" type="text" class="validate" required>
+                            <label for="cooking_time">Cooking TIme</label>
+                        </div>
+                        <div class="input-field col s6">
+                            <input id="serves" type="text" class="validate" required>
+                            <label for="serves">Serves</label>
+                        </div>
+                        <div class="input-field col s6">
+                            <input id="difficulty" type="text" class="validate" required>
+                            <label for="difficulty">Difficulty</label>
+                        </div>
+                        <div class="input-field col s12">
+                            <input id="ingredients" type="text" class="validate" required>
+                            <label for="ingredients">Ingredients</label>
+                        </div>
+                        <div class="input-field col s12">
+                            <input id="method" type="text" class="validate" required>
+                            <label for="method">Method</label>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </main>
+
+
+{% endblock %}
