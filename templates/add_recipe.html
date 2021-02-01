@@ -46,10 +46,22 @@
     <h3 class="center-align page-heading">Add Recipe</h3>
     
     <main class="container">
-        <!-- Recipe title -->
         <div class="row">
-            <form class="col s12" method="POST" action="#">
+            <form class="col s12" method="POST" action="{{ url_for('add_recipe') }}">
                 <div class="card-panel form-bac">
+                    <!-- Recipe category -->
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <select id="category_name" name="category_name" class="validate" required>
+                                <option value="" disabled selected>Choose a category</option>
+                                {% for category in categories %}
+                                    <option value="{{ category.category_name }}">{{ category.category_name }}</option>
+                                {% endfor %}
+                            </select>
+                            <label for="category_name">Recipe Category</label>
+                        </div>
+                    </div>
+                    <!-- Recipe title -->
                     <div class="row">
                         <div class="input-field col s12">
                             <input id="recipe_title" name="recipe_title" type="text" class="validate" minlength="3"
@@ -63,18 +75,6 @@
                             <textarea id="recipe_description" name="recipe_description"
                                 class="materialize-textarea validate" minlength="5" maxlength="150" required></textarea>
                             <label for="recipe_description">Recipe Description</label>
-                        </div>
-                    </div>
-                    <!-- Recipe category -->
-                    <div class="row">
-                        <div class="input-field col s12">
-                            <select id="category_name" name="category_name" class="validate" required>
-                                <option value="" disabled selected>Choose a category</option>
-                                {% for category in categories %}
-                                    <option value="{{ category.category_name }}">{{ category.category_name }}</option>
-                                {% endfor %}
-                            </select>
-                            <label for="category_name">Recipe Category</label>
                         </div>
                     </div>
                     <!-- Recipe image -->
