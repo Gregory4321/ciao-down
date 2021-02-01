@@ -16,9 +16,11 @@
 
     <header>
         <!-- top navbar -->
-        <nav class="nav-extended text-shadow top-nav-color">
-            <div class="nav-wrapper">
-                <a href="{{ url_for('index') }}" class="brand-logo center">Ciao Down</a>
+        <nav class="text-shadow top-nav">
+            <div class="nav-wrapper valign-wrapper">
+                <a href="{{ url_for('index') }}" class="brand-logo center valign-wrapper">
+                    <img src="static/images/logo.png" alt="Ciao Down Logo" class="logo-image">
+                </a>
                 <a href="#" data-target="mobile-demo" class="sidenav-trigger show-on-large"><i class="fas fa-bars hamburger"></i></a>
                 <div class="navbar-entries">
                 {% if not session.user %}
