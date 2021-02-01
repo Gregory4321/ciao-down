@@ -150,7 +150,6 @@ h1, h2, h3, h4, h5, h6 {
 
 .page-footer {
     background-color: #BF0E0E;
-    color: #000;
     padding: 0;
 }
 
@@ -162,11 +161,15 @@ h1, h2, h3, h4, h5, h6 {
 
 .social-links li {
     list-style: none;
+    display: inline-block;
+}
+
+.social-links li a {
+    list-style: none;
     margin: 5px 10px;
     display: inline-block;
     padding: 15px 10px;
-    color: #000;
-    border: 1px solid #000;
+    border: 1px solid #fff;
     border-radius: 50%;
     width: 50px;
     height: 50px;
@@ -176,13 +179,17 @@ h1, h2, h3, h4, h5, h6 {
     -o-transition: all 0.35s ease-in-out;
 }
 
-.social-links li:hover {
-    background-color: #588967;
+.social-links li a:hover {
+    background-color: #fff;
+}
+
+.social-links li a:hover .social-icon {
+    color: #BF0E0E;
 }
 
 .social-links li a i {
     font-size: 20px;
-    color: #000;
+    color: #fff;
 }
 
 /* ----------------------------- Flash Messages */
