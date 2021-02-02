@@ -106,6 +106,11 @@ def logout():
     return redirect(url_for("login"))
 
 
+@app.route("/recipe")
+def recipe():
+    return render_template("recipe.html")
+
+
 @app.route("/add_recipe", methods=["GET", "POST"])
 def add_recipe():
     if request.method == "POST":
