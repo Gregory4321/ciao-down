@@ -83,6 +83,29 @@ h1, h2, h3, h4, h5, h6 {
 .col:hover .card-overlay {
     opacity: 1;
 }
+
+/* ------------------------------------------------ Recipe Page */
+
+.recipe-container .rec-img {
+    padding: 0;
+}
+
+.rec-info {
+    border-top: 1px solid #000;
+    border-bottom: 1px solid #000;
+    color: #588967;
+    padding: 15px 0;
+    margin-top: 20px;
+    text-align: center;
+    font-family: 'Average', sans-serif;
+}
+
+.user-rec-info {
+    color: #000;
+    display: block;
+    /* padding-left: 15px; */
+}
+
 /* ------------------------------------------------ Profile Page */
 
 /* ----------------------------- Accordion Dropdown */
@@ -207,6 +230,16 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* ----------------------------- Media Queries */
+
+@media only screen and (max-width:700px ) {
+    .center-text {
+        text-align: center;
+    }
+
+    .rec-info-bottom {
+        margin-bottom: 8px;
+    }
+}
 
 @media only screen and (max-width: 769px) {
     .navbar-entries {
