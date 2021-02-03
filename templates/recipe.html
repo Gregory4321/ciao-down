@@ -2,63 +2,42 @@
 
 {% block content %}
 
-
-
     <main class="container recipe-container">
         <div class="row page-heading center-text">
-                    <div class="col s12 m5 rec-img">
-                        <img src="static/images/lasagne.jpg" class="responsive-img recipe-img" alt="">
-                    </div>
-                    <div class="col s12 m5 offset-m1">
-                        <h3>Recipe Title</h3>
-                        <p>Recipe Description</p>
-                    </div>
-                </div>
+            <div class="col s12 m5 rec-img">
+                <img src="{{ recipe.image_url }}" class="responsive-img recipe-img" alt="Image">
+            </div>
+            <div class="col s12 m5 offset-m1">
+                <h3>{{ recipe.recipe_title }}</h3>
+                <p>{{ recipe.recipe_description }}</p>
+            </div>
+        </div>
         <div class="row rec-info">
             <div class="col s6 m3 rec-info-bottom">
-                Prep Time <span class="user-rec-info">2 minutes</span>
+                Prep Time <span class="user-rec-info">{{ recipe.prep_time }}</span>
             </div>
             <div class="col s6 m3 rec-info-bottom">
-                Cooking Time <span class="user-rec-info">1 hour 10 minutes</span>
+                Cooking Time <span class="user-rec-info">{{ recipe.cooking_time }}</span>
             </div>
             <div class="col s6 m3">
-                Serves <span class="user-rec-info">4</span>
+                Serves <span class="user-rec-info">{{ recipe.serves }}</span>
             </div>
             <div class="col s6 m3">
-                Difficulty <span class="user-rec-info">Medium</span>
+                Difficulty <span class="user-rec-info">{{ recipe.difficulty }}</span>
             </div>
-
-                <!-- <table>
-                    <tbody>
-                        <tr>
-                            <td>Prep Time:</td>
-                            <td>Cooking Time:</td>
-                            <td>Serves:</td>
-                            <td>Difficulty:</td>
-                        </tr>
-                    </tbody>
-                </table> -->
-            
         </div>
-            <div class="row">
+        <div class="row">
             <div class="col s12 m3 center-text">
                 <h4>Ingredients</h4>
-                <p>Ingredient</p>
-                <p>Ingredient</p>
-                <p>Ingredient</p>
-                <p>Ingredient</p>
-                <p>Ingredient</p>
-                <p>Ingredient</p>
+                {% for list in recipe.recipe_ingredients.splitlines() %}
+                    <p>{{ list }}</p>
+                {% endfor %}
             </div>
             <div class="col s12 m8 offset-m1 center-text">
                 <h4>Method</h4>
-                <p>Method</p>
-                <p>Method</p>
-                <p>Method</p>
-                <p>Method</p>
-                <p>Method</p>
-                <p>Method</p>
-            </div>
+                {% for list in recipe.recipe_method.splitlines() %}
+                    <p>{{ list }}</p>
+                {% endfor %}
             </div>
         </div>
     </main>
