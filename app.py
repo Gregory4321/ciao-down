@@ -17,13 +17,17 @@ app.secret_key = os.getenv("SECRET_KEY")
 
 mongo = PyMongo(app)
 
+# ------------------------- Homepage
+
 
 @app.route("/")
 @app.route("/index")
 def index():
-    # recipes = mongo.db.recipes.find()
-    return render_template("index.html")
-    # ***removed from within brackets above, recipes=recipes
+    recipes = mongo.db.recipes.find().limit(6)
+    return render_template("index.html", recipes=recipes)
+
+
+# ------------------------- User
 
 
 @app.route("/sign_up", methods=["GET", "POST"])
@@ -106,16 +110,24 @@ def logout():
     return redirect(url_for("login"))
 
 
-@app.route("/recipe")
-def recipe():
-    return render_template("recipe.html")
+# ------------------------- Recipes
+
+
+@app.route("/recipe/<recipe_id>")
+def get_recipe(recipe_id):
+
+    recipe = mongo.db.recipes.find_one({"_id": ObjectId(recipe_id)})
+
+    return render_template("recipe.html", recipe=recipe)
 
 
 @app.route("/add_recipe", methods=["GET", "POST"])
 def add_recipe():
+    # Add recipe to the database
     if request.method == "POST":
         is_vegetarian = "on" if request.form.get("is_vegetarian") else "off"
         is_gluten_free = "on" if request.form.get("is_gluten_free") else "off"
+
         recipe = {
             "category_name": request.form.get("category_name"),
             "recipe_title": request.form.get("recipe_title"),
@@ -136,7 +148,9 @@ def add_recipe():
         flash("Recipe Successfully Added")
         return redirect(url_for("index"))
 
+    # Find the categories from the database
     categories = mongo.db.categories.find()
+
     return render_template("add_recipe.html", categories=categories)
 
 
