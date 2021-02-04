@@ -78,13 +78,10 @@
                         </div>
                     </div>
                     <!-- Recipe image -->
-                    <div class="file-field input-field">
-                        <div class="btn form-btn">
-                            <span>Image</span>
-                            <input type="file" required>
-                        </div>
-                        <div class="file-path-wrapper">
-                            <input class="file-path validate" type="text" id="image_url" name="image_url">
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <input id="image_url" name="image_url" type="url" class="validate" required>
+                            <label for="image_url">Image URL</label>
                         </div>
                     </div>
                     <!-- Recipe prep time -->
@@ -126,7 +123,7 @@
                     <div class="row">
                         <div class="input-field col s12">
                             <textarea id="recipe_method" name="recipe_method" class="materialize-textarea validate"
-                                placeholder="Write each method on a new line" required></textarea>
+                                placeholder="Write each step on a new line" required></textarea>
                             <label for="recipe_method">Method</label>
                         </div>
                     </div>
@@ -154,13 +151,13 @@
                     </div>
                     <!-- Submit button -->
                     <div class="row">
-                        <button type="submit" class="col s4 btn-large form-btn">
-                            Log In <i class=" fas fa-sign-in-alt"></i>
+                        <button type="submit" class="col offset-s2 s3 btn-large form-btn">
+                            Submit
                         </button>
                         <!-- Clear button -->
-                        <button type="submit" class="col s4 btn-large form-btn">
-                            Log In <i class=" fas fa-sign-in-alt"></i>
-                        </button>
+                        <a href="{{ url_for('index') }}" class="col offset-s2 s3 btn-large form-btn">
+                            Cancel
+                        </a>
                     </div>
                 </div>
             </form>
