@@ -1,0 +1,167 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+    <div class="slider">
+        <ul class="slides">
+            <li>
+                <img src="static/images/tomato-pasta.jpg"> <!-- random image -->
+                <div class="caption center-align">
+                    <h3>This is our big Tagline!</h3>
+                    <h5 class="light grey-text text-lighten-3">Here's our small slogan.</h5>
+                </div>
+            </li>
+            <li>
+                <img src="static/images/pizza-making.jpg"> <!-- random image -->
+                <div class="caption center-align">
+                    <h3>This is our big Tagline!</h3>
+                    <h5 class="light grey-text text-lighten-3">Here's our small slogan.</h5>
+                </div>
+            </li>
+            <li>
+                <img src="static/images/fresh-spag.jpg"> <!-- random image -->
+                <div class="caption left-align">
+                    <h3>Left Aligned Caption</h3>
+                    <h5 class="light grey-text text-lighten-3">Here's our small slogan.</h5>
+                </div>
+            </li>
+            <li>
+                <img src="static/images/tom-salad.jpg"> <!-- random image -->
+                <div class="caption right-align">
+                    <h3>Right Aligned Caption</h3>
+                    <h5 class="light grey-text text-lighten-3">Here's our small slogan.</h5>
+                </div>
+            </li>
+            <li>
+                <img src="static/images/olive-ling.jpg"> <!-- random image -->
+                <div class="caption center-align">
+                    <h3>This is our big Tagline!</h3>
+                    <h5 class="light grey-text text-lighten-3">Here's our small slogan.</h5>
+                </div>
+            </li>
+        </ul>
+    </div>
+    
+    
+    <h3 class="center-align page-heading">Edit Recipe</h3>
+    
+    <main class="container">
+        <div class="row">
+            <form class="col s12" method="POST" action="{{ url_for('edit_recipe, recipe_id=recipe._id') }}">
+                <div class="card-panel form-bac">
+                    <!-- Recipe category -->
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <select id="category_name" name="category_name" class="validate" required>
+                                <option value="" disabled selected>Choose a category</option>
+                                {% for category in categories %}
+                                    <option value="{{ category.category_name }}">{{ category.category_name }}</option>
+                                {% endfor %}
+                            </select>
+                            <label for="category_name">Recipe Category</label>
+                        </div>
+                    </div>
+                    <!-- Recipe title -->
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <input id="recipe_title" name="recipe_title" type="text" class="validate" minlength="3"
+                                maxlength="50" required>
+                            <label for="recipe_title">Recipe Title</label>
+                        </div>
+                    </div>
+                    <!-- Recipe description -->
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <textarea id="recipe_description" name="recipe_description"
+                                class="materialize-textarea validate" minlength="5" maxlength="150" required></textarea>
+                            <label for="recipe_description">Recipe Description</label>
+                        </div>
+                    </div>
+                    <!-- Recipe image -->
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <input id="image_url" name="image_url" type="url" class="validate" required>
+                            <label for="image_url">Image URL</label>
+                        </div>
+                    </div>
+                    <!-- Recipe prep time -->
+                    <div class="row">
+                        <div class="input-field col s6">
+                            <input id="prep_time" name="prep_time" type="text" class="validate"
+                                placeholder="Example: 10 minutes" required>
+                            <label for="prep_time">Prep Time</label>
+                        </div>
+                        <!-- Recipe cooking time -->
+                        <div class="input-field col s6">
+                            <input id="cooking_time" name="cooking_time" type="text" class="validate"
+                                placeholder="Example: 2 hours and 15 minutes" required>
+                            <label for="cooking_time">Cooking TIme</label>
+                        </div>
+                    </div>
+                    <!-- Recipe serves -->
+                    <div class="row">
+                        <div class="input-field col s6">
+                            <input id="serves" name="serves" type="text" class="validate" placeholder="How many people does this serve"
+                                required>
+                            <label for="serves">Serves</label>
+                        </div>
+                        <!-- Recipe difficulty -->
+                        <div class="input-field col s6">
+                            <input id="difficulty" name="difficulty" type="text" class="validate" placeholder="Easy/Medium/Hard" required>
+                            <label for="difficulty">Difficulty</label>
+                        </div>
+                    </div>
+                    <!-- Recipe ingredients -->
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <textarea id="recipe_ingredients" name="recipe_ingredients" class="materialize-textarea validate"
+                                placeholder="Write each ingredient on a new line" required></textarea>
+                            <label for="recipe_ingredients">Ingredients</label>
+                        </div>
+                    </div>
+                    <!-- Recipe method -->
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <textarea id="recipe_method" name="recipe_method" class="materialize-textarea validate"
+                                placeholder="Write each step on a new line" required></textarea>
+                            <label for="recipe_method">Method</label>
+                        </div>
+                    </div>
+                    <!-- Gluten Free Switch -->
+                    <div class="row">
+                        <div class="input-field col s2">
+                            <div class="switch">
+                                <label for="is_gluten_free">
+                                    <input type="checkbox" id="is_gluten_free" name="is_gluten_free">
+                                    <span class="lever"></span>
+                                    Gluten Free
+                                </label>
+                            </div>
+                        </div>
+                        <!-- Vegetarian Switch -->
+                        <div class="input-field col s2">
+                            <div class="switch">
+                                <label for="is_vegetarian">
+                                    <input type="checkbox" id="is_vegetarian" name="is_vegetarian">
+                                    <span class="lever"></span>
+                                    Vegetarian
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Submit button -->
+                    <div class="row">
+                        <button type="submit" class="col offset-s2 s3 btn-large form-btn">
+                            Submit
+                        </button>
+                        <!-- Clear button -->
+                        <a href="{{ url_for('index') }}" class="col offset-s2 s3 btn-large form-btn">
+                            Cancel
+                        </a>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </main>
+
+{% endblock %}
