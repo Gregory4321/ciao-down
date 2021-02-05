@@ -11,13 +11,15 @@ if os.path.exists("env.py"):
 
 app = Flask(__name__)
 
+# ------------------------------------------------------ Configuration
+
 app.config["MONGO_DBNAME"] = os.getenv("MONGO_DBNAME")
 app.config["MONGO_URI"] = os.getenv("MONGO_URI")
 app.secret_key = os.getenv("SECRET_KEY")
 
 mongo = PyMongo(app)
 
-# ------------------------- Homepage
+# ------------------------------------------------------ Homepage
 
 
 @app.route("/")
@@ -27,8 +29,8 @@ def index():
     return render_template("index.html", recipes=recipes)
 
 
-# ------------------------- User
-
+# ------------------------------------------------------ User
+# ---------------------------------------- Register
 
 @app.route("/sign_up", methods=["GET", "POST"])
 def sign_up():
@@ -55,6 +57,9 @@ def sign_up():
         flash("Account Created...Welcome!")
         return redirect(url_for("profile", username=session["user"]))
     return render_template("register.html")
+
+
+# ---------------------------------------- Login
 
 
 @app.route("/login", methods=("GET", "POST"))
@@ -86,6 +91,9 @@ def login():
     return render_template("login.html")
 
 
+# ---------------------------------------- Profile
+
+
 @app.route("/profile/<username>", methods=["GET", "POST"])
 def profile(username):
     # Get session user's recipes from the database
@@ -102,6 +110,9 @@ def profile(username):
     return redirect(url_for("login"))
 
 
+# ---------------------------------------- Logout
+
+
 @app.route("/logout")
 def logout():
     # Remove user from session cookies
@@ -110,7 +121,8 @@ def logout():
     return redirect(url_for("login"))
 
 
-# ------------------------- Recipes
+# ------------------------------------------------------ Recipes
+# ---------------------------------------- Recipe page
 
 
 @app.route("/recipe/<recipe_id>")
@@ -119,6 +131,9 @@ def get_recipe(recipe_id):
     recipe = mongo.db.recipes.find_one({"_id": ObjectId(recipe_id)})
 
     return render_template("recipe.html", recipe=recipe)
+
+
+# ---------------------------------------- Add Recipe
 
 
 @app.route("/add_recipe", methods=["GET", "POST"])
@@ -152,6 +167,15 @@ def add_recipe():
     categories = mongo.db.categories.find()
 
     return render_template("add_recipe.html", categories=categories)
+
+
+@app.route("/edit_recipe/<recipe_id>", methods=["GET", "POST"])
+def edit_recipe(recipe_id):
+    recipe = mongo.db.recipes.find_one({"_id": ObjectId(recipe_id)})
+    categories = mongo.db.categories.find()
+
+    return render_template(
+        "edit_recipe.html", recipe=recipe, categories=categories)
 
 
 if __name__ == "__main__":
