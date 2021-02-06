@@ -97,7 +97,7 @@ def login():
 @app.route("/profile/<username>", methods=["GET", "POST"])
 def profile(username):
     # Get session user's recipes from the database
-    recipes = mongo.db.recipes.find()
+    recipes = mongo.db.recipes.find({"created_by": session["user"]})
 
     # Get session user's username from the database
     username = mongo.db.users.find_one(
