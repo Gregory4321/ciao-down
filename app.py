@@ -171,6 +171,31 @@ def add_recipe():
 
 @app.route("/edit_recipe/<recipe_id>", methods=["GET", "POST"])
 def edit_recipe(recipe_id):
+    # Add recipe to the database
+    if request.method == "POST":
+        is_vegetarian = "on" if request.form.get("is_vegetarian") else "off"
+        is_gluten_free = "on" if request.form.get("is_gluten_free") else "off"
+
+        rec_update = {
+            "category_name": request.form.get("category_name"),
+            "recipe_title": request.form.get("recipe_title"),
+            "recipe_description": request.form.get("recipe_description"),
+            "image_url": request.form.get("image_url"),
+            "prep_time": request.form.get("prep_time"),
+            "cooking_time": request.form.get("cooking_time"),
+            "serves": request.form.get("serves"),
+            "difficulty": request.form.get("difficulty"),
+            "recipe_ingredients": request.form.get("recipe_ingredients"),
+            "recipe_method": request.form.get("recipe_method"),
+            "is_vegetarian": is_vegetarian,
+            "is_gluten_free": is_gluten_free,
+            "date_added": request.form.get("date_added"),
+            "created_by": session["user"]
+        }
+        mongo.db.recipes.update({"_id": ObjectId(recipe_id)}, rec_update)
+        flash("Recipe Successfully Updated")
+        return redirect(url_for("profile", username=session["user"]))
+
     recipe = mongo.db.recipes.find_one({"_id": ObjectId(recipe_id)})
     categories = mongo.db.categories.find()
 
