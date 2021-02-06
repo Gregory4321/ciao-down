@@ -169,6 +169,9 @@ def add_recipe():
     return render_template("add_recipe.html", categories=categories)
 
 
+# ---------------------------------------- Edit Recipe
+
+
 @app.route("/edit_recipe/<recipe_id>", methods=["GET", "POST"])
 def edit_recipe(recipe_id):
     # Add recipe to the database
@@ -201,6 +204,17 @@ def edit_recipe(recipe_id):
 
     return render_template(
         "edit_recipe.html", recipe=recipe, categories=categories)
+
+
+# ---------------------------------------- Delete Recipe
+
+
+@app.route("/delete_recipe/<recipe_id>")
+def delete_recipe(recipe_id):
+    mongo.db.recipes.remove({"_id": ObjectId(recipe_id)})
+    flash("Recipe Successfully Deleted")
+
+    return redirect(url_for("profile"))
 
 
 if __name__ == "__main__":
