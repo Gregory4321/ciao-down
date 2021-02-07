@@ -51,16 +51,16 @@
                     <a class="collapsible-header">Categories<i class="fas fa-chevron-down right down-arrow"></i></a>
                     <div class="collapsible-body">
                         <ul>
-                            <li><a href="#!">Starters</a></li>
-                            <li><a href="#!">Main</a></li>
-                            <li><a href="#!">Desserts</a></li>
-                            <li><a href="#!">Other</a></li>
+                            <li><a href="#">All</a></li>
+                            <li><a href="#">Starters</a></li>
+                            <li><a href="#">Main</a></li>
+                            <li><a href="#">Desserts</a></li>
                         </ul>
                     </div>
                 </li>
             </ul>
             {% if session.user %}
-                <li><a href="#">Add Recipe</a></li>
+                <li><a href="{{ url_for('add_recipe') }}">Add Recipe</a></li>
                 <li><a href="{{ url_for('profile', username=session['user']) }}">Profile</a></li>
                 <li><a href="{{ url_for('logout') }}">Log Out</a></li>
             {% else %}

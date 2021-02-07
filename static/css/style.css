@@ -64,7 +64,7 @@ h1, h2, h3, h4, h5, h6 {
 /* ----------------------------- Recipe cards */
 
 .feat-cards {
-    margin: 3rem 0 3rem 0;
+    margin: 3.1rem 0 3.1rem 0;
 }
 
 /* .card .card-image {
@@ -127,6 +127,10 @@ h1, h2, h3, h4, h5, h6 {
 
 /* ----------------------------- Accordion Dropdown */
 
+.all-accordion {
+    margin: 3.1rem 0;
+}
+
 .accordion-head {
     background-color: #f5f2f2;
     font-size: 20px;
@@ -181,7 +185,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .page-heading {
-    margin: 3rem 0 0 0;
+    margin: 3.1rem 0 0 0;
 }
 
 .card-panel {
@@ -200,6 +204,10 @@ h1, h2, h3, h4, h5, h6 {
 .form-btn:hover {
     background-color: #758d7c;
     color: #000;
+}
+
+.switch {
+    white-space: nowrap;
 }
 
 .prefix-colour {
@@ -306,7 +314,7 @@ h1, h2, h3, h4, h5, h6 {
     }
 }
 
-@media only screen and (min-width: 993px){
+@media only screen and (min-width: 993px) {
     .container {
         width: 85%;
     }
@@ -334,6 +342,12 @@ h1, h2, h3, h4, h5, h6 {
     }
 }
 
+@media only screen and (min-width:601px) {
+    .veg-switch {
+        margin-left: 40px;
+    }
+}
+
 @media only screen and (min-width:480px) and (max-width:569px) {
     .accordion-head {
         font-size: 14px;
@@ -354,7 +368,7 @@ h1, h2, h3, h4, h5, h6 {
     }
 }
 
-@media only screen and (max-width:479px) {
+@media only screen and (min-width:415px) and (max-width:479px) {
     .accordion-head {
         font-size: 12px;
     }
@@ -372,4 +386,43 @@ h1, h2, h3, h4, h5, h6 {
         font-size: 8px;
         letter-spacing: 0.3px;
     }
+
+    .form-btn {
+        font-size: 13px;
+    }
+
+}
+
+@media only screen and (max-width:414px) {
+    .accordion-head {
+        font-size: 10px;
+    }
+
+    .edit-btn {
+        margin: 0.7px;
+        padding: 1.7px 7.5px;
+        font-size: 7.5px;
+        letter-spacing: 0.1px;
+    }
+
+    .delete-btn {
+        margin: 0.7px 6.8px 0.7px 0.7px;
+        padding: 1.7px 7.5px;
+        font-size: 7.5px;
+        letter-spacing: 0.1px;
+    }
+
+    .btn-large {
+        height: 35px;
+        line-height: 35px;
+    }
+
+    .form-btn {
+        font-size: 10px;
+    }
+}
+
+@media only screen and (min-width:375px) and (max-width:414px) {
+
+    
 }
