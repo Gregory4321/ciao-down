@@ -2,20 +2,58 @@
 
 {% block content %}
 
-    <div class="slider">
+<div class="slider">
     <ul class="slides">
       <li>
-        <img src="static/images/tomato-pasta.jpg"> <!-- random image -->
+        <img src="{{ url_for('static', filename='images/tomato-pasta.jpg') }}">
         <div class="caption center-align">
           <h3>This is our big Tagline!</h3>
           <h5 class="light grey-text text-lighten-3">Here's our small slogan.</h5>
         </div>
       </li>
-      
+      <li>
+        <img src="{{ url_for('static', filename='images/pizza-making.jpg') }}">
+        <div class="caption center-align">
+          <h3>This is our big Tagline!</h3>
+          <h5 class="light grey-text text-lighten-3">Here's our small slogan.</h5>
+        </div>
+      </li>
+      <li>
+        <img src="{{ url_for('static', filename='images/tiramisu.jpg') }}">
+        <div class="caption left-align">
+          <h3>Left Aligned Caption</h3>
+          <h5 class="light grey-text text-lighten-3">Here's our small slogan.</h5>
+        </div>
+      </li>
+      <li>
+        <img src="{{ url_for('static', filename='images/tom-salad1.jpg') }}">
+        <div class="caption right-align">
+          <h3>Right Aligned Caption</h3>
+          <h5 class="light grey-text text-lighten-3">Here's our small slogan.</h5>
+        </div>
+      </li>
+      <li>
+        <img src="{{ url_for('static', filename='images/meatball1.jpg') }}">
+        <div class="caption center-align">
+          <h3>This is our big Tagline!</h3>
+          <h5 class="light grey-text text-lighten-3">Here's our small slogan.</h5>
+        </div>
+      </li>
     </ul>
   </div>
     
-
+    <section>
+        <!-- flash messages-->
+        {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+                {% for category, message in messages %}
+                    <div class="row flashes">
+                        <h4 class="center-align custom-flash {{ category}}">{{ message }}</h4>
+                    </div>
+                {% endfor %}
+            {% endif %}
+        {% endwith %}
+    </section>
     <main class="container">
         <h3 class="center-align page-heading">Sign Up</h3>
     <div class="row">

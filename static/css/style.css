@@ -48,6 +48,28 @@ h1, h2, h3, h4, h5, h6 {
     padding: 0 55px;
 }
 
+/* ---------------------------------------------- Back To Top Button */
+
+/* #to-top-btn {
+    display: none;
+    position: fixed;
+    bottom: 100px;
+    right: 30px;
+    z-index: 99;
+    border: none;
+    outline: none;
+    background-color: #588967;
+    color: #fff;
+    cursor: pointer;
+    padding: 0 10px;
+    border-radius: 10px;
+    font-size: 40px;
+}
+
+#to-top-btn:hover {
+    background-color: #758d7c;
+} */
+
 /* ------------------------------------------------ Home Page */
 /* ----------------------------- Hero Image */
 
@@ -93,7 +115,7 @@ h1, h2, h3, h4, h5, h6 {
     font-size: 20px;
     padding: 20px 0 8px 0;
     text-align: center;
-    text-shadow: 3px 3px 3px rgba(0, 0, 0, 0.7) /* maybe a red text-shadow HERE*/
+    text-shadow: 3px 3px 3px rgba(0, 0, 0, 0.7)
 }
 
 .col:hover .card-overlay {
@@ -304,6 +326,10 @@ h1, h2, h3, h4, h5, h6 {
 
 .custom-flash {
     background-color: #EAF4F4;
+}
+
+.error {
+    background-color: red;
 }
 
 /* ----------------------------- Media Queries */

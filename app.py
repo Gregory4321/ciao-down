@@ -41,7 +41,7 @@ def sign_up():
             {"username": request.form.get("username").lower()})
 
         if existing_user:
-            flash("Username already exists")
+            flash("Username already exists", "error")
             return redirect(url_for("sign_up"))
 
         sign_up = {
@@ -81,12 +81,12 @@ def login():
                     "profile", username=session["user"]))
             else:
                 # Invalid password match
-                flash("Incorrect Username and/or Password entered")
+                flash("Incorrect Username and/or Password entered", "error")
                 return redirect(url_for("login"))
 
         else:
             # Username doesn't exist
-            flash("Incorrect Username and/or Password entered")
+            flash("Incorrect Username and/or Password entered", "error")
             return redirect(url_for("login"))
 
     return render_template("login.html")
@@ -148,7 +148,8 @@ def recipe_category(category):
     elif category == "desserts":
         recipes = list(mongo.db.recipes.find({"category_name": "Desserts"}))
 
-    return render_template("recipes.html", category=category, recipes=recipes)
+    return render_template(
+        "recipes.html", category_name=category, recipes=recipes)
 
 
 # ---------------------------------------- Add Recipe
@@ -233,7 +234,7 @@ def delete_recipe(recipe_id):
     mongo.db.recipes.remove({"_id": ObjectId(recipe_id)})
     flash("Recipe Successfully Deleted")
 
-    return redirect(url_for("profile"))
+    return redirect(url_for("profile", username=session["user"]))
 
 
 if __name__ == "__main__":

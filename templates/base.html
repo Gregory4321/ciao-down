@@ -13,9 +13,10 @@
     <title>Ciao Down</title>
 </head>
 <body>
-
+<!-- <button onclick="topFunction()" id="to-top-btn" title="Go to top"><i class="fas fa-angle-up"></i></button> -->
     <header>
         <!-- top navbar -->
+        <div class="navbar-fixed">
         <nav class="text-shadow top-nav">
             <div class="nav-wrapper valign-wrapper">
                 <a href="{{ url_for('index') }}" class="brand-logo center valign-wrapper">
@@ -28,6 +29,9 @@
                     <span>/</span>
                     <a href="{{ url_for('sign_up') }}" class="navbar-entry">Sign Up</a>
                 {% endif %}
+                {% if session.user %}
+                    <a href="{{ url_for('logout') }}" class="navbar-entry">Logout</a>
+                {% endif %}
                 </div>
                 <!-- <ul class="right hide-on-med-and-down">
                     <li><a href="#">Home</a></li>
@@ -39,6 +43,7 @@
                 </ul> -->
             </div>
         </nav>
+        </div>
         
         <!-- side navbar -->
         <ul class="sidenav" id="mobile-demo">
@@ -69,19 +74,6 @@
             {% endif %}
         </ul>
     </header>
-
-    <section>
-        <!-- flash messages-->
-        {% with messages = get_flashed_messages() %}
-            {% if messages %}
-                {% for message in messages %}
-                    <div class="row flashes">
-                        <h4 class="center-align custom-flash">{{ message }}</h4>
-                    </div>
-                {% endfor %}
-            {% endif %}
-        {% endwith %}
-    </section>
 
         {% block content %}
         {% endblock %}
