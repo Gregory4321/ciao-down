@@ -32,6 +32,7 @@ def index():
 # ------------------------------------------------------ User
 # ---------------------------------------- Register
 
+
 @app.route("/sign_up", methods=["GET", "POST"])
 def sign_up():
     if request.method == "POST":
@@ -133,6 +134,23 @@ def get_recipe(recipe_id):
     return render_template("recipe.html", recipe=recipe)
 
 
+# ---------------------------------------- Recipe category page
+
+
+@app.route("/recipe_category/<category>")
+def recipe_category(category):
+    if category == "all":
+        recipes = list(mongo.db.recipes.find())
+    elif category == "starters":
+        recipes = list(mongo.db.recipes.find({"category_name": "Starters"}))
+    elif category == "mains":
+        recipes = list(mongo.db.recipes.find({"category_name": "Mains"}))
+    elif category == "desserts":
+        recipes = list(mongo.db.recipes.find({"category_name": "Desserts"}))
+
+    return render_template("recipes.html", category=category, recipes=recipes)
+
+
 # ---------------------------------------- Add Recipe
 
 
@@ -174,7 +192,7 @@ def add_recipe():
 
 @app.route("/edit_recipe/<recipe_id>", methods=["GET", "POST"])
 def edit_recipe(recipe_id):
-    # Add recipe to the database
+    # Edit a recipe from the database
     if request.method == "POST":
         is_vegetarian = "on" if request.form.get("is_vegetarian") else "off"
         is_gluten_free = "on" if request.form.get("is_gluten_free") else "off"
@@ -211,6 +229,7 @@ def edit_recipe(recipe_id):
 
 @app.route("/delete_recipe/<recipe_id>")
 def delete_recipe(recipe_id):
+    # Delete a recipe from the database
     mongo.db.recipes.remove({"_id": ObjectId(recipe_id)})
     flash("Recipe Successfully Deleted")
 
