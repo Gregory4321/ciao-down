@@ -51,10 +51,10 @@
                     <a class="collapsible-header">Categories<i class="fas fa-chevron-down right down-arrow"></i></a>
                     <div class="collapsible-body">
                         <ul>
-                            <li><a href="#">All</a></li>
-                            <li><a href="#">Starters</a></li>
-                            <li><a href="#">Main</a></li>
-                            <li><a href="#">Desserts</a></li>
+                            <li><a href="{{ url_for('recipe_category', category='all') }}">All</a></li>
+                            <li><a href="{{ url_for('recipe_category', category='starters') }}">Starters</a></li>
+                            <li><a href="{{ url_for('recipe_category', category='mains') }}">Main</a></li>
+                            <li><a href="{{ url_for('recipe_category', category='desserts') }}">Desserts</a></li>
                         </ul>
                     </div>
                 </li>
