@@ -173,6 +173,20 @@ h1, h2, h3, h4, h5, h6 {
     text-decoration: underline;
 }
 
+.cta-recipe {
+    float: right;
+    color: #000;
+    text-decoration: underline;
+}
+
+.cta-recipe:hover {
+    color: #858585;
+}
+
+.accord-desc {
+    margin-top: 20px;
+}
+
 /* ----------------------------- Forms */
 
 .slider img {

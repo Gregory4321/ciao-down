@@ -25,15 +25,16 @@
                     </div>
                 </div>
                 <div class="collapsible-body">
-                    <p>Date added: {{ recipe.date_added }}</p>
-                    {{ recipe.category_name }}
-                    <p>{{ recipe.recipe_description }}</p>
+                    <h6 ><a class="cta-recipe" href="{{ url_for('get_recipe', recipe_id=recipe._id) }}">Go to recipe</a></h6>
+                    <h6>{{ recipe.category_name }}</h6>
+                    <p class="accord-desc">{{ recipe.recipe_description }}</p>
                     {% if recipe.is_vegetarian == "on" %}
                         <i class="fab fa-vimeo-v"></i>
                     {% endif %}
                     {% if recipe.is_gluten_free == "on" %}
                         <i class="fab fa-glide-g"></i>
                     {% endif %}
+                    <p>Date added: {{ recipe.date_added }}</p>
                     
                 </div>
             </li>
