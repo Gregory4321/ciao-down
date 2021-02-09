@@ -30,19 +30,22 @@
         <ul class="collapsible all-accordion">
             {% for recipe in recipes %}
             <li>
+                <div class="row accord-row">
                 <div class="collapsible-header accordion-head rotate valign-wrapper">
+                    
                     <div class="col s1 caret-icon">
                         <i class="fas fa-angle-down"></i>
                     </div>
-                    <div class="col s2">
+                    <div class="col m2 hide-on-med-and-down">
                         <a href="{{ url_for('edit_recipe', recipe_id=recipe._id) }}" class="edit-btn">Edit</a>
                         <a href="{{ url_for('delete_recipe', recipe_id=recipe._id) }}" class="delete-btn">Delete</a>
                     </div>
-                    <div class="col s5 accord-title">
+                    <div class="col s7 m7 accord-title">
                         {{ recipe.recipe_title }}
                     </div>
-                    <div class="col s4">
-                    <h6><a class="cta-recipe" href="{{ url_for('get_recipe', recipe_id=recipe._id) }}">Go to recipe</a></h6>
+                    <div class="col m4 l2 go-recipe">
+                    <p><a class="cta-recipe" href="{{ url_for('get_recipe', recipe_id=recipe._id) }}">Go to recipe</a></p>
+                    </div>
                     </div>
                 </div>
                 <div class="collapsible-body">
@@ -55,6 +58,10 @@
                         <i class="fab fa-glide-g"></i>
                     {% endif %}
                     <p>Date added: {{ recipe.date_added }}</p>
+                    <div class="col s2 m2 show-on-medium-and-down hide-on-med-and-up">
+                        <a href="{{ url_for('edit_recipe', recipe_id=recipe._id) }}" class="edit-btn">Edit</a>
+                        <a href="{{ url_for('delete_recipe', recipe_id=recipe._id) }}" class="delete-btn">Delete</a>
+                    </div>
                     
                 </div>
             </li>

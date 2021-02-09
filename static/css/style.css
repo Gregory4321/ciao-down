@@ -204,13 +204,17 @@ Originally found on WS3 Schools. https://www.w3schools.com/howto/howto_js_scroll
 
 /* ----------------------------- Accordion Dropdown */
 
+.accord-row {
+    margin-bottom: 0;
+}
+
 .all-accordion {
-    margin: 0 0 3.1rem 0;
+    margin-bottom: 3.1rem;
 }
 
 .accordion-head {
     background-color: #f5f2f2;
-    font-size: 20px;
+    /* font-size: 20px; */
     font-family: 'Average', sans-serif;
 }
 
@@ -219,9 +223,13 @@ Originally found on WS3 Schools. https://www.w3schools.com/howto/howto_js_scroll
 }
 
 .accord-title {
+    font-size: 20px;
+}
+
+/* .accord-title {
     position: relative;
     right: 0px;
-}
+} */
 
 .rotate {
     transition: all .3s linear;
@@ -231,8 +239,8 @@ Originally found on WS3 Schools. https://www.w3schools.com/howto/howto_js_scroll
     background-color: #588967;
     color: #fff;
     border-radius: 4%;
-    margin: 3px;
-    padding: 5px 15px;
+    margin: 2px;
+    padding: 5px 10px;
     font-family: 'Source Sans Pro', sans-serif;
     font-size: 15px;
     display: inline-block;
@@ -249,8 +257,8 @@ Originally found on WS3 Schools. https://www.w3schools.com/howto/howto_js_scroll
     background-color: #BF0E0E;
     color: #fff;
     border-radius: 4%;
-    margin: 3px 15px 3px 3px;
-    padding: 5px 15px;
+    margin: 2px;
+    padding: 5px 10px;
     font-family: 'Source Sans Pro', sans-serif;
     font-size: 15px;
     display: inline-block;
@@ -263,10 +271,14 @@ Originally found on WS3 Schools. https://www.w3schools.com/howto/howto_js_scroll
     text-decoration: underline;
 }
 
+.go-recipe {
+    text-align: end;
+}
+
 .cta-recipe {
-    float: right;
     color: #000;
     text-decoration: underline;
+    font-size: 18px;
 }
 
 .cta-recipe:hover {
@@ -408,6 +420,21 @@ Originally found on WS3 Schools. https://www.w3schools.com/howto/howto_js_scroll
 
 /* ----------------------------- Media Queries */
 
+@media only screen and (min-width:992px) and (max-width:1083px) {
+    .edit-btn {
+        margin: 1px;
+        padding: 5px 8px;
+        font-size: 14px;
+    }
+
+    .delete-btn {
+        margin: 1px;
+        padding: 5px 8px;
+        font-size: 14px;
+
+    }
+}
+
 @media only screen and (max-width:700px ) {
     .center-text {
         text-align: center;
@@ -434,7 +461,7 @@ Originally found on WS3 Schools. https://www.w3schools.com/howto/howto_js_scroll
     }
 }
 
-@media only screen and (min-width:570px) and (max-width:680px) {
+/* @media only screen and (min-width:570px) and (max-width:680px) {
     .accordion-head {
         font-size: 17px;
     }
@@ -449,12 +476,12 @@ Originally found on WS3 Schools. https://www.w3schools.com/howto/howto_js_scroll
         margin: 2px 12px 2px 2px;
         padding: 4px 12px;
         font-size: 13px;
-    }
+    } */
 
-    .accord-title {
+    /* .accord-title {
         margin: 3px;
     }
-}
+} */
 
 @media only screen and (min-width:601px) {
     .veg-switch {
@@ -462,70 +489,13 @@ Originally found on WS3 Schools. https://www.w3schools.com/howto/howto_js_scroll
     }
 }
 
-@media only screen and (min-width:480px) and (max-width:569px) {
-    .accordion-head {
-        font-size: 14px;
-    }
-
-    .edit-btn {
-        margin: 1.5px;
-        padding: 3px 10px;
-        font-size: 10px;
-        letter-spacing: 0.5px;
-    }
-
-    .delete-btn {
-        margin: 1.5px 7.5px 1.5px 1.5px;
-        padding: 3px 10px;
-        font-size: 10px;
-        letter-spacing: 0.5px;
-    }
-}
-
 @media only screen and (min-width:415px) and (max-width:479px) {
-    .accordion-head {
-        font-size: 12px;
-    }
-
-    .edit-btn {
-        margin: 1px;
-        padding: 2px 8px;
-        font-size: 8px;
-        letter-spacing: 0.3px;
-    }
-
-    .delete-btn {
-        margin: 1px 7px 1px 1px;
-        padding: 2px 8px;
-        font-size: 8px;
-        letter-spacing: 0.3px;
-    }
-
     .form-btn {
         font-size: 13px;
     }
-
 }
 
 @media only screen and (max-width:414px) {
-    .accordion-head {
-        font-size: 10px;
-    }
-
-    .edit-btn {
-        margin: 0.7px;
-        padding: 1.7px 7.5px;
-        font-size: 7.5px;
-        letter-spacing: 0.1px;
-    }
-
-    .delete-btn {
-        margin: 0.7px 6.8px 0.7px 0.7px;
-        padding: 1.7px 7.5px;
-        font-size: 7.5px;
-        letter-spacing: 0.1px;
-    }
-
     .btn-large {
         height: 35px;
         line-height: 35px;
@@ -539,6 +509,19 @@ Originally found on WS3 Schools. https://www.w3schools.com/howto/howto_js_scroll
         margin-top: 2.5rem;
     }
 }
+
+@media only screen and (min-width: 0px) {
+    nav .nav-wrapper i {
+        height: 64px;
+        line-height: 64px;
+    }
+
+    nav .sidenav-trigger i {
+        height: 56px;
+        line-height: 56px;
+    }
+}
+
 
 @media only screen and (min-width:375px) and (max-width:414px) {
 
