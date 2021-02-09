@@ -38,6 +38,15 @@ h1, h2, h3, h4, h5, h6 {
     margin-top: 20px;
 }
 
+.home-icon {
+    margin-right: 15px;
+    font-size: 22px;
+}
+
+.home-icon:hover {
+    color: #000;
+}
+
 /* ----------------------------- Sidenav */
 
 .sidenav .collapsible-header {
@@ -329,6 +338,11 @@ Originally found on WS3 Schools. https://www.w3schools.com/howto/howto_js_scroll
 
 .para-link {
     text-decoration: underline;
+    color: #588967;
+}
+
+.para-link:hover {
+    color: #758d7c;
 }
 
 /* ----------------------------- Footer */

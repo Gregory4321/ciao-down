@@ -23,6 +23,7 @@
                     <img src="{{ url_for('static', filename='images/logo.png') }}" alt="Ciao Down Logo" class="logo-image">
                 </a>
                 <a href="#" data-target="mobile-demo" class="sidenav-trigger show-on-large"><i class="fas fa-bars hamburger"></i></a>
+                <a href="{{ url_for('index') }}"><i class="fas fa-home home-icon"></i></a>
                 <div class="navbar-entries">
                 {% if not session.user %}
                     <a href="{{ url_for('login') }}" class="navbar-entry">Log In</a>
