@@ -16,15 +16,21 @@
     </section>  
 
      <main class="container">
+         <button onclick="backButton()" class="back-btn profile"><i class="fas fa-arrow-left"></i> Back</button>
         <!-- Page Title -->
         <h3 class="center-align page-heading">
             {{username}}'s profile
         </h3>
-    
+        <div class="row add-rec">
+            <div class="col s12">
+                <a href="{{ url_for('add_recipe') }}" class="add-btn"><h6>Add Recipe +</h6></a>
+
+            </div>
+        </div>
         <ul class="collapsible all-accordion">
             {% for recipe in recipes %}
             <li>
-                <div class="collapsible-header accordion-head valign-wrapper">
+                <div class="collapsible-header accordion-head rotate valign-wrapper">
                     <div class="col s1 caret-icon">
                         <i class="fas fa-angle-down"></i>
                     </div>
@@ -32,12 +38,14 @@
                         <a href="{{ url_for('edit_recipe', recipe_id=recipe._id) }}" class="edit-btn">Edit</a>
                         <a href="{{ url_for('delete_recipe', recipe_id=recipe._id) }}" class="delete-btn">Delete</a>
                     </div>
-                    <div class="col s9 accord-title">
+                    <div class="col s5 accord-title">
                         {{ recipe.recipe_title }}
+                    </div>
+                    <div class="col s4">
+                    <h6><a class="cta-recipe" href="{{ url_for('get_recipe', recipe_id=recipe._id) }}">Go to recipe</a></h6>
                     </div>
                 </div>
                 <div class="collapsible-body">
-                    <h6 ><a class="cta-recipe" href="{{ url_for('get_recipe', recipe_id=recipe._id) }}">Go to recipe</a></h6>
                     <h6>{{ recipe.category_name }}</h6>
                     <p class="accord-desc">{{ recipe.recipe_description }}</p>
                     {% if recipe.is_vegetarian == "on" %}

@@ -43,9 +43,10 @@
     </div>
     
     
-    <h3 class="center-align page-heading">Add Recipe</h3>
     
     <main class="container">
+         <button onclick="backButton()" class="back-btn"><i class="fas fa-arrow-left"></i> Back</button>
+        <h3 class="center-align page-heading">Add Recipe</h3>
         <div class="row">
             <form class="col s12" method="POST" action="{{ url_for('add_recipe') }}">
                 <div class="card-panel form-bac">

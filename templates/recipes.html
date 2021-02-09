@@ -1,11 +1,53 @@
 {% extends "base.html" %}
 {% block content %}
 
-    <main>
+    <div class="slider">
+    <ul class="slides">
+      <li>
+        <img src="{{ url_for('static', filename='images/tomato-pasta.jpg') }}"> <!-- random image -->
+        <div class="caption center-align">
+          <h3>This is our big Tagline!</h3>
+          <h5 class="light grey-text text-lighten-3">Here's our small slogan.</h5>
+        </div>
+      </li>
+      <li>
+        <img src="{{ url_for('static', filename='images/pizza-making.jpg') }}"> <!-- random image -->
+        <div class="caption center-align">
+          <h3>This is our big Tagline!</h3>
+          <h5 class="light grey-text text-lighten-3">Here's our small slogan.</h5>
+        </div>
+      </li>
+      <li>
+        <img src="{{ url_for('static', filename='images/tiramisu.jpg') }}"> <!-- random image -->
+        <div class="caption left-align">
+          <h3>Left Aligned Caption</h3>
+          <h5 class="light grey-text text-lighten-3">Here's our small slogan.</h5>
+        </div>
+      </li>
+      <li>
+        <img src="{{ url_for('static', filename='images/tom-salad1.jpg') }}"> <!-- random image -->
+        <div class="caption right-align">
+          <h3>Right Aligned Caption</h3>
+          <h5 class="light grey-text text-lighten-3">Here's our small slogan.</h5>
+        </div>
+      </li>
+      <li>
+        <img src="{{ url_for('static', filename='images/meatball1.jpg') }}"> <!-- random image -->
+        <div class="caption center-align">
+          <h3>This is our big Tagline!</h3>
+          <h5 class="light grey-text text-lighten-3">Here's our small slogan.</h5>
+        </div>
+      </li>
+    </ul>
+  </div>
+
+    <main class="container">
+         <button onclick="backButton()" class="back-btn"><i class="fas fa-arrow-left"></i> Back</button>
+
         <!-- Page Title -->
-        <h3 class="center-align page-heading">{{ recipes.category_name }}</h3>
+        <h3 class="center-align page-heading">{{ category_name|capitalize }}</h3>
         <!-- Recipes by Category -->
-        <div class="container">
+        <div>
             <div class="row feat-cards">
                 {% for recipe in recipes %}
                     <div class="col s12 m6 l4">

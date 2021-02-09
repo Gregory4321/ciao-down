@@ -151,10 +151,52 @@ Originally found on WS3 Schools. https://www.w3schools.com/howto/howto_js_scroll
 
 /* ------------------------------------------------ Profile Page */
 
+.add-rec {
+    margin-bottom: 0;
+    margin-top: 1rem;
+}
+
+.add-btn {
+    float: right;
+    text-decoration: underline;
+    color: #000;
+    letter-spacing: 0.5px;
+    font-family: 'Average', sans-serif;
+}
+
+.add-btn:hover {
+    color: #858585;
+}
+
+.back-btn {
+    border: 1px solid #000;
+    border-radius: 5%;
+    background-color: #f1f1f1;
+    font-family: 'Average', sans-serif;
+}
+
+.back-btn.profile {
+    margin-top: 2rem;
+    border: 1px solid #000;
+    border-radius: 5%;
+}
+
+.back-btn:hover {
+    color: #858585;
+}
+
+.back-btn:active {
+    background-color: #f1f1f1;
+}
+
+.back-btn:focus {
+    background-color: #f1f1f1;
+}
+
 /* ----------------------------- Accordion Dropdown */
 
 .all-accordion {
-    margin: 3.1rem 0;
+    margin: 0 0 3.1rem 0;
 }
 
 .accordion-head {
@@ -163,7 +205,7 @@ Originally found on WS3 Schools. https://www.w3schools.com/howto/howto_js_scroll
     font-family: 'Average', sans-serif;
 }
 
-.collapsible li.active i {
+.collapsible li.active .caret-icon i {
     transform: rotate(180deg);
 }
 
@@ -238,7 +280,7 @@ Originally found on WS3 Schools. https://www.w3schools.com/howto/howto_js_scroll
 }
 
 .page-heading {
-    margin: 3.1rem 0 0 0;
+    margin: 2rem 0 3.1rem 0;
 }
 
 .card-panel {
@@ -477,6 +519,10 @@ Originally found on WS3 Schools. https://www.w3schools.com/howto/howto_js_scroll
 
     .form-btn {
         font-size: 10px;
+    }
+
+    .back-btn.profile {
+        margin-top: 2.5rem;
     }
 }
 
