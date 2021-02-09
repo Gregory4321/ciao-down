@@ -50,11 +50,15 @@ h1, h2, h3, h4, h5, h6 {
 
 /* ---------------------------------------------- Back To Top Button */
 
-/* #to-top-btn {
+/* Code taken from my MS2 project and edited.
+Originally found on WS3 Schools. https://www.w3schools.com/howto/howto_js_scroll_to_top.asp */
+
+
+#to-top-btn {
     display: none;
     position: fixed;
     bottom: 100px;
-    right: 30px;
+    right: 15px;
     z-index: 99;
     border: none;
     outline: none;
@@ -68,7 +72,7 @@ h1, h2, h3, h4, h5, h6 {
 
 #to-top-btn:hover {
     background-color: #758d7c;
-} */
+}
 
 /* ------------------------------------------------ Home Page */
 /* ----------------------------- Hero Image */
@@ -159,6 +163,19 @@ h1, h2, h3, h4, h5, h6 {
     font-family: 'Average', sans-serif;
 }
 
+.collapsible li.active i {
+    transform: rotate(180deg);
+}
+
+.accord-title {
+    position: relative;
+    right: 0px;
+}
+
+.rotate {
+    transition: all .3s linear;
+}
+
 .edit-btn {
     background-color: #588967;
     color: #fff;
@@ -225,7 +242,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .card-panel {
-    margin: 3.1rem 0 0 0;
+    margin: 3.1rem 0;
 }
 
 .form-bac {
@@ -322,14 +339,15 @@ h1, h2, h3, h4, h5, h6 {
 
 .flashes h4 {
     line-height: 2;
+    margin-top: 50px;
 }
 
 .custom-flash {
-    background-color: #EAF4F4;
+    background-color: #46a563;
 }
 
 .error {
-    background-color: red;
+    background-color: #f13737;
 }
 
 /* ----------------------------- Media Queries */
