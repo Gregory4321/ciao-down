@@ -292,6 +292,10 @@ Originally found on WS3 Schools. https://www.w3schools.com/howto/howto_js_scroll
     text-decoration: underline;
 }
 
+.rec-btn {
+    padding: 8px 20px;
+}
+
 .go-recipe {
     text-align: end;
 }
