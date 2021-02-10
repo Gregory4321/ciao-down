@@ -57,6 +57,23 @@ h1, h2, h3, h4, h5, h6 {
     padding: 0 55px;
 }
 
+.collapsible li.active .chevron-down i {
+    transform: rotate(180deg);
+}
+
+.side-logo {
+    display: block;
+    margin: 10px auto 5px;
+    width: 50%;
+    height: 10%;
+    /* width: 250px;
+    height: 75px; */
+}
+
+.sidenav>a {
+    padding: 0;
+}
+
 /* ---------------------------------------------- Back To Top Button */
 
 /* Code taken from my MS2 project and edited.
@@ -507,6 +524,22 @@ Originally found on WS3 Schools. https://www.w3schools.com/howto/howto_js_scroll
 
     .back-btn.profile {
         margin-top: 2.5rem;
+    }
+
+    .side-logo {
+        height: 12%;
+    }
+}
+
+@media only screen and (max-width:375px) {
+    .side-logo {
+        height: 13%;
+    }
+}
+
+@media only screen and (max-width:320px) {
+    .side-logo {
+        height: 14%;
     }
 }
 

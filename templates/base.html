@@ -8,6 +8,7 @@
         crossorigin="anonymous" type="text/css"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" type="text/css">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" type="text/css">
+    <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
     {% block styles %}
     {% endblock %}
     <title>Ciao Down</title>
@@ -48,13 +49,13 @@
         
         <!-- side navbar -->
         <ul class="sidenav" id="mobile-demo">
-            <li>
-                <h4 class="center-align text-color">Ciao Down</h4>
-            </li>
+            <a href="{{ url_for('index') }}">
+                    <img src="{{ url_for('static', filename='images/side-logo.png') }}" alt="Ciao Down Logo" class="side-logo">
+                </a>
             <li><a href="{{ url_for('index') }}">Home</a></li>
             <ul class="collapsible collapsible-accordion">
                 <li>
-                    <a class="collapsible-header">Categories<i class="fas fa-chevron-down right down-arrow"></i></a>
+                    <a class="collapsible-header chevron-down">Categories<i class="fas fa-chevron-down right down-arrow"></i></a>
                     <div class="collapsible-body">
                         <ul>
                             <li><a href="{{ url_for('recipe_category', category='all') }}">All</a></li>
