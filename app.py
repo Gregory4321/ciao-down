@@ -5,6 +5,7 @@ from flask import (
 from flask_pymongo import PyMongo
 from bson.objectid import ObjectId
 from werkzeug.security import generate_password_hash, check_password_hash
+from datetime import datetime
 if os.path.exists("env.py"):
     import env
 
@@ -65,6 +66,9 @@ def sign_up():
 
 @app.route("/login", methods=("GET", "POST"))
 def login():
+    if "user" in session:
+        return redirect(url_for("profile", username=session["user"]))
+
     if request.method == "POST":
         # Check if username exists in database
         existing_user = mongo.db.users.find_one(
@@ -175,7 +179,7 @@ def add_recipe():
             "recipe_method": request.form.get("recipe_method"),
             "is_vegetarian": is_vegetarian,
             "is_gluten_free": is_gluten_free,
-            "date_added": request.form.get("date_added"),
+            "date_added": datetime.today().strftime("%d %B %Y"),
             "created_by": session["user"]
         }
         mongo.db.recipes.insert_one(recipe)

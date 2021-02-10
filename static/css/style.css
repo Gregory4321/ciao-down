@@ -175,6 +175,10 @@ Originally found on WS3 Schools. https://www.w3schools.com/howto/howto_js_scroll
     /* padding-left: 15px; */
 }
 
+.posted-by {
+    color: #a0a0a0;
+}
+
 /* ------------------------------------------------ Profile Page */
 
 .add-rec {
