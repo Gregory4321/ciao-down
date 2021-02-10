@@ -47,6 +47,14 @@ h1, h2, h3, h4, h5, h6 {
     color: #000;
 }
 
+.modal .modal-footer {
+    text-align: center;
+}
+
+.modal-para {
+    margin-top: 30px;
+}
+
 /* ----------------------------- Sidenav */
 
 .sidenav .collapsible-header {
