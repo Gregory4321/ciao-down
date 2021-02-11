@@ -163,5 +163,73 @@ Having researched and thought over the design process thoroughly, I created a wo
 
 [Back to Top](#table-of-contents)
 
-They also have the ability to add the ingredients list from a recipe to a shopping list hosted
-within their own profile.
+## **Technologies Used**
+
+#### Languages
+
+* [HTML5](https://en.wikipedia.org/wiki/HTML5) - Language used to create the structure of the pages.
+
+* [CSS3](https://en.wikipedia.org/wiki/Cascading_Style_Sheets) - Language used to add styling across all pages.
+
+* [JavaScript](https://en.wikipedia.org/wiki/JavaScript) - Language used to create interactivity across the pages.
+
+* [Python](https://en.wikipedia.org/wiki/Python_(programming_language)) - Language used to create the back-end functionality of the app.
+
+* [Jinja](https://jinja.palletsprojects.com/en/2.11.x/) - this templating language was used with the Flask Framework across the HTML pages. It extended the base.html page across all pages, sharing the header and footer, along with all the meta data and links needed for the page creations, especially the crucial !DOCTYPE html.
+
+#### Libraries, Frameworks and Editors
+
+* [Materialize 1.0.0](https://materializecss.com/) - used as the base structure and layout of the site, using its grid system to aid responsiveness across screen sizes. Many components such as the navbar, footer and cards were used. Materialize jQuery was used for initialization of many components such as the sidenav, dropdown and modal
+
+* [Flask](https://flask.palletsprojects.com/en/1.1.x/) - a micro-framework used to help with writing the Python code.
+
+* [MongoDB](https://www.mongodb.com/) - the non-relational database used to store my data on it's cloud servers.
+
+* [Werkzeug](https://werkzeug.palletsprojects.com/en/1.0.x/) - used their WSGI toolkit for utilities to aid security of user's passwords.
+
+* [Google Fonts](https://fonts.google.com/) - used to import the 'Source Sans Pro' and 'Average' fonts, that were used across all pages.
+
+* [Font Awesome](https://fontawesome.com/) - used for their free range of icons.
+
+* [PyMongo](https://pypi.org/project/pymongo/) - used as Python's API for MongoDB, to enable data links from the back-end to front-end.
+
+* [Favicon.io](https://favicon.io/) - was used to generate the favicon image.
+
+* [Gitpod](https://www.gitpod.io/) - used as preferred choice of IDE for writing my code.
+
+* [Git](https://git-scm.com/) - used for version control by making use of the Gitpod terminal to add, commit and push to Github.
+
+* [Github](https://github.com) - used to host the project's repository and store the code, and linked to Heroku to push latest changes to the deployed build version.
+
+* [Heroku](https://www.heroku.com/) - used as a hosting platform for deploying my live version of this CRUD application.
+
+* [Unsplash](https://unsplash.com/) - used to find images for use across the site.
+
+* [Pexels](https://www.pexels.com/) - used to find images for use across the site.
+
+* [Pixbay](https://pixabay.com/) - used to find images for use across the site.
+
+* [Google Images](https://google.com) - used to find images for use across the site.
+
+#### Tools
+
+* [Google](https://www.google.co.uk/) - used for researching various techniques, styles and information.
+
+* [Google Chrome DevTools](https://developers.google.com/web/tools/chrome-devtools) - used for testing and debugging.
+
+* [Figma](https://www.figma.com/) - used for creating the wireframes in the design stage.
+
+* [Coolors](https://coolors.co/) - used to find and compare colours that complimented one another, retrieve names of colours, and showcase
+the colours on the README.md file as an image.
+
+* [Canva](https://www.canva.com/) - used to design and create the logo and favicon logo.
+
+* [Picresize](https://picresize.com/) - used to resize and crop images for better implementation, such as 25% or 50% smaller.
+
+* [Am I Responsive](http://ami.responsivedesign.is/) - used for showing the responsiveness of the site across different screen sizes and providing the image at the top of this document.
+
+* [Free Online HTML Formatter](https://www.freeformatter.com/html-formatter.html#ad-output) - used to format the HTML code in a neater and more organised fashion.
+
+* [Free Online CSS Formatter](https://www.freeformatter.com/css-beautifier.html) - used to format the CSS code in a neater and more organised fashion.
+
+* [Free Online JS Formatter](https://www.freeformatter.com/javascript-beautifier.html) - used to format the JavaScript code in a neater and more organised fashion.
