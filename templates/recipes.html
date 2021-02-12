@@ -47,24 +47,55 @@
         <!-- Page Title -->
         <h3 class="center-align page-heading">{{ category_name|capitalize }}</h3>
         <!-- Recipes by Category -->
-        <div>
-            <div class="row feat-cards">
-                {% for recipe in recipes %}
-                    <div class="col s12 m6 l4">
-                        <a href="{{ url_for('get_recipe', recipe_id=recipe._id) }}">
-                            <div class="card hoverable">
-                                <div class="card-image">
-                                    <img src="{{ recipe.image_url }}" class="responsive-img">
-                                    <div class="card-overlay">
-                                        {{ recipe.recipe_title }}
-                                    </div>
-                                </div>
+    <div class="container">
+        <div class="row hide-on-med-and-down">
+            {% for recipe in recipes %}
+            <div class="col s12">
+                <a href="{{ url_for('get_recipe', recipe_id=recipe._id) }}">
+                    <div class="card horizontal">
+                        <div class="card-image">
+                            <img src="{{ recipe.image_url }}">
+                        </div>
+                        <div class="card-stacked">
+                            <div class="card-content content-bac">
+                                <h5>{{ recipe.recipe_title }}</h5>
+                                <p class="card-descrip">{{ recipe.recipe_description }}</p>
+                                <p>
+                                    Difficulty: {{ recipe.difficulty }}
+                                    <span class="card-serve">
+                                        Serves: {{ recipe.serves }}
+                                    </span>
+                                </p>
+                                {% if recipe.is_vegetarian == "on" %}
+                                <i class="fab fa-vimeo-v"><span class="dietry">Vegetarian</span></i>
+                                {% endif %}
+                                {% if recipe.is_gluten_free == "on" %}
+                                <i class="fab fa-glide-g"><span class="dietry">Gluten-Free</span></i>
+                                {% endif %}
                             </div>
-                        </a>
+                        </div>
                     </div>
-                {% endfor %}
+                </a>
             </div>
+            {% endfor %}
         </div>
+    </div>
+    <div class="row feat-cards show-on-medium-and-down hide-on-med-and-up">
+        {% for recipe in recipes %}
+        <div class="col s12 m6 l4">
+            <a href="{{ url_for('get_recipe', recipe_id=recipe._id) }}">
+                <div class="card hoverable">
+                    <div class="card-image">
+                        <img src="{{ recipe.image_url }}" class="responsive-img">
+                        <div class="card-overlay">
+                            {{ recipe.recipe_title }}
+                        </div>
+                    </div>
+                </div>
+            </a>
+        </div>
+        {% endfor %}
+    </div>
     </main>
 
 {% endblock %}
