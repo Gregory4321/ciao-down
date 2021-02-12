@@ -138,6 +138,17 @@ def get_recipe(recipe_id):
     return render_template("recipe.html", recipe=recipe)
 
 
+# ---------------------------------------- Search bar
+
+
+@app.route("/search", methods=["GET", "POST"])
+def search():
+
+    query = request.form.get("query")
+    recipes = list(mongo.db.recipes.find({"$text": {"$search": query}}))
+
+    return render_template("search.html", recipes=recipes)
+
 # ---------------------------------------- Recipe category page
 
 
@@ -184,7 +195,7 @@ def add_recipe():
         }
         mongo.db.recipes.insert_one(recipe)
         flash("Recipe Successfully Added")
-        return redirect(url_for("index"))
+        return redirect(url_for("profile", username=session["user"]))
 
     # Find the categories from the database
     categories = mongo.db.categories.find()

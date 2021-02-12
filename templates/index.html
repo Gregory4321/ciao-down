@@ -16,8 +16,31 @@
 
     <!-- Hero Image -->
     <div class="hero-img-1">
+        <div class="search-bar">
+            <form action="{{ url_for('search') }}" method="POST">
+                <input type="text" name="query" id="query" placeholder="Search" class="search-input" minlength="3" required>
+                <label for="query"></label>
+                     <a href="{{ url_for('index') }}" class="btn-small reset-btn">Reset</a>
+                     <button type="submit" class="btn-small search-btn">Search</button>
+            </form>
+
+        </div>
+            <!-- <div class="row card-panel">
+        <form class="col s12" method="POST" action="{{ url_for('search') }}">
+            <div class="row center-align valign-wrapper">
+                <div class="col s12 input-field">
+                    <input type="text" name="query" id="query" class="validate" minlength="3" required>
+                    <label for="query">Search Recipes</label>
+                </div>
+                <div class="col s12">
+                     <a href="{{ url_for('index') }}" class="red btn">Reset</a>
+                     <button type="submit" class="blue btn">Submit</button>
+                </div>
+            </div>
+        </form>
+    </div> -->
     </div>
-    
+
     <main>
         <!-- Page Title -->
         <h3 class="center-align page-heading">Featured Recipes</h3>
