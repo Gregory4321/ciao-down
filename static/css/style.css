@@ -121,6 +121,33 @@ Originally found on WS3 Schools. https://www.w3schools.com/howto/howto_js_scroll
     opacity: 0.9;
 }
 
+.search-bar {
+    margin: auto;
+    width: 50%;
+}
+
+.search-bar input[type=text] {
+    color: #000;
+    background-color: #F1F1F1;
+    text-align: center;
+}
+
+.search-btn {
+    background-color: #588967;
+}
+
+.search-btn:hover {
+    background-color: #758d7c;
+}
+
+.reset-btn {
+    background-color: #BF0E0E;
+}
+
+.reset-btn:hover {
+    background-color: #c24444;
+}
+
 /* ----------------------------- Recipe cards */
 
 .feat-cards {
@@ -444,11 +471,11 @@ Originally found on WS3 Schools. https://www.w3schools.com/howto/howto_js_scroll
 }
 
 .custom-flash {
-    background-color: #46a563;
+    background-color: #46A563;
 }
 
 .error {
-    background-color: #f13737;
+    background-color: #F13737;
 }
 
 /* ----------------------------- Media Queries */
@@ -544,6 +571,10 @@ Originally found on WS3 Schools. https://www.w3schools.com/howto/howto_js_scroll
 
     .side-logo {
         height: 12%;
+    }
+
+    .search-bar {
+        width: 60%;
     }
 }
 
