@@ -150,6 +150,19 @@ Originally found on WS3 Schools. https://www.w3schools.com/howto/howto_js_scroll
 
 /* ----------------------------- Recipe cards */
 
+.content-bac {
+    background-color: #F1F1F1;
+    color: #000;
+}
+
+.card .card-content p {
+    margin: 14.5px 0;
+}
+
+.card-serve {
+    margin-left: 15px;
+}
+
 .feat-cards {
     margin: 3.1rem 0 3.1rem 0;
 }
