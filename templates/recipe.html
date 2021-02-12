@@ -16,18 +16,24 @@
     </section>
 
     <main class="container recipe-container">
-         <button onclick="backButton()" class="back-btn profile"><i class="fas fa-arrow-left"></i> Back</button>
-
+        <button onclick="backButton()" class="back-btn profile"><i class="fas fa-arrow-left"></i> Back</button>
+    
         <div class="row page-heading center-text">
             <div class="col s12 m5 rec-img">
                 <img src="{{ recipe.image_url }}" class="responsive-img recipe-img" alt="Image">
             </div>
-            <div class="col s12 m5 offset-m1">
+            <div class="col s12 m6 offset-m1">
                 <p class="posted-by">
                     Posted by: {{ recipe.created_by }} on {{ recipe.date_added }} in {{ recipe.category_name }}
                 </p>
                 <h3>{{ recipe.recipe_title }}</h3>
                 <p>{{ recipe.recipe_description }}</p>
+                {% if recipe.is_vegetarian == "on" %}
+                    <i class="fab fa-vimeo-v"><span class="dietry">Vegetarian</span></i>
+                {% endif %}
+                {% if recipe.is_gluten_free == "on" %}
+                    <i class="fab fa-glide-g"><span class="dietry">Gluten-Free</span></i>
+                {% endif %}
             </div>
         </div>
         <div class="row rec-info">
@@ -48,13 +54,13 @@
             <div class="col s12 m3 center-text">
                 <h4>Ingredients</h4>
                 {% for list in recipe.recipe_ingredients.splitlines() %}
-                    <p>{{ list }}</p>
+                <p>{{ list }}</p>
                 {% endfor %}
             </div>
             <div class="col s12 m8 offset-m1 center-text">
                 <h4>Method</h4>
                 {% for list in recipe.recipe_method.splitlines() %}
-                    <p>{{ list }}</p>
+                <p>{{ list }}</p>
                 {% endfor %}
             </div>
         </div>
@@ -66,6 +72,19 @@
             </div>
         </div>
         {% endif %}
+        <!-- Modal Structure -->
+        <div id="modal1" class="modal center">
+            <div class="modal-content">
+                <h4>Delete this recipe?</h4>
+                <p class="modal-para">Are you sure you want to delete this recipe?<br>Once you do you will not be able to
+                    undo this action.</p>
+            </div>
+            <div class="modal-footer">
+                <a href="#!" class="modal-close edit-btn">Cancel</a>
+                <a href="{{ url_for('delete_recipe', recipe_id=recipe._id) }}" class="modal-close delete-btn">Delete</a>
+    
+            </div>
+        </div>
     </main>
 
 {% endblock %}

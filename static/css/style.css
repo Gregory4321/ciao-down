@@ -214,6 +214,11 @@ Originally found on WS3 Schools. https://www.w3schools.com/howto/howto_js_scroll
     color: #a0a0a0;
 }
 
+.dietry {
+    margin-left: 8px;
+    margin-right: 10px;
+}
+
 /* ------------------------------------------------ Profile Page */
 
 .add-rec {
@@ -480,6 +485,12 @@ Originally found on WS3 Schools. https://www.w3schools.com/howto/howto_js_scroll
 
 /* ----------------------------- Media Queries */
 
+@media only screen and (max-width:1024px) {
+    .card-overlay {
+        opacity: 1;
+    }
+}
+
 @media only screen and (min-width:992px) and (max-width:1083px) {
     .edit-btn {
         margin: 1px;
@@ -556,6 +567,10 @@ Originally found on WS3 Schools. https://www.w3schools.com/howto/howto_js_scroll
 }
 
 @media only screen and (max-width:414px) {
+    .page-heading {
+        margin: 2rem 0 1.5rem 0;
+    }
+
     .btn-large {
         height: 35px;
         line-height: 35px;
