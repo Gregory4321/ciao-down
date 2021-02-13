@@ -179,14 +179,15 @@ Originally found on WS3 Schools. https://www.w3schools.com/howto/howto_js_scroll
 .card .card-image img {
     display: block;
     border-radius: 2px 2px 0 0;
-    width: 500px;
-    height: 250px;
+    width: 520px;
+    height: 280px;
     margin: 0 auto;
+    object-fit: cover;
 }
 
 
 .card.horizontal .card-image img {
-    width: 500px;
+    width: 520px;
 }
 
 .card-overlay {
@@ -410,6 +411,10 @@ Originally found on WS3 Schools. https://www.w3schools.com/howto/howto_js_scroll
 }
 
 .page-heading {
+    margin: 2rem 0 3.1rem 0;
+}
+
+.recipe-heading {
     margin: 2rem 0 3.1rem 0;
 }
 

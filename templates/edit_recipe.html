@@ -2,45 +2,25 @@
 
 {% block content %}
 
-    <div class="slider">
-        <ul class="slides">
-            <li>
-                <img src="static/images/tomato-pasta.jpg"> <!-- random image -->
-                <div class="caption center-align">
-                    <h3>This is our big Tagline!</h3>
-                    <h5 class="light grey-text text-lighten-3">Here's our small slogan.</h5>
-                </div>
-            </li>
-            <li>
-                <img src="static/images/pizza-making.jpg"> <!-- random image -->
-                <div class="caption center-align">
-                    <h3>This is our big Tagline!</h3>
-                    <h5 class="light grey-text text-lighten-3">Here's our small slogan.</h5>
-                </div>
-            </li>
-            <li>
-                <img src="static/images/fresh-spag.jpg"> <!-- random image -->
-                <div class="caption left-align">
-                    <h3>Left Aligned Caption</h3>
-                    <h5 class="light grey-text text-lighten-3">Here's our small slogan.</h5>
-                </div>
-            </li>
-            <li>
-                <img src="static/images/tom-salad.jpg"> <!-- random image -->
-                <div class="caption right-align">
-                    <h3>Right Aligned Caption</h3>
-                    <h5 class="light grey-text text-lighten-3">Here's our small slogan.</h5>
-                </div>
-            </li>
-            <li>
-                <img src="static/images/olive-ling.jpg"> <!-- random image -->
-                <div class="caption center-align">
-                    <h3>This is our big Tagline!</h3>
-                    <h5 class="light grey-text text-lighten-3">Here's our small slogan.</h5>
-                </div>
-            </li>
-        </ul>
-    </div>
+<div class="slider">
+    <ul class="slides">
+      <li>
+        <img src="{{ url_for('static', filename='images/cannoli.jpg') }}">
+      </li>
+      <li class="slide-opac">
+        <img src="{{ url_for('static', filename='images/pesto-bow.jpg') }}">
+      </li>
+      <li>
+        <img src="{{ url_for('static', filename='images/lasagne.jpg') }}">
+      </li>
+      <li>
+        <img src="{{ url_for('static', filename='images/tomato-pasta.jpg') }}">
+      </li>
+      <li>
+        <img src="{{ url_for('static', filename='images/pizza.jpg') }}">
+      </li>
+    </ul>
+  </div>
     
     
     
@@ -142,7 +122,7 @@
                     </div>
                     <!-- Gluten Free Switch -->
                     <div class="row">
-                        <div class="input-field col s2">
+                        <div class="input-field col s12 m2">
                             <div class="switch">
                                 <label for="is_gluten_free">
                                     {% if recipe.is_gluten_free == "on" %}
@@ -156,8 +136,8 @@
                             </div>
                         </div>
                         <!-- Vegetarian Switch -->
-                        <div class="input-field col s2">
-                            <div class="switch">
+                        <div class="input-field col s12 m2">
+                            <div class="switch veg-switch">
                                 <label for="is_vegetarian">
                                     {% if recipe.is_vegetarian == "on" %}
                                     <input type="checkbox" id="is_vegetarian" name="is_vegetarian" checked>
