@@ -45,7 +45,7 @@
     
     
     <main class="container">
-         <button onclick="backButton()" class="back-btn"><i class="fas fa-arrow-left"></i> Back</button>
+                  <button onclick="backButton()" class="back-btn profile"><i class="fas fa-arrow-left"></i></button>
         <h3 class="center-align page-heading">Add Recipe</h3>
         <div class="row">
             <form class="col s12" method="POST" action="{{ url_for('add_recipe') }}">
@@ -156,7 +156,7 @@
                             Submit
                         </button>
                         <!-- Clear button -->
-                        <a href="{{ url_for('index') }}" class="col offset-s2 s3 btn-large form-btn">
+                        <a href="{{ url_for('profile', username=session['user']) }}" class="col offset-s2 s3 btn-large form-btn">
                             Cancel
                         </a>
                     </div>

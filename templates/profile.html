@@ -13,10 +13,9 @@
                 {% endfor %}
             {% endif %}
         {% endwith %}
-    </section>  
-
+    </section>
      <main class="container">
-         <button onclick="backButton()" class="back-btn profile"><i class="fas fa-arrow-left"></i> Back</button>
+         <button onclick="backButton()" class="back-btn profile"><i class="fas fa-arrow-left"></i></button>
         <!-- Page Title -->
         <h3 class="center-align page-heading">
             {{username|capitalize}}'s Profile
@@ -24,7 +23,6 @@
         <div class="row add-rec">
             <div class="col s12">
                 <a href="{{ url_for('add_recipe') }}" class="add-btn"><h6>Add Recipe +</h6></a>
-
             </div>
         </div>
         <ul class="collapsible all-accordion">
@@ -32,7 +30,6 @@
             <li>
                 <div class="row accord-row">
                 <div class="collapsible-header accordion-head rotate valign-wrapper">
-                    
                     <div class="col s1 caret-icon">
                         <i class="fas fa-angle-down"></i>
                     </div>
@@ -62,15 +59,13 @@
                         <a href="{{ url_for('edit_recipe', recipe_id=recipe._id) }}" class="edit-btn">Edit</a>
                         <a href="#modal{{ loop.index }}" class="modal-trigger delete-btn">Delete</a>
                     </div>
-                    
                 </div>
             </li>
                <!-- Modal Structure -->
         <div id="modal{{ loop.index }}" class="modal center">
             <div class="modal-content">
                 <h4>Delete this recipe?</h4>
-                <p class="modal-para">Are you sure you want to delete this recipe?<br>Once you do you will not be able to
-                    undo this action.</p>
+                <p class="modal-para">Are you sure you want to delete <b class="green-text">{{ recipe.recipe_title }}</b>? Once you do you will not be able to undo this action.</p>
             </div>
             <div class="modal-footer">
                 <a href="#!" class="modal-close edit-btn">Cancel</a>
@@ -78,10 +73,7 @@
             </div>
         </div>
             {% endfor %}
-
         </ul>
-        
     </main>
-
 
 {% endblock %}
