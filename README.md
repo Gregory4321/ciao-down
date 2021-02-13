@@ -19,6 +19,7 @@ recipes, and delete those recipes if wanted.
        * [4. Geometry](#4-geometry)
        * [5. Wireframes](#5-wireframes)
 * [Technologies Used](#technologies-used)
+* [Database Structure](#database-structure)
 * [Features](#features)
    * [Existing Features](#future-features)
    * [Future Features](#removed-features)
@@ -238,6 +239,21 @@ the colours on the README.md file as an image.
 
 ***
 
+## **Database Structure**
+
+For this project I chose to use [MongoDB](https://www.mongodb.com/) to store my data. MongoDB is non-relational database management system and works on document based data. It was the perfect type of database structure for what I wanted to achieve with this project. 
+In a database I called 'recipe_cookbook', I created three collections.
+* Categories - This collection stored the three categories that the recipes in the database fell into:
+    * Starters
+    * Mains
+    * Desserts
+* Recipes - This was the main collection of the database, where the majority of the data would be stored. When a user adds a recipe to the application, adding it to this collection, it stored a multitute of data, form the category, title and description of the recipe, to the details of the cooking times, ingredients list and method, as well as the data it was added and by which user.
+* Users - This collection held the details entered by a user when registering to the site. The password and confirm password were encrypted before being stored on to the database, so their entry to the site is secure. This was done using the [Werkzeug](https://werkzeug.palletsprojects.com/en/1.0.x/) security helpers found in it's utilities section. A password can hashed and salted with a string for sufficient secuirty of a users password.
+
+Each document inserted into the database was given its own unique id, stored as an ObjectId. All of the data in each of the documents has been stored as strings. This was more than sufficient for the needs of this site using a database.
+
+***
+
 ## **Features**
 
 ### Features Across All Pages
@@ -280,7 +296,7 @@ The nav is consistent across all pages, designed to be responsive to the differe
 The home page offers the user a few features.
 
 * A user is firstly presented with a colourful hero image, an overlapping search bar, and content hinting below.
-* A user can use the search bar to search for a recipe by name, or a key word from the recipe.
+* A user can use the search bar to search for a recipe by name, or a key word from the recipe, taking them to a search result page.
 * Below the hero image is a hoverable grid, displaying featured recipes randomly generated from the database, all clickable taking them to each recipe.
 
 #### Log in
@@ -337,6 +353,7 @@ This page is provided for the user to clearly see their submitted recipes. Only 
 #### Recipe Page
 
 * This page displays all the information in a clean and clear format of an added recipe.
+* On desktops the recipes are displayed stacked as full width columns, showing some of the recipes details, but then on tablet screen sizes and less they are displayed as grid images that are dispaly the name as an overlay at the bottom of the image.
 * If a user is viewing their own recipe, they are given the option to edit or delete the recipe.
 * This option is very handy for when a user first submits their recipe, and are taken to this page, they may discover a typo mistake.
 
@@ -348,3 +365,28 @@ This page is provided for the user to clearly see their submitted recipes. Only 
 
 * I initially had designed for a shopping list hosted on their profile page. This shopping list would be a styled accordion where the body would contain the user's shopping list of ingredients. There were to be buttons where the user could edit or delete each ingredient. This would of demonstrated further the knowledge and use of CRUD operations. From the recipe page, a user would have had the abilitly to add the ingreditns list to their own shopping list, where they could then tailor quanities to their own preferences. The user would have been able to manually add more ingredients to their list too from the accordion in their profile.
 * Perhaps an extension of the users profile page, and/or an account page, where the user has the abilitly to change their username and password, email account associated with the account, and delete thri profile if wanted.
+
+
+
+
+
+## Testing
+
+Testing can be found via this [link]()
+
+## **Deployment**
+
+
+
+
+
+
+
+
+* Navbar - Featured across all pages. The sites logo is set to the center of the page, and responsive within the navbar. Site visitors can use the links on the left to login or sign up to the site. They can also click the hamburger icon on the left to reveal a sidenav which also allows them access to the login and sign up pages. This sidenav also has the logo showcased at the top. A site visitor is also given the option to view the categories (All, Starters, Mains, Desserts), taking them to the corresponding pages. The 'Home' option is always visible in the side nav, as well as a home icon on the main nav bar to the right of the hamburger icon for ease of navigation back to the home page. The logo of the navbar and the sidenav are also set as a link back to home. 
+Upon registering or logging in to the site, the login/sign up links change to logout, on both the navbar itslef and the side nav. A logged in user can now get access to their own profile page, and the option to take them to the add recipe page. The navbar is also fixed, which enables the user to easily navigate between the pages of the website.
+
+
+
+They also have the ability to add the ingredients list from a recipe to a shopping list hosted
+within their own profile.
