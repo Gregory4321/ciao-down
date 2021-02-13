@@ -4,6 +4,7 @@ from flask import (
     redirect, request, session, url_for)
 from flask_pymongo import PyMongo
 from bson.objectid import ObjectId
+from bson.json_util import loads, dumps
 from werkzeug.security import generate_password_hash, check_password_hash
 from datetime import datetime
 if os.path.exists("env.py"):
@@ -102,7 +103,14 @@ def login():
 @app.route("/profile/<username>", methods=["GET", "POST"])
 def profile(username):
     # Get session user's recipes from the database
-    recipes = mongo.db.recipes.find({"created_by": session["user"]})
+    recipes = mongo.db.recipes.find({
+        "$query": {
+                "created_by": session["user"]
+            },
+        "$orderby": {
+                "date_added": -1
+            }
+        })
 
     # Get session user's username from the database
     username = mongo.db.users.find_one(
@@ -155,13 +163,47 @@ def search():
 @app.route("/recipe_category/<category>")
 def recipe_category(category):
     if category == "all":
-        recipes = list(mongo.db.recipes.find())
+        recipes = list(
+            mongo.db.recipes.find({
+                "$query": {},
+                "$orderby": {
+                        "date_added": -1
+                    }
+            })
+        )
     elif category == "starters":
-        recipes = list(mongo.db.recipes.find({"category_name": "Starters"}))
+        recipes = list(
+            mongo.db.recipes.find({
+                "$query": {
+                    "category_name": "Starters"
+                    },
+                "$orderby": {
+                        "date_added": -1
+                    }
+            })
+        )
     elif category == "mains":
-        recipes = list(mongo.db.recipes.find({"category_name": "Mains"}))
+        recipes = list(
+            mongo.db.recipes.find({
+                "$query": {
+                    "category_name": "Mains"
+                    },
+                "$orderby": {
+                    "date_added": -1
+                    }
+            })
+        )
     elif category == "desserts":
-        recipes = list(mongo.db.recipes.find({"category_name": "Desserts"}))
+        recipes = list(
+            mongo.db.recipes.find({
+                "$query": {
+                    "category_name": "Desserts"
+                    },
+                "$orderby": {
+                    "date_added": -1
+                    }
+            })
+        )
 
     return render_template(
         "recipes.html", category_name=category, recipes=recipes)
@@ -190,11 +232,13 @@ def add_recipe():
             "recipe_method": request.form.get("recipe_method"),
             "is_vegetarian": is_vegetarian,
             "is_gluten_free": is_gluten_free,
-            "date_added": datetime.today().strftime("%d %B %Y"),
+            "date_added": datetime.today().strftime("%d %B %Y %X"),
             "created_by": session["user"]
         }
+
         mongo.db.recipes.insert_one(recipe)
         flash("Recipe Successfully Added")
+
         return redirect(url_for("profile", username=session["user"]))
 
     # Find the categories from the database
