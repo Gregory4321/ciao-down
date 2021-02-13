@@ -54,7 +54,9 @@
                     {% if recipe.is_gluten_free == "on" %}
                         <i class="fab fa-glide-g"></i>
                     {% endif %}
+                    {% if recipe.date_added is not none %}
                     <p>Date added: {{ recipe.date_added }}</p>
+                    {% endif %}
                     <div class="col s2 m2 show-on-medium-and-down hide-on-med-and-up">
                         <a href="{{ url_for('edit_recipe', recipe_id=recipe._id) }}" class="edit-btn">Edit</a>
                         <a href="#modal{{ loop.index }}" class="modal-trigger delete-btn">Delete</a>

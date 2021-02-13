@@ -23,7 +23,11 @@
             </div>
             <div class="col s12 m6 offset-m1">
                 <p class="posted-by">
-                    Posted by: {{ recipe.created_by }} on {{ recipe.date_added }} in {{ recipe.category_name }}
+                    Posted by: {{ recipe.created_by }}
+                    {% if recipe.date_added is not none %}
+                    on {{ recipe.date_added }} 
+                    {% endif %}
+                    in {{ recipe.category_name }}
                 </p>
                 <h3>{{ recipe.recipe_title }}</h3>
                 <p>{{ recipe.recipe_description }}</p>
