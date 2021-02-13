@@ -16,13 +16,18 @@
 
     <!-- Hero Image -->
     <div class="hero-img-1">
-        <div class="search-bar">
-            <form action="{{ url_for('search') }}" method="POST">
-                <input type="text" name="query" id="query" placeholder="Search" class="search-input" minlength="3" required>
-                <label for="query"></label>
-                     <a href="{{ url_for('index') }}" class="btn-small reset-btn">Reset</a>
-                     <button type="submit" class="btn-small search-btn">Search</button>
-            </form>
+        <div class="row">
+            <div class="col">
+                <h2>Find a Recipe</h2>
+                <div class="search-bar">
+                    <form action="{{ url_for('search') }}" method="POST">
+                        <input type="text" name="query" id="query" placeholder="Search" class="search-input" minlength="3" required>
+                        <label for="query"></label>
+                             <a href="{{ url_for('index') }}" class="btn-small reset-btn">Reset</a>
+                             <button type="submit" class="btn-small search-btn">Search</button>
+                    </form>
+                </div>
+            </div>
 
         </div>
             <!-- <div class="row card-panel">
