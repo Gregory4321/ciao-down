@@ -185,7 +185,6 @@ Originally found on WS3 Schools. https://www.w3schools.com/howto/howto_js_scroll
     object-fit: cover;
 }
 
-
 .card.horizontal .card-image img {
     width: 520px;
 }
@@ -471,6 +470,12 @@ Originally found on WS3 Schools. https://www.w3schools.com/howto/howto_js_scroll
     color: #758d7c;
 }
 
+
+
+.no-recipe {
+    margin-bottom: 90px;
+}
+
 /* ----------------------------- Footer */
 
 .page-footer {
@@ -630,7 +635,7 @@ Originally found on WS3 Schools. https://www.w3schools.com/howto/howto_js_scroll
         font-size: 24px;
     }
 }
-
+/* 
 @media only screen and (min-width:px) and (max-width:px) {
     .slider-h2 {
         font-size: 30px;
@@ -639,7 +644,7 @@ Originally found on WS3 Schools. https://www.w3schools.com/howto/howto_js_scroll
     .slider-h4 {
         font-size: 222px;
     }
-}
+} */
 
 @media only screen and (min-width:601px) {
     .veg-switch {
