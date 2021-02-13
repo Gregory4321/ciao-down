@@ -53,6 +53,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .modal-para {
     margin-top: 30px;
+    letter-spacing: 1px;
 }
 
 /* ----------------------------- Sidenav */
@@ -119,17 +120,18 @@ Originally found on WS3 Schools. https://www.w3schools.com/howto/howto_js_scroll
     align-items: center;
     text-align: center;
     opacity: 0.9;
+    margin-top: 16px;
 }
 
 .search-bar {
     margin: auto;
-    width: 50%;
 }
 
 .search-bar input[type=text] {
     color: #000;
     background-color: #F1F1F1;
     text-align: center;
+    font-size: 22px;
 }
 
 .search-btn {
@@ -232,6 +234,10 @@ Originally found on WS3 Schools. https://www.w3schools.com/howto/howto_js_scroll
     margin-right: 10px;
 }
 
+.green-text {
+    color: #46A563;
+}
+
 /* ------------------------------------------------ Profile Page */
 
 .add-rec {
@@ -252,28 +258,31 @@ Originally found on WS3 Schools. https://www.w3schools.com/howto/howto_js_scroll
 }
 
 .back-btn {
-    border: 1px solid #000;
-    border-radius: 5%;
-    background-color: #f1f1f1;
-    font-family: 'Average', sans-serif;
+    background-color: #588967;
+    border: none;
+    outline: none;
+    color: #fff;
+    cursor: pointer;
+    padding: 3px 8px;
+    border-radius: 10px;
+    font-size: 25px;
+
 }
 
 .back-btn.profile {
     margin-top: 2rem;
-    border: 1px solid #000;
-    border-radius: 5%;
 }
 
 .back-btn:hover {
-    color: #858585;
+    background-color: #758d7c;
 }
 
 .back-btn:active {
-    background-color: #f1f1f1;
+    background-color: #588967;
 }
 
 .back-btn:focus {
-    background-color: #f1f1f1;
+    background-color: #588967;
 }
 
 /* ----------------------------- Accordion Dropdown */
@@ -368,6 +377,14 @@ Originally found on WS3 Schools. https://www.w3schools.com/howto/howto_js_scroll
 }
 
 /* ----------------------------- Forms */
+
+.slider .slides {
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+.slider .slides .slide-opac img {
+    opacity: 0.5;
+}
 
 .slider img {
     opacity: 0.4;
@@ -504,6 +521,16 @@ Originally found on WS3 Schools. https://www.w3schools.com/howto/howto_js_scroll
     }
 }
 
+@media only screen and (min-width:818px) and (max-width:992px) {
+    .slider-h2 {
+        font-size: 46px;
+    }
+
+    .slider-h4 {
+        font-size: 31px;
+    }
+}
+
 @media only screen and (min-width:992px) and (max-width:1083px) {
     .edit-btn {
         margin: 1px;
@@ -516,6 +543,32 @@ Originally found on WS3 Schools. https://www.w3schools.com/howto/howto_js_scroll
         padding: 5px 8px;
         font-size: 14px;
 
+    }
+}
+
+@media only screen and (min-width:539px) and (max-width:817px) {
+    .slider-h2 {
+        font-size: 42px;
+    }
+
+    .slider-h4 {
+        font-size: 28px;
+    }
+}
+
+@media only screen and (max-width:747px) {
+    .slider .slides li .caption {
+        top: 30%;
+    }
+}
+
+@media only screen and (min-width:488px) and (max-width:538px) {
+    .slider-h2 {
+        font-size: 38px;
+    }
+
+    .slider-h4 {
+        font-size: 25px;
     }
 }
 
@@ -545,27 +598,25 @@ Originally found on WS3 Schools. https://www.w3schools.com/howto/howto_js_scroll
     }
 }
 
-/* @media only screen and (min-width:570px) and (max-width:680px) {
-    .accordion-head {
-        font-size: 17px;
+@media only screen and (min-width:100px) and (max-width:487px) {
+    .slider-h2 {
+        font-size: 35px;
     }
 
-    .edit-btn {
-        margin: 2px;
-        padding: 4px 12px;
-        font-size: 13px;
+    .slider-h4 {
+        font-size: 24px;
+    }
+}
+
+@media only screen and (min-width:px) and (max-width:px) {
+    .slider-h2 {
+        font-size: 30px;
     }
 
-    .delete-btn {
-        margin: 2px 12px 2px 2px;
-        padding: 4px 12px;
-        font-size: 13px;
-    } */
-
-    /* .accord-title {
-        margin: 3px;
+    .slider-h4 {
+        font-size: 222px;
     }
-} */
+}
 
 @media only screen and (min-width:601px) {
     .veg-switch {
@@ -610,6 +661,10 @@ Originally found on WS3 Schools. https://www.w3schools.com/howto/howto_js_scroll
     .side-logo {
         height: 13%;
     }
+
+    .slider .slides li .caption {
+        top: 25%;
+    }
 }
 
 @media only screen and (max-width:320px) {
@@ -628,10 +683,4 @@ Originally found on WS3 Schools. https://www.w3schools.com/howto/howto_js_scroll
         height: 56px;
         line-height: 56px;
     }
-}
-
-
-@media only screen and (min-width:375px) and (max-width:414px) {
-
-    
 }
