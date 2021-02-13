@@ -232,7 +232,7 @@ def add_recipe():
             "recipe_method": request.form.get("recipe_method"),
             "is_vegetarian": is_vegetarian,
             "is_gluten_free": is_gluten_free,
-            "date_added": datetime.today().strftime("%d %B %Y %X"),
+            "date_added": datetime.today().strftime("%d %B %Y @ %X"),
             "created_by": session["user"]
         }
 
@@ -252,12 +252,14 @@ def add_recipe():
 
 @app.route("/edit_recipe/<recipe_id>", methods=["GET", "POST"])
 def edit_recipe(recipe_id):
+    recipe = mongo.db.recipes.find_one({"_id": ObjectId(recipe_id)})
+    categories = mongo.db.categories.find()
     # Edit a recipe from the database
     if request.method == "POST":
         is_vegetarian = "on" if request.form.get("is_vegetarian") else "off"
         is_gluten_free = "on" if request.form.get("is_gluten_free") else "off"
 
-        rec_update = {
+        rec_update = {"$set": {
             "category_name": request.form.get("category_name"),
             "recipe_title": request.form.get("recipe_title"),
             "recipe_description": request.form.get("recipe_description"),
@@ -270,15 +272,11 @@ def edit_recipe(recipe_id):
             "recipe_method": request.form.get("recipe_method"),
             "is_vegetarian": is_vegetarian,
             "is_gluten_free": is_gluten_free,
-            "date_added": request.form.get("date_added"),
-            "created_by": session["user"]
-        }
-        mongo.db.recipes.update({"_id": ObjectId(recipe_id)}, rec_update)
+        }}
+
+        mongo.db.recipes.update_many(recipe, rec_update)
         flash("Recipe Successfully Updated")
         return redirect(url_for("profile", username=session["user"]))
-
-    recipe = mongo.db.recipes.find_one({"_id": ObjectId(recipe_id)})
-    categories = mongo.db.categories.find()
 
     return render_template(
         "edit_recipe.html", recipe=recipe, categories=categories)
