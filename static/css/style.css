@@ -179,9 +179,14 @@ Originally found on WS3 Schools. https://www.w3schools.com/howto/howto_js_scroll
 .card .card-image img {
     display: block;
     border-radius: 2px 2px 0 0;
-    width: 520px;
+    width: 500px;
     height: 250px;
     margin: 0 auto;
+}
+
+
+.card.horizontal .card-image img {
+    width: 500px;
 }
 
 .card-overlay {
@@ -241,20 +246,30 @@ Originally found on WS3 Schools. https://www.w3schools.com/howto/howto_js_scroll
 /* ------------------------------------------------ Profile Page */
 
 .add-rec {
-    margin-bottom: 0;
-    margin-top: 1rem;
+    margin-bottom: 5px;
+    margin-top: 15px;
+}
+
+.add-rec .col {
+    padding: 0;
 }
 
 .add-btn {
     float: right;
-    text-decoration: underline;
-    color: #000;
     letter-spacing: 0.5px;
-    font-family: 'Average', sans-serif;
+    font-family: 'Source Sans Pro', sans-serif;
+    background-color: #588967;
+    color: #fff;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 2px 15px;
+    border-radius: 10px;
+    font-size: 20px;
 }
 
 .add-btn:hover {
-    color: #858585;
+    background-color: #758d7c;
 }
 
 .back-btn {
@@ -266,7 +281,6 @@ Originally found on WS3 Schools. https://www.w3schools.com/howto/howto_js_scroll
     padding: 3px 8px;
     border-radius: 10px;
     font-size: 25px;
-
 }
 
 .back-btn.profile {
@@ -519,6 +533,10 @@ Originally found on WS3 Schools. https://www.w3schools.com/howto/howto_js_scroll
     .card-overlay {
         opacity: 1;
     }
+
+    .add-rec {
+        margin-bottom: 10px;
+    }
 }
 
 @media only screen and (min-width:818px) and (max-width:992px) {
@@ -624,6 +642,12 @@ Originally found on WS3 Schools. https://www.w3schools.com/howto/howto_js_scroll
     }
 }
 
+@media only screen and (max-width:600px) {
+    .cta-recipe {
+        font-size: 15px;
+    }
+}
+
 @media only screen and (min-width:415px) and (max-width:479px) {
     .form-btn {
         font-size: 13px;
@@ -655,6 +679,24 @@ Originally found on WS3 Schools. https://www.w3schools.com/howto/howto_js_scroll
     .search-bar {
         width: 60%;
     }
+
+    .add-btn {
+        font-size: 16px;
+    }
+
+    .add-rec {
+        margin-top:30px;
+    }
+}
+
+@media only screen and (min-width:375px) and (max-width:414px) {
+    .home-head {
+    font-size: 40px;
+    }
+
+    .page-heading {
+        font-size: 36px;
+    }
 }
 
 @media only screen and (max-width:375px) {
@@ -665,11 +707,31 @@ Originally found on WS3 Schools. https://www.w3schools.com/howto/howto_js_scroll
     .slider .slides li .caption {
         top: 25%;
     }
+
+    .home-head {
+    font-size: 40px;
+    }
+
+    .page-heading {
+        font-size: 32px;
+    }
 }
 
 @media only screen and (max-width:320px) {
     .side-logo {
         height: 14%;
+    }
+
+    .home-head {
+    font-size: 32px;
+    }
+
+    .page-heading {
+        font-size: 30px;
+    }
+
+    .add-btn {
+        font-size: 16px;
     }
 }
 

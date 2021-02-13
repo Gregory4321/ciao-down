@@ -2,45 +2,29 @@
 
 {% block content %}
 
-    <div class="slider">
-        <ul class="slides">
-            <li>
-                <img src="static/images/tomato-pasta.jpg"> <!-- random image -->
-                <div class="caption center-align">
-                    <h3>This is our big Tagline!</h3>
-                    <h5 class="light grey-text text-lighten-3">Here's our small slogan.</h5>
-                </div>
-            </li>
-            <li>
-                <img src="static/images/pizza-making.jpg"> <!-- random image -->
-                <div class="caption center-align">
-                    <h3>This is our big Tagline!</h3>
-                    <h5 class="light grey-text text-lighten-3">Here's our small slogan.</h5>
-                </div>
-            </li>
-            <li>
-                <img src="static/images/fresh-spag.jpg"> <!-- random image -->
-                <div class="caption left-align">
-                    <h3>Left Aligned Caption</h3>
-                    <h5 class="light grey-text text-lighten-3">Here's our small slogan.</h5>
-                </div>
-            </li>
-            <li>
-                <img src="static/images/tom-salad.jpg"> <!-- random image -->
-                <div class="caption right-align">
-                    <h3>Right Aligned Caption</h3>
-                    <h5 class="light grey-text text-lighten-3">Here's our small slogan.</h5>
-                </div>
-            </li>
-            <li>
-                <img src="static/images/olive-ling.jpg"> <!-- random image -->
-                <div class="caption center-align">
-                    <h3>This is our big Tagline!</h3>
-                    <h5 class="light grey-text text-lighten-3">Here's our small slogan.</h5>
-                </div>
-            </li>
-        </ul>
-    </div>
+<div class="slider">
+    <ul class="slides">
+      <li>
+        <img src="{{ url_for('static', filename='images/meatball.jpg') }}">
+        <div class="caption center-align">
+          <h2 class="slider-h2">Inspire other cooks!</h2>
+          <h4 class="slider-h4">Share your amazing recipes</h4>
+        </div>
+      </li>
+      <li class="slide-opac">
+        <img src="{{ url_for('static', filename='images/tiramisu.jpg') }}">
+      </li>
+      <li>
+        <img src="{{ url_for('static', filename='images/tom-salad.jpg') }}">
+      </li>
+      <li>
+        <img src="{{ url_for('static', filename='images/cannoli.jpg') }}">
+      </li>
+      <li>
+        <img src="{{ url_for('static', filename='images/lasagne.jpg') }}">
+      </li>
+    </ul>
+  </div>
     
     
     
