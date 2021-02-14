@@ -4,7 +4,6 @@ from flask import (
     redirect, request, session, url_for)
 from flask_pymongo import PyMongo
 from bson.objectid import ObjectId
-from bson.json_util import loads, dumps
 from werkzeug.security import generate_password_hash, check_password_hash
 from datetime import datetime
 if os.path.exists("env.py"):
@@ -45,7 +44,7 @@ def sign_up():
         if existing_user:
             flash("Username already exists", "error")
             return redirect(url_for("sign_up"))
-
+        # Dictionary of new users entered details
         sign_up = {
             "username": request.form.get("username").lower(),
             "email": request.form.get("email").lower(),
@@ -67,6 +66,7 @@ def sign_up():
 
 @app.route("/login", methods=("GET", "POST"))
 def login():
+    # Send user to profile upon login
     if "user" in session:
         return redirect(url_for("profile", username=session["user"]))
 
@@ -102,7 +102,7 @@ def login():
 
 @app.route("/profile/<username>", methods=["GET", "POST"])
 def profile(username):
-    # Get session user's recipes from the database
+    # Get session user's recipes from the database ordered by most recent
     recipes = mongo.db.recipes.find({
         "$query": {
                 "created_by": session["user"]
@@ -119,7 +119,7 @@ def profile(username):
     if session["user"]:
         return render_template(
             "profile.html", username=username, recipes=recipes)
-
+    # Send user to login if not logged in
     return redirect(url_for("login"))
 
 
@@ -140,7 +140,7 @@ def logout():
 
 @app.route("/recipe/<recipe_id>")
 def get_recipe(recipe_id):
-
+    # Find recipe from the database
     recipe = mongo.db.recipes.find_one({"_id": ObjectId(recipe_id)})
 
     return render_template("recipe.html", recipe=recipe)
@@ -151,7 +151,7 @@ def get_recipe(recipe_id):
 
 @app.route("/search", methods=["GET", "POST"])
 def search():
-
+    # Search for recipes in database by keywords
     query = request.form.get("query")
     recipes = list(mongo.db.recipes.find({"$text": {"$search": query}}))
 
@@ -162,6 +162,7 @@ def search():
 
 @app.route("/recipe_category/<category>")
 def recipe_category(category):
+    # Find and populate recipes by category
     if category == "all":
         recipes = list(
             mongo.db.recipes.find({
@@ -218,7 +219,7 @@ def add_recipe():
     if request.method == "POST":
         is_vegetarian = "on" if request.form.get("is_vegetarian") else "off"
         is_gluten_free = "on" if request.form.get("is_gluten_free") else "off"
-
+        # Dictionary of recipe details
         recipe = {
             "category_name": request.form.get("category_name"),
             "recipe_title": request.form.get("recipe_title"),
@@ -258,7 +259,7 @@ def edit_recipe(recipe_id):
     if request.method == "POST":
         is_vegetarian = "on" if request.form.get("is_vegetarian") else "off"
         is_gluten_free = "on" if request.form.get("is_gluten_free") else "off"
-
+        # Dicitonary of edited recipe details
         rec_update = {"$set": {
             "category_name": request.form.get("category_name"),
             "recipe_title": request.form.get("recipe_title"),
