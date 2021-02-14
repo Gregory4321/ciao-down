@@ -70,3 +70,24 @@ My python file was passed through the [PEP8](http://pep8online.com/) validator. 
 [Python Validation Passed](https://github.com/Gregory4321/ciao-down/blob/master/static/readme_images/testing_images/python-validation.png)
 
 ***
+
+## DevTools
+
+Google Chrome DevTools was used for rigorous testing of the site, from start to finish. It was used for various different reasons. 
+
+* It tested for the responsiveness of the site across multiple screen resolutions.
+* Each time I added a new feature, I was able to identify margin and padding issues, making it easy for me to resolve any issues.
+* I discovered that the text overlayed on the slider images worked great on large screens, but on the smaller screen sizes it overflowed off the image at the bottom, making it not completely visible.
+* It was also very useful at pinpointing what styling was overriding the cards images. I had trouble getting the images to fit the cards the same, not matter what image was uploaded.
+* Deciding what to show and what not to show was made easy too with DevTools. It helped reveal that the profile page accordion needed better styling as the screen resolution decreased.
+* I had previously edited the code to control the toggle buttons on the add recipe page, to help space them out and wrap them when the screen hit a certain breakpoint. I was bale to find with DevTools that I had forgot to include the same styling on the edit recipe form.
+* The Materialize grid system was updated and implemented more often to control how the columns responded.
+* When opening the site the console produced and error regarding the favicon. A link tag was added into the head of the base template which resolved this issue.
+* The line height of the home icon in the navbar was higher than the hamburger icon when on mobile screen sizes
+    
+* Debugging
+    * Highlighted incorrect use of styling and/or Materialize.
+    * Most of the issues above were addressed using media queires to alter sizes, changing margins and paddings, line heights and font sizes across the various screen sizes.
+    * Console.log was used and placed amoungst the code to debug any issues.
+
+***
