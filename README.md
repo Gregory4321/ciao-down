@@ -96,45 +96,42 @@ their age or experience.
 
 [Back to Top](#table-of-contents)
 
-### Design
-#### 1. Colour Scheme
+***
+## **Design**
 
-The colour scheme used for this site was to be colourful and eyecatching, but also not overwhelming to the user. In order to keep the theme of my site clear, I decided to base my colour scheme on the Italian flag. I used [Coolors](https://coolors.co/) to start playing with
-variations of green and red. It was important to me that the colour scheme didn't make the page feel to busy and cluttered, as the content of the site would be very colourful.
+### Research
 
-The colours I used are:
+Researching other recipe and food websites, I discovered a trend in the designs for these sites. Basic colours were used, and lots of content filled the pages. I wanted to design a clear and concise website that cared for the users experience.I wanted the user to be notified when taking action ont he site, and keeping the flow of the site going.
 
-![Colour scheme](static/readme_images/colours.png)
+Sites I used for inspiration were:
 
-The primary colour, Russian Green, was used for the navigation bar, buttons of forms and the back to top button, and some text on the recipe page for clearer contrast. I toned down the green to a slightly more muted shade that wasnt too garish, and easy on the eye and comforting for the user. It also worked well as the content of the page was going to be predominently colourful. Using the colour tool that appears when hovering over a colour set in the style.css page, I made the green a bit more bold for use as the colour of success flash messages, so it stood out clear to the user from the navbar. This colour was the GO Green.
+* [Food Network](https://foodnetwork.co.uk/?utm_source=foodnetwork.com&utm_medium=domestic)
+* [BBC Good Food](https://www.bbcgoodfood.com/)
+* [allrecipes](https://www.allrecipes.com/)
+* [epicurious](https://www.epicurious.com/)
+* [tasty](https://tasty.co/)
 
-I chose the background colour to be White, so that the colourful content of the page would be easily seen, and gave a clean break between areas of the pages. I was hesitant of using a white background as feedback from my Milestone Project 1 was about having text on a white background. I chose the white as I was wanting to use the Italian flag as my colour scheme, but also a lot of the sites I found when researching for this project used white backgrounds. 
+### The Five Planes of UX
 
-The hamburger and home icons as well as the Log In/Sign Up/Logout text in the navbar looked cleaner as white text.
+#### The Strategy Plane
+After researching other recipe websites live on the web, it became apparent that there was a lot of competition in this field. However, there were a few things I noticed that I could improve on. Most sites were very busy when it came to content, and simply accessing an actual recipe felt long winded. I decided that my site needed to be easy to use and display recipes clearly. I wanted each user to have the ability to create their own account, and store their own added recipes in a complete collection, with the simple option to edit and delete them.
 
-The red, International Orange Engineering was a bright colour and picked as an accent to contrast well with the white and green, breaking the page up, clearly defining the different sections of the page. Also completing my Italian flag design. It was used as the footer colour, and incorporated with the social icons that turned white on hover and the icon itself red, giving a very clear contrast for user experience. I also used the method of the colour tool mentioned above to get a brighter red to use as the error colour of flash messages, to really indicate the error to the user. This colour was the Imperial Red.
+#### The Scope Plane
+This stage was where I really considered what features would be beneficial to the user. This led me into further thought about the users account, where having a profile page cleary displaying their own recipes was a must. I wanted a user to have the abilitly to create, read, update and delete their recipes, utilising the CRUD functions. I also wanted as user to be able to easily search the entire database using keywords. I wanted to incorporate flash messages that would notify users of any successful or unsuccessful actions.
 
-As mentioned above, receiving critcism of text on a white background, I gave the forms the background colour of Cultured. This gave a clear definition of the form itself, making it clear that this was the content, and keeping it user friendly. I discovered this colour using the tool as mentioned before, getting the right shade I wanted.
+#### The Structure Plane
+The presentation of the site had to be clean. I wanted good margins and to avoid ay content being lost of the screen across the pages. Navbars can get very messy, so I wanted to make use of a side nav that would hold the majority of page links. I wanted all users to easily search for keywords of a recipe, being redirected to a search results page that showcased recipes clearly. Also I wanted the option to search by category, from within the side nav.
+I decided to have certain pages not display until a user was registered and logged in, and also the login and regester options not display once a user was signed in. This would make for a more comforting experience and better overall feel.
 
-For text across the site, for the most part I used Black, to make sure all the words were clear and easy to read.
+#### The Skeleton Plane
+At this level, I really thought about how a user would navigate around the site. I wanted a clear structure throughout the site. Each page would have a fixed navbar and footer that was consistent and the ease of navigation across the site was enhanced further with back buttons and call to action buttons. The idea of a sidenav would be the main point of call, to keep the site clean and keep the user interacting with the site but not to the point of confusing the user. I still wanted to display some things on the navbar. A user always needed an easy way to return home, so a home icon would serve best. I also wanted users to log in or register first, so links to these pages would be displayed here too. Upon signing in, these buttons would turn to logout, for an easy way to leave the site. All of these options would be discoverable within the sidenav too. I wanted content hinting on the home page to encourage the user to scroll down the page, accessing featured recipes.A back to top button would also appear, aiding ease of use for the user once they had scrolled down, to avoid having to scroll all the way back to the top to find the navigation.
+When a user had signed in, I wanted them to be directed to their own profile page. I wanted to make use of an accordion on the users profile page to keep text nicely bundled together in their own compartments. I wanted an easy option to add a recipe, in the form of a button. And once recipes were submitted, for the user to easily edit and delete each recipe, as well as view the recipe in it's entirety.
+Considering users may move to a page and then change their minds, I wanted a back button to take the user back to their last page visit. This would be useful when a user searches for recipes and then views recipes, giving them the option to go back to the page of their search results. As well as the user having the abilitly to implement the CRUD functions from their profile page, I wanted to make sure they had more than one option when it came to adding and editing recipes. If a user was viewing a recipe that was their own, and say they came across a typo, or just wanted to delete the recipe completely, then they would have buttons provided to execute these options.
 
-#### 2. Font
+#### The Surface Plane
+From the beginning of my research, I had discovered that recipes sites would be very colourful, no matter what, due to the colurful content of recipe images. Because of this I wanted to keep the design simple, and not have overpowering colours that would clutter the site. It was also apparent about the business of recipe sites, so this site had to be designed so that a user could effortlessly navigate the site. Having researched and thought over the design process thoroughly, I created a workspace on [Figma](https://www.figma.com/). I had initially sketched ideas onto paper, so now I could start to bring them to life. I created all the pages I had planned for desktop and mobile screen sizes, clearly showing how the structure of the content would mould together on the different sizes, creating more enhanced wireframes.
 
-I found fonts from researching online cookbook reccomendations, and scouring [Google Fonts](https://fonts.google.com/), using their inbuilt compare tool. I decided to use two fonts throughout my site. I wanted the main and secondary fonts to complement each other well throughout the site.
-The font for the body text was 'Source Sans Pro', which was a clean and easy to read font across all areas it was presented. I found this font bold and to the point, and stood out clearly when used as an overlay to images.The second font I used was 'Average'. This was not average as it's name may suggest. It was a Serif font that gave a bold statement when being used for headers and titles, that this was a statement. 
-These fonts were included in the site by inserting an _import_ link of the Google Fonts API into the top of my style.css file. Both of the fonts had a fall back of 'Sans-serif', should the site not load the import correctly. 
-
-#### 3. Logo
-
-The logo was created using an online design tool called [Canva](https://www.canva.com/en_gb/). I started by creating a custom canvas to suit my required dimensions, and then set the background to the colour, Russian Green, so it would blend with the nav bar. I played with several combinations of hand written and block fonts until I found a combiation I was happy with. I wanted the two words to be in contrasting fonts. I then played with positioning to make it look more exciting, and then completed it with an underlying Italian flag. 
-
-#### 4. Composition
-
-There is a clear structure throughout the site. Each page had a fixed navbar and footer that was consistent and the ease of navigation across the site was enhanced further with back buttons and call to action buttons. A side nav was used to house the nav links to keep the site clean and keep the user interacting with the site, but not to the point of confusing the user. Content hinting was used on the home page to encourage the user to scroll down the page. A bact to top button also aided ease of use for the user once they had scrolled down, to avoid having to scroll all the way back to the top to find the navigation.I used containers across the pages to keep good margins and to avoid ay content being lost of the screen. Images were displayed in grids for clear and clean design for the user, and the use of an accordion on the users profile page kept text nicely bundled together in their own compartments.
-
-#### 5. Wireframes
-
-Having researched and thought over the design process thoroughly, I created a workspace on [Figma](https://www.figma.com/). I had initially sketched ideas onto paper, so now I could start to bring them to life. I created all the pages I had planned for desktop and mobile screen sizes, clearly showing how the structure of the content would mould together on the different sizes, creating more enhanced wireframes. The final pages I ended up with did not vary too much from the wirefrmaes I made during the palnning stages. There were some basic design choices I decided whilst constructing the pages that differ slightly from these wireframes. Find the links to these wireframes below.
+Find the links to these wireframes below.
 
 <details>
 <summary>Wireframes</summary>
@@ -162,6 +159,43 @@ Having researched and thought over the design process thoroughly, I created a wo
     * [Mobile View](https://github.com/Gregory4321/ciao-down/blob/master/static/readme_images/wireframes/mob-register-wire.png)
 </details>
 
+##### The Colour Scheme
+
+The colour scheme used for this site was to be colourful and eyecatching, but also not overwhelming to the user. In order to keep the theme of my site clear, I decided to base my colour scheme on the Italian flag. I used [Coolors](https://coolors.co/) to start playing with
+variations of green and red. It was important to me that the colour scheme didn't make the page feel to busy and cluttered, as the content of the site would be very colourful.
+
+The colours I used are:
+
+![Colour scheme](static/readme_images/colours.png)
+
+The primary colour, Russian Green, was used for the navigation bar, buttons of forms and the back to top button, and some text on the recipe page for clearer contrast. I toned down the green to a slightly more muted shade that wasnt too garish, and easy on the eye and comforting for the user. It also worked well as the content of the page was going to be predominently colourful. Using the colour tool that appears when hovering over a colour set in the style.css page, I made the green a bit more bold for use as the colour of success flash messages, so it stood out clear to the user from the navbar. This colour was the GO Green.
+
+I chose the background colour to be White, so that the colourful content of the page would be easily seen, and gave a clean break between areas of the pages. I was hesitant of using a white background as feedback from my Milestone Project 1 was about having text on a white background. I chose the white as I was wanting to use the Italian flag as my colour scheme, but also a lot of the sites I found when researching for this project used white backgrounds. 
+
+The hamburger and home icons as well as the Log In/Sign Up/Logout text in the navbar looked cleaner as white text.
+
+The red, International Orange Engineering was a bright colour and picked as an accent to contrast well with the white and green, breaking the page up, clearly defining the different sections of the page. Also completing my Italian flag design. It was used as the footer colour, and incorporated with the social icons that turned white on hover and the icon itself red, giving a very clear contrast for user experience. I also used the method of the colour tool mentioned above to get a brighter red to use as the error colour of flash messages, to really indicate the error to the user. This colour was the Imperial Red.
+
+As mentioned above, receiving critcism of text on a white background, I gave the forms the background colour of Cultured. This gave a clear definition of the form itself, making it clear that this was the content, and keeping it user friendly. I discovered this colour using the tool as mentioned before, getting the right shade I wanted.
+
+For text across the site, for the most part I used Black, to make sure all the words were clear and easy to read.
+
+##### Font
+
+I found fonts from researching online cookbook reccomendations, and scouring [Google Fonts](https://fonts.google.com/), using their inbuilt compare tool. I decided to use two fonts throughout my site. I wanted the main and secondary fonts to complement each other well throughout the site.
+The font for the body text was 'Source Sans Pro', which was a clean and easy to read font across all areas it was presented. I found this font bold and to the point, and stood out clearly when used as an overlay to images.The second font I used was 'Average'. This was not average as it's name may suggest. It was a Serif font that gave a bold statement when being used for headers and titles, that this was a statement. 
+These fonts were included in the site by inserting an _import_ link of the Google Fonts API into the top of my style.css file. Both of the fonts had a fall back of 'Sans-serif', should the site not load the import correctly.
+
+##### The Logo
+
+The logo was created using an online design tool called [Canva](https://www.canva.com/en_gb/). I started by creating a custom canvas to suit my required dimensions, and then set the background to the colour, Russian Green, so it would blend with the nav bar. I played with several combinations of hand written and block fonts until I found a combiation I was happy with. I wanted the two words to be in contrasting fonts. I then played with positioning to make it look more exciting, and then completed it with an underlying Italian flag. 
+
+#### Conclusion
+
+The final pages I ended up with did not vary too much from the wireframes I made during the planning stages. There were some basic design choices I decided whilst constructing the pages that differ slightly from these wireframes. Any changes I made along the way all had teh users experience in mind, focusing on the flow of the entire site.
+
+***
+
 [Back to Top](#table-of-contents)
 
 ***
@@ -188,7 +222,7 @@ Having researched and thought over the design process thoroughly, I created a wo
 
 * [MongoDB](https://www.mongodb.com/) - the non-relational database used to store my data on it's cloud servers.
 
-* [Werkzeug](https://werkzeug.palletsprojects.com/en/1.0.x/) - used their WSGI toolkit for utilities to aid security of user's passwords.
+* [Werkzeug](https://werkzeug.palletsprojects.com/en/1.0.x/) - used their WSGI toolkit for utilities to add security to user's passwords.
 
 * [Google Fonts](https://fonts.google.com/) - used to import the 'Source Sans Pro' and 'Average' fonts, that were used across all pages.
 
