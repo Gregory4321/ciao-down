@@ -7,8 +7,8 @@
     * [JSHint Validator](#jshint-validator)
     * [PEP8](#pep8)
 * [DevTools](#devtools)
-* [Site Testing](#site-testing)
-    * [User Stories from User Experince (UX) Section](#user-stories-from-user-experience-(ux)-section)
+* [Manual Testing](#manual-testing)
+    
         * [First Time Visitor Goals](#first-time-visitor-goals)
     * [User Testing](#user-testing)
         * [Peer Code Review](peer-code-review)
@@ -89,5 +89,94 @@ Google Chrome DevTools was used for rigorous testing of the site, from start to 
     * Highlighted incorrect use of styling and/or Materialize.
     * Most of the issues above were addressed using media queires to alter sizes, changing margins and paddings, line heights and font sizes across the various screen sizes.
     * Console.log was used and placed amoungst the code to debug any issues.
+
+***
+
+## Manual Testing
+
+### Navigation bar
+
+* Home icon - returns the user to the home/index page
+* Logo - also returns the user to the home/index page
+* Log In - directs the user to the login page
+* Sign Up - direct the user to the register page
+* Hamburger icon - activates the side nav
+    * Logo - returns the user to the home/index page
+    * Categories - activates the dropdown, revealing the categories
+        * All - directs the user to the recipes page showing all recipes
+        * Starters - directs the user to the recipes page showing just the starter recipes
+        * Mains - directs the user to the recipes page showing just the mains recipes
+        * Desserts - directs the user to the recipes page showing just the dessert recipes
+    * Add Recipe - visible if logged in - directs the user to the add recipe page form
+    * Profile - visible if logged in - directs a user to the profile page
+    * Logout - visible if logged in - directs a user to the log in page
+
+### Footer
+
+* Social icons - directs the user to the corresponding social page
+
+### Back-to-top button
+
+* Becomes visible after a user scrolls past 200 pixels of the page - directs the user back to the top of the page
+
+All of these features above are present on all pages of the site.
+
+***
+
+### Home page
+
+* Search bar - allows a user to type in a keyword
+    * Search button - direct the user to the search results page, populating any data that matches their query, otherwise return a try again message
+    * Reset button - reloads the home page and resets the search bar
+* Featured recipes cards - 
+    * when hovered over, reveals the recipes name
+    * when clicked, directs the user to that specific recipes page
+
+### Categories page
+
+* Back button - directs the user back to the previous page they were on
+* Slider control buttons - allows the user to select with slider image to view, otherwise it changes automatically over time
+* Recipe card - directs the user to the recipe page of the recipe card clicked
+
+### Add recipe page
+
+* Back button - directs the user back to the previous page they were on
+* Slider control buttons - allows the user to select with slider image to view, otherwise it changes automatically over time
+* Add recipe form - a user cannot submit the form unitl all fields are complete with the required information
+* Toggle switch - toggles the selected field on or off
+* Submit button - directs the user to their profile page with a flash message of a successful recipe add
+* Cancel button - directs the user back to their profile page
+
+### Profile page
+
+* Back button - directs the user back to the previous page they were on
+* Add recipe button - directs the user to the add recipe page form
+* Accordion header -
+    * When clicked anywhere, it drops down to reveal the accordion content
+    * Go to recipe button - directs the user to the recipe page of required recipe
+    * Edit button - directs the user to the edit recipe form
+    * Delete button - activates a modal to confirm removal recipe
+        * Modal activated from delete button - gives the user two options -
+            * Cancel button - cancels the request to delete and returns the user to the accordion of the profile page
+            * Delete button - removes the recipe from the database completely, and returns the user to the profile page with a confirmation of removal flash message
+    * Accordion body content - when viewd on smaller screens the edit, delete and go to rrecipe buttons from the head move to the body, with the same functionality as when in the head of the accordion.
+
+### Edit recipe page
+
+* Back button - directs the user back to the previous page they were on
+* Slider control buttons - allows the user to select with slider image to view, otherwise it changes automatically over time
+* Edit recipe form - a user cannot submit the form unitl all fields are complete with the required information
+* Toggle switch - toggles the selected field on or off
+* Submit button - directs the user to their profile page with a flash message of a successful recipe add
+* Cancel button - directs the user back to their profile page
+
+### Recipe page
+
+* Back button - directs the user back to the previous page they were on
+* Edit button - directs the user to the edit recipe form
+* Delete button - activates a modal to confirm removal recipe
+    * Modal activated from delete button - gives the user two options -
+        * Cancel button - cancels the request to delete and returns the user to the accordion of the profile page
+        * Delete button - removes the recipe from the database completely, and returns the user to the profile page with a confirmation of removal flash message
 
 ***
