@@ -36,6 +36,10 @@ def index():
 
 @app.route("/sign_up", methods=["GET", "POST"])
 def sign_up():
+    # Keep user on profile upon sign up if use back button
+    if "user" in session:
+        return redirect(url_for("profile", username=session["user"]))
+
     if request.method == "POST":
         # Check if username already exists in database
         existing_user = mongo.db.users.find_one(
@@ -66,7 +70,7 @@ def sign_up():
 
 @app.route("/login", methods=("GET", "POST"))
 def login():
-    # Send user to profile upon login
+    # Keep user on profile upon login if use back button
     if "user" in session:
         return redirect(url_for("profile", username=session["user"]))
 
