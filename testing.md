@@ -9,16 +9,6 @@
 * [DevTools](#devtools)
 * [Site Testing](#site-testing)
     * [Manual Testing](#manual-testing)
-    <!-- * [Navigation Bar](#navigation-bar)
-    * [Footer](#footer)
-    * [Back To Top Button](#back-to-top-button)
-    * [Home Page](#home-page)
-    * [Categories Page](#categories-page)
-    * [Add Recipe Page](#add-recipe-page)
-    * [Profile Page](#profile-page)
-    * [Edit Recipe Page](#edit-recipe-page)
-    * [Recipe Page](#recipe_page)
-    * [Search Results Page](#search-results-page) -->
 
 * [User Testing](#user-testing)
     * [Peer Code Review](peer-code-review)
@@ -112,7 +102,39 @@ Google Chrome DevTools was used for rigorous testing of the site, from start to 
 
 ### User Stories from User Experience (UX) Section
 
+* Generic User:
+    * As a user, I want to be able to navigate through the entire site, comfortably and securely.
+        * When the site is first loaded, a navbar is presented clearly and is easily readable. Users are made to feel comfortable with the simplicity of the site.
+        * A hero display a search bar for a user to easily find a recipe.
+        * Content hinting gives incentive to scroll down.
+    * As a user, I want to be able to easily search for recipes by name or ingredients.
+        * A user can use the search bar from the home page to search for recipes by a key value.
+        * A user can navigate to a cateogies page found in the side nav, that will present all recipes or recipes by category.
+    * As a user, I want to view the contents of recipes on the site.
+        A user can click on a recipe card from either the home page, categories page or from the search results page, and open up the page of the requested recipe, displaying al relavent information from that recipe.
+    * As a user, I want to be able to register/sign-up and create my own account on the site.
+        * A user can navigate to the log in and sign up pages from the nav bar, as well as within the side nav, rendering the forms for registration or logging in.
+        * The forms present the user with helpers of what each fireld requests.
 
+* Registered User:
+    * As a registered user, I want to be able to easily log in to my account.
+        * A registered user can navigate to the log in page from teh nav bar link for ease of use, and also from within the side nav.
+    * As a registered user, I want to be able to create and submit my own recipes to the site.
+        * A registered user can navigate to the add recipe form from within the sidenav, or more easily when they log in and are directed to their profile page, they can click an add recipe button.
+    * As a registered user, I want to be able to see my own recipes in one place.
+        * A registered user you can see all of your recipes presented in an accordion for neater presentation on their own profile page.
+    * As a registered user, I want to be able to easily edit my own recipes.
+        * A registered user can access the edit form for my own recipes from two locations. There is the option to edit their recipe from their profile page accordion, or when viewing the entirety of the recipe on its own page.
+    * As a registered user, I want to be able to easily delete my own recipes.
+        * A registered user can delete their own recipes by clicking the delte button next to the recipe title of the accordion on their profile page, or from the recipe page itself.
+    * As a registered user, I want to be able to easily log out of my account.
+        * A registered user can find the logout link displayed in the navbar at all times after they signed in. They can also logout from the link in the sidenav.
+
+* Site admin:
+    * As the site admin, I want to be able to do all that is possible for a generic user and registered user.
+        * The site admin can perform actions and tasks that all users can perform. 
+    * As the site admin, I want to be able to access ALL recipes on the site, having the abilitly to edit any errors found, and delete recipes in case of unsuitable content.
+        * The site admin can access all recipes across the database, and be able to edit or delete recipes from the database by using the buttons on each recipe page.
 
 ### Manual Testing
 
@@ -211,7 +233,7 @@ All of these features above are present on all pages of the site.
 
 Any bugs found during testing this site were all possible to fix. There were some where new code to be added, but the majority were simple syntax errors. DevTools had revealed most errors during that testing stage, but the manual testing was good as it was another final check before deployment.
 
-* After a user registers to the site, they are directed to their profile page. If the user then clicked the back button it sent them back to the registeration form, despite just completing this action. I fixed this bug by included an if statement in the python code to control that if the user is in session, keep profile page rendered if the back button was clicked.
+* After a user registers to the site, they are directed to their profile page. If the user then clicked the back button it sent them back to the registration form, despite just completing this action. I fixed this bug by included an if statement in the python code to control that if the user is in session, keep profile page rendered if the back button was clicked.
 
 ***
 

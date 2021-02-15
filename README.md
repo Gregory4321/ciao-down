@@ -76,7 +76,6 @@ their age or experience.
     * As a user, I want to be able to navigate through the entire site, comfortably and securely.
     * As a user, I want to be able to easily search for recipes by name or ingredients.
     * As a user, I want to view the contents of recipes on the site.
-    * As a user, I want to have the possibility of printing a recipe.
     * As a user, I want to be able to register/sign-up and create my own account on the site.
 
 * Registered User:
@@ -398,6 +397,7 @@ This page is provided for the user to clearly see their submitted recipes. Only 
 * On desktops the recipes are displayed stacked as full width columns, showing some of the recipes details, but then on tablet screen sizes and less they are displayed as grid images that are dispaly the name as an overlay at the bottom of the image.
 * If a user is viewing their own recipe, they are given the option to edit or delete the recipe.
 * This option is very handy for when a user first submits their recipe, and are taken to this page, they may discover a typo mistake.
+* Provide the option for a user to print a recipe.
 
 ***
 
@@ -420,6 +420,7 @@ This page is provided for the user to clearly see their submitted recipes. Only 
 * A newsletter that any user can sign up to.
 * Implementing emailJS so after a user has created an account, they get an email confirming this action.
 * More detailed footer, containing navigation and call to action links.
+* Create and allow the admin access to create new categories for the site.
 
 Some of these features I wanted to implement for deployment of this project but unfortuantely time was not on my side and I was not able to complete all of the features that potentially could have been implemtented at this time. There is a lot of potential for this site for further development.
 
