@@ -1,7 +1,7 @@
 # Milestone Project 3 - Ciao Down
 View live project <a href=“https://ciao-down.herokuapp.com/”>here</a>
 
-![Ciao Down Am I Responsive image](#)
+![Ciao Down Am I Responsive image](static/readme_images/responsive-image.png)
 
 Ciao Down is a free to use online cookbook app focused on Italian cuisine, that presents the user with recipes that have been shared on the
 site. The user is able to create a free account. Doing so give them the ability to add their own recipes to the site, edit those
