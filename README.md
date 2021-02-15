@@ -23,12 +23,13 @@ recipes, and delete those recipes if wanted.
 * [Technologies Used](#technologies-used)
 * [Database Structure](#database-structure)
 * [Features](#features)
-   * [Existing Features](#future-features)
-   * [Future Features](#removed-features)
+   * [Features Across All Pages](#features-across-all-pages)
+   * [Other Features](#other-features)
+   * [Future Features](#future-features)
 * [Testing](#testing)
 * [Deployment](#deployment)
-    * [Hosting on Github Pages](#hosting-on-github-pages)
-    * [Running Project Locally](#running-project-locally)
+    * [Local Deployment](#local-deployment)
+    * [Deployment to Heroku](#deployment-to-heroku)
 * [Credits](#credits)
     * [Content](#content)
     * [Code](#code)
@@ -38,7 +39,7 @@ recipes, and delete those recipes if wanted.
 * [Disclaimer](#disclaimer)
 ***
 
-## ![Ciao Down Logo](static/images/logo.png)
+![Ciao Down Logo](static/images/logo.png)
 
 ### Ciao Down Logo
 
@@ -428,7 +429,7 @@ Some of these features I wanted to implement for deployment of this project but 
 
 ## Testing
 
-Testing can be found via this [link]()
+Testing can be found via this [link](https://github.com/Gregory4321/ciao-down/blob/master/testing.md)
 
 ***
 
@@ -481,7 +482,7 @@ python3 app.py
 
 ***
 
-### Deploy to Heroku
+### Deployment to Heroku
 
 To deploy this project to Heroku:
 
@@ -516,3 +517,118 @@ The deployed site will now automatically update whenever changes are pushed to t
 [Back to Top](#table-of-contents)
 
 ***
+
+## **Credits**
+
+#### Content
+
+All content on the website was written by me, the developer, with inspiration taken from other food and recipe sites.
+
+#### Code
+
+* The code throughout the project used [Materialize](https://materializecss.com/getting-started.html) as its base to create a
+responsive site, utilising the Materialize grid system.
+
+* Inspiration on how to place and style the hero images, was taken from my previous Milestone 1 Project.
+
+* Tutor support provided me with pointers and curve balls that helped me with certain functions in my Python code. They helped me to understand what needed to be done to achieve what I was trying to achieve, and directed me to documentation sites to find the answers I needed.
+
+* The code for the EmailJS was a mixture of using the documentation found on the website, following the CI tutorial videos on EmailJS, and my own
+knowledge and practice put into place.
+
+* The back-to-top button code was taken from my Milestone 2 Project, which was originally found on 'Codepen', and then tailored to my sites needs.
+
+* The code that ensured the dropdown section of the forms  was a required field was taken from the Code Institute lesson 'Materialize Form Validation'.
+
+* The code that made sure that the passwords matched when a user was creating an account was found on 'Codepen'.
+
+* The code to enable the back button across pages was found using W3Schools.
+
+* All other code was written by me, the developer.
+
+#### Media
+
+The images used on the website were taken from various different image libraries:
+
+* [Unsplash](https://unsplash.com/)
+
+* [Pexels](https://www.pexels.com/)
+
+* [Pixbay](https://pixabay.com/)
+
+* [Google Images](https://google.com)
+
+These images were then resized to suit the wants of me, the developer, using these two sites:
+
+* [Canva](https://www.canva.com/)
+
+* [Picresize](https://picresize.com/)
+
+The logo image was created and exported to my computer using the site [Canva](https://www.canva.com/)
+
+The favicon image was created and exported to my computer using the site [Canva](https://www.canva.com/), and then uploaded to the site [Favicon.io]
+(https://favicon.io/) to be generated as an ico image, to then be exported back to my computer and then added to my root directory on gitpod.
+
+***
+
+## **Acknowledgements**
+
+#### Pages used for inspiration
+
+* [BBC Good Food](https://www.bbcgoodfood.com/)
+
+* [Jamie Oliver](https://www.jamieoliver.com/)
+
+* [epicurious](https://www.epicurious.com/)
+
+#### Pages used for information
+
+* [Stack overflow](https://stackoverflow.com/)
+
+* [W3schools](https://www.w3schools.com/)
+
+* [CSS-Tricks](https://css-tricks.com/)
+
+* [Code Institute](https://codeinstitute.net/)
+
+* [Code Institute Sample README](https://github.com/Code-Institute-Solutions/SampleREADME)
+
+* [Slack](https://slack.com/intl/en-gb/)
+
+* [YouTube](https://www.youtube.com/)
+
+* [Code Pen](https://codepen.io/)
+
+* [Markdown Cheatsheet](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet)
+
+* [Tripadvisor](https://www.tripadvisor.co.uk/)
+
+* [Werkzeug](https://werkzeug.palletsprojects.com/en/1.0.x/)
+
+* [MDN web docs](https://developer.mozilla.org/en-US/)
+
+* [Codepen](https://codepen.io/)
+
+* [Python](https://www.python.org/)
+
+* [MongoDB](https://www.mongodb.com/)
+
+* [Jinja](https://flask.palletsprojects.com/en/1.1.x/)
+
+#### Special thanks
+
+* Seun Owonikoko @seun_mentor, my mentor, for the support and guidance she gave thoughout the build of this project.
+
+* All of the tutors at Code Institute that helped me from tutor support, your advice and guidance helped me more than I think you know. 
+
+* Code Institute for the informative lessons and teachings they provided.
+
+* My family and friends for their feedback during the build and testing stages.
+
+* Everyone from the Slack community for their response to questions and advice towards a solution.
+
+[Back to Top](#table-of-contents)
+
+## **Disclaimer**
+
+This project was created for educational use only. It has been part of studying at the Code Institute as part of their Full Stack Web Developer Course.
