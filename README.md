@@ -12,12 +12,14 @@ recipes, and delete those recipes if wanted.
 * [What does it do and what does it need to fulfill?](#what-does-it-do-and-what-does-it-need-to-fulfill)
 * [User Experience](#user-experience)
    * [User Stories](#user-stories)
-   * [Design](#design)
-       * [1. Colour Scheme](#1-color-scheme)
-       * [2. Font](#2-font)
-       * [3. Logo](#3-logo)
-       * [4. Geometry](#4-geometry)
-       * [5. Wireframes](#5-wireframes)
+* [Design](#design)
+    * [Research](#research)
+    * [The Five Planes of UX](#the-five-planes-of-ux)
+        * [Wireframes](#wireframes)
+        * [The Colour Scheme](#the-colour-scheme)
+        * [Font](#font)
+        * [The Logo](#the-logo)
+    * [Conclusion](#conclusion)
 * [Technologies Used](#technologies-used)
 * [Database Structure](#database-structure)
 * [Features](#features)
@@ -61,6 +63,8 @@ recipe. I felt this kind of design was too busy and could easily overwhelm the u
 to me that the recipe pages on 'Ciao Down' displayed information (e.g: ingredients, method and dietary requirements) in a simple and
 easy-to-digest manner. The target audience for this application is anyone who has an interest or passion for Italian food, not matter what
 their age or experience.
+
+***
 
 ## **User Experience**
 
@@ -159,6 +163,8 @@ Find the links to these wireframes below.
     * [Mobile View](https://github.com/Gregory4321/ciao-down/blob/master/static/readme_images/wireframes/mob-register-wire.png)
 </details>
 
+[Back to Top](#table-of-contents)
+
 ##### The Colour Scheme
 
 The colour scheme used for this site was to be colourful and eyecatching, but also not overwhelming to the user. In order to keep the theme of my site clear, I decided to base my colour scheme on the Italian flag. I used [Coolors](https://coolors.co/) to start playing with
@@ -193,8 +199,6 @@ The logo was created using an online design tool called [Canva](https://www.canv
 #### Conclusion
 
 The final pages I ended up with did not vary too much from the wireframes I made during the planning stages. There were some basic design choices I decided whilst constructing the pages that differ slightly from these wireframes. Any changes I made along the way all had teh users experience in mind, focusing on the flow of the entire site.
-
-***
 
 [Back to Top](#table-of-contents)
 
@@ -271,6 +275,8 @@ the colours on the README.md file as an image.
 
 * [Free Online JS Formatter](https://www.freeformatter.com/javascript-beautifier.html) - used to format the JavaScript code in a neater and more organised fashion.
 
+[Back to Top](#table-of-contents)
+
 ***
 
 ## **Database Structure**
@@ -320,10 +326,11 @@ The nav is consistent across all pages, designed to be responsive to the differe
 
 * A back to top button is displayed to the user across all pages when the user scrolls down past 200px.
 
+[Back to Top](#table-of-contents)
+
 ***
 
 ### Other Features
-
 
 #### Home Page
 
@@ -381,7 +388,7 @@ This page is provided for the user to clearly see their submitted recipes. Only 
 * This page has a similar layour to the home page.
 * A slider of images presents mouth watering images and the title of the selected category is displayed beneath.
 * All images are displayed in a grid format as cards, responsive to the different screen sizes.
-* Upon hovering over the cards, the recipe title is displayed.*
+* Upon hovering over the cards, the recipe title is displayed.
  Upon clicking the card, the user is directed to that recipe.
 
 #### Recipe Page
@@ -395,32 +402,117 @@ This page is provided for the user to clearly see their submitted recipes. Only 
 
 ### Future Features
 
+#### Hompe Page
+
+* Once a user is signed in, it would be nice for them to have a floating action button visible from the home screen to add a recipe to their profile. This could be useful if they have directed off from their profile page, and want a quick way to add a recipe, even if the option is in the side nav
+
 #### Profile Page
 
 * I initially had designed for a shopping list hosted on their profile page. This shopping list would be a styled accordion where the body would contain the user's shopping list of ingredients. There were to be buttons where the user could edit or delete each ingredient. This would of demonstrated further the knowledge and use of CRUD operations. From the recipe page, a user would have had the abilitly to add the ingreditns list to their own shopping list, where they could then tailor quanities to their own preferences. The user would have been able to manually add more ingredients to their list too from the accordion in their profile.
-* Perhaps an extension of the users profile page, and/or an account page, where the user has the abilitly to change their username and password, email account associated with the account, and delete thri profile if wanted.
+* Perhaps an extension of the users profile page, in the form of a my account section, where the user has the abilitly to change their username and password, email account associated with the account, and delete their profile if wanted.
+* Having a more personalised feeling with the users profile page. Allowing a user to upload an image as a profile picture. A 
 
 
+#### Other
 
+* A communtiy page where users can communicate with one another, creating friendships and sharing cooking tips directly.
+* A way of following other users if their recipes are the ones you like the most.
+* A newsletter that any user can sign up to.
+* Implementing emailJS so after a user has created an account, they get an email confirming this action.
 
+Some of these features I wanted to implement for deployment of this project but unfortuantely time was not on my side and I was not able to complete all of the features that potentially could have been implemtented at this time. There is a lot of potential for this site for further development.
+
+[Back to Top](#table-of-contents)
+
+***
 
 ## Testing
 
 Testing can be found via this [link]()
 
+***
+
 ## **Deployment**
 
+This multi-page website was developed in Gitpod and pushed to the remote repository on Github. I have deployed this project to Heroku 
 
+The live site of this project can be viewed <a href=“https://ciao-down.herokuapp.com/”>here</a>
 
+The repository of this project can be viewed on Github <a href=“https://github.com/Gregory4321/ciao-down”>here</a>
 
+***
 
+### Local Deployment
 
+To run your own version of this project, it can be cloned or downloaded from Github
 
+To clone this project:
 
-* Navbar - Featured across all pages. The sites logo is set to the center of the page, and responsive within the navbar. Site visitors can use the links on the left to login or sign up to the site. They can also click the hamburger icon on the left to reveal a sidenav which also allows them access to the login and sign up pages. This sidenav also has the logo showcased at the top. A site visitor is also given the option to view the categories (All, Starters, Mains, Desserts), taking them to the corresponding pages. The 'Home' option is always visible in the side nav, as well as a home icon on the main nav bar to the right of the hamburger icon for ease of navigation back to the home page. The logo of the navbar and the sidenav are also set as a link back to home. 
-Upon registering or logging in to the site, the login/sign up links change to logout, on both the navbar itslef and the side nav. A logged in user can now get access to their own profile page, and the option to take them to the add recipe page. The navbar is also fixed, which enables the user to easily navigate between the pages of the website.
+1. At the top the repository, click the code button at the top of the screen.
+2. Click the clipboard icon to copy the URL.
+3. Open a new terminal window in the IDE you have chosen, and make sure the current working directory is the location where you want your cloned directory.
+4. In the command line, paste the copied link mentioned above after 'git clone', to create your own local repository
+```
+git clone https://github.com/Gregory4321/ciao-down.git
+```
+5. Using [MongoDB](https://www.mongodb.com/), create a database that you will use for this project.
+6. In the terminal window, install the required dependencies needed to successfully run the app.
+```
+pip3 install -r requirements.txt
+```
+7. At the root level of your application, create a file called env.py to contain your environmental variables. They are as follows:
+```
+import os
 
+os.environ.setdefault("IP", "0.0.0.0")
+os.environ.setdefault("PORT", "5000")
+os.environ.setdefault("SECRET_KEY", "SECRET_KEY")
+os.environ.setdefault("MONGO_URI", "MONGO_URI")
+os.environ.setdefault("MONGO_DBNAME", "MONGO_DBNAME")
+```
 
+You will need to update the **MONGO_URI** and **MONGO_DBNAME** variables to those provided by MongoDB. Make sure you replace the necessary fields of 'username', 'password', 'cluste_name' and 'database_name' in the URI. You will also need to update the **SECRET_KEY**. You could use this site to generate this and keep it unique - [RandomKeygen](https://randomkeygen.com/)
 
-They also have the ability to add the ingredients list from a recipe to a shopping list hosted
-within their own profile.
+8. If you plan for this project to be public, make sure that your env.py file is added to the .gitignore file. This will keep your database information safe from others, no one will be able to see it.
+9. You can now run the application locally, by typing in the terminal window: 
+```
+python3 app.py
+```
+
+***
+
+### Deploy to Heroku
+
+To deploy this project to Heroku:
+
+1. Sign in to your Heroku account and create a new app. Make sure you set the region closet to you.
+2. Once created, navigate to the 'Settings' tab, and click the 'Reveal Config Vars' button.
+3. Enter the key value pairs that you entered in your env.py file:
+```
+IP = 0.0.0.0
+PORT = 5000
+SECRET_KEY = SECRET_KEY
+MONGO_URI = MONGO_URI
+MONGO_DBNAME = MONGO_DBNAME
+```
+4. In your local repository, create the requirements.txt if not already created:
+```
+pip3 freeze --local > requirements.txt
+```
+5. Then create a Procfile, including the content in the creation:
+```
+echo web: python app.py > Procfile
+```
+
+The Procfile might create a blank line at the bootom of the file. Make sure to remove this to avoid any problems when running the app on Heroku.
+6. Back within the Heroku app, navigate to the 'Deploy' tab, and under the 'Deployment method' section, select 'Connect to Github'.
+7. Make sure your Github profile is displayed, and add your repository name and click 'Search'.
+8. Once Heroku finds your repo, click the 'Connect' button to connect to this app.
+9. Below this, click the 'Enable Automatic Deploys' button, and then below this, makig sure your branch is correct, click 'Deploy Branch'.
+10. Heroku will now start building the app, receiving the code from Github.
+11. When the build is complete, you should see that 'Your app was successfully deployed'. Click the 'View' button to to launch the app.
+The deployed site will now automatically update whenever changes are pushed to the Github repository.
+
+[Back to Top](#table-of-contents)
+
+***
