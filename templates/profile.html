@@ -1,91 +1,103 @@
 {% extends "base.html" %}
-
 {% block content %}
-
-    <section>
-        <!-- flash messages-->
-        {% with messages = get_flashed_messages(with_categories=true) %}
-            {% if messages %}
-                {% for category, message in messages %}
-                    <div class="row flashes">
-                        <h4 class="center-align custom-flash {{ category}}">{{ message }}</h4>
-                    </div>
-                {% endfor %}
-            {% endif %}
-        {% endwith %}
-    </section>
-     <main class="container">
-         <button onclick="backButton()" class="back-btn profile"><i class="fas fa-arrow-left"></i></button>
-        <!-- Page Title -->
-        <h3 class="center-align page-heading">
-            {{username|capitalize}}'s Profile
-        </h3>
-        <div class="row add-rec">
-            <div class="col s12">
-                <a href="{{ url_for('add_recipe') }}" class="add-btn">Add Recipe +</a>
-            </div>
+<section>
+    <!-- flash messages-->
+    {% with messages = get_flashed_messages(with_categories=true) %}
+    {% if messages %}
+    {% for category, message in messages %}
+    <div class="row flashes">
+        <h4 class="center-align custom-flash {{ category}}">{{ message }}</h4>
+    </div>
+    {% endfor %}
+    {% endif %}
+    {% endwith %}
+</section>
+<main class="container">
+    <button onclick="backButton()" class="back-btn profile"><i class="fas fa-arrow-left"></i></button>
+    <!-- Page Title -->
+    <h3 class="center-align page-heading">
+        {{username|capitalize}}'s Profile
+    </h3>
+    <div class="row add-rec">
+        <!-- Add recipe button -->
+        <div class="col s12">
+            <a href="{{ url_for('add_recipe') }}" class="add-btn">Add Recipe +</a>
         </div>
-        <ul class="collapsible all-accordion">
-            {% for recipe in recipes %}
-            <li>
-                <div class="row accord-row">
-                    <div class="collapsible-header accordion-head rotate valign-wrapper">
-                        <div class="col s1 caret-icon">
-                            <i class="fas fa-angle-down"></i>
-                        </div>
-                        <div class="col m2 hide-on-med-and-down">
-                            <a href="{{ url_for('edit_recipe', recipe_id=recipe._id) }}" class="edit-btn">Edit</a>
-                            <a href="#modal{{ loop.index }}" class="modal-trigger delete-btn">Delete</a>
-                        </div>
-                        <div class="col s10 m7 accord-title">
-                            {{ recipe.recipe_title }}
-                        </div>
-                        <div class="col m4 l2 go-recipe show-on-medium-and-up hide-on-small-only">
-                            <p>
-                                <a class="cta-recipe" href="{{ url_for('get_recipe', recipe_id=recipe._id) }}">
-                                    Go to recipe
-                                </a>
-                            </p>
-                        </div>
+    </div>
+    <ul class="collapsible all-accordion">
+        {% for recipe in recipes %}
+        <li>
+            <div class="row accord-row">
+                <!-- Accordion head -->
+                <div class="collapsible-header accordion-head rotate valign-wrapper">
+                    <div class="col s1 caret-icon">
+                        <i class="fas fa-angle-down"></i>
                     </div>
-                </div>
-                <div class="collapsible-body">
-                    <h6 class="show-on-small hide-on-med-and-up right">
-                        <a class="cta-recipe" href="{{ url_for('get_recipe', recipe_id=recipe._id) }}">
-                            Go to recipe
-                        </a>
-                    </h6>
-                    <h6>{{ recipe.category_name }}</h6>
-                    
-                    <p class="accord-desc">{{ recipe.recipe_description }}</p>
-                    {% if recipe.is_vegetarian == "on" %}
-                        <i class="fab fa-vimeo-v"></i>
-                    {% endif %}
-                    {% if recipe.is_gluten_free == "on" %}
-                        <i class="fab fa-glide-g"></i>
-                    {% endif %}
-                    {% if recipe.date_added is not none %}
-                    <p>Date added: {{ recipe.date_added }}</p>
-                    {% endif %}
-                    <div class="col s2 m2 show-on-medium-and-down hide-on-med-and-up">
+                    <div class="col m2 hide-on-med-and-down">
+                        <!-- Edit button -->
                         <a href="{{ url_for('edit_recipe', recipe_id=recipe._id) }}" class="edit-btn">Edit</a>
+                        <!-- Delete button -->
                         <a href="#modal{{ loop.index }}" class="modal-trigger delete-btn">Delete</a>
                     </div>
+                    <!-- Recipe title -->
+                    <div class="col s10 m7 accord-title">
+                        {{ recipe.recipe_title }}
+                    </div>
+                    <div class="col m4 l2 go-recipe show-on-medium-and-up hide-on-small-only">
+                        <p>
+                            <!-- Go to recipe button -->
+                            <a class="cta-recipe" href="{{ url_for('get_recipe', recipe_id=recipe._id) }}">
+                            Go to recipe
+                            </a>
+                        </p>
+                    </div>
                 </div>
-            </li>
-               <!-- Modal Structure -->
+            </div>
+            <!-- Accordion body -->
+            <div class="collapsible-body">
+                <h6 class="show-on-small hide-on-med-and-up right">
+                    <a class="cta-recipe" href="{{ url_for('get_recipe', recipe_id=recipe._id) }}">
+                    Go to recipe
+                    </a>
+                </h6>
+                <!-- Recipe category -->
+                <h6>{{ recipe.category_name }}</h6>
+                <!-- Recipe description -->
+                <p class="accord-desc">{{ recipe.recipe_description }}</p>
+                <!-- Vege icon -->
+                {% if recipe.is_vegetarian == "on" %}
+                <i class="fab fa-vimeo-v"></i>
+                {% endif %}
+                <!-- Gluten icon -->
+                {% if recipe.is_gluten_free == "on" %}
+                <i class="fab fa-glide-g"></i>
+                {% endif %}
+                {% if recipe.date_added is not none %}
+                <!-- Date added -->
+                <p>Date added: {{ recipe.date_added }}</p>
+                {% endif %}
+                <div class="col s2 m2 show-on-medium-and-down hide-on-med-and-up">
+                    <!-- Edit button -->
+                    <a href="{{ url_for('edit_recipe', recipe_id=recipe._id) }}" class="edit-btn">Edit</a>
+                    <!-- Delete button | Modal trigger -->
+                    <a href="#modal{{ loop.index }}" class="modal-trigger delete-btn">Delete</a>
+                </div>
+            </div>
+        </li>
+        <!-- Modal Structure -->
         <div id="modal{{ loop.index }}" class="modal center">
             <div class="modal-content">
                 <h4>Delete this recipe?</h4>
                 <p class="modal-para">Are you sure you want to delete <b class="green-text">{{ recipe.recipe_title }}</b>? Once you do you will not be able to undo this action.</p>
             </div>
             <div class="modal-footer">
+                <!-- Cancel modal button -->
                 <a href="#!" class="modal-close edit-btn">Cancel</a>
+                <!-- Delete recipe confirm button -->
                 <a href="{{ url_for('delete_recipe', recipe_id=recipe._id) }}" class="modal-close delete-btn">Delete</a>
             </div>
         </div>
-            {% endfor %}
-        </ul>
-    </main>
-
+        {% endfor %}
+    </ul>
+</main>
 {% endblock %}

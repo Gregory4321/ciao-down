@@ -1,56 +1,64 @@
 {% extends "base.html" %}
 {% block content %}
-
-    <div class="slider">
+<!-- Slider of images -->
+<div class="slider">
     <ul class="slides">
-      <li>
-        <img src="{{ url_for('static', filename='images/spag-bol.jpg') }}">
-        <div class="caption center-align">
-          <h2 class="slider-h2">Find your next meal</h2>
-        </div>
-      </li>
-      <li>
-        <img src="{{ url_for('static', filename='images/tom-salad.jpg') }}">
-      </li>
-      <li>
-        <img src="{{ url_for('static', filename='images/meatball.jpg') }}">
-      </li>
-      <li>
-        <img src="{{ url_for('static', filename='images/tiramisu.jpg') }}">
-      </li>
-      <li>
-        <img src="{{ url_for('static', filename='images/gnoc.jpg') }}">
-      </li>
+        <li>
+            <img src="{{ url_for('static', filename='images/spag-bol.jpg') }}" alt="spaghetti-bolognese-image">
+            <div class="caption center-align">
+                <h2 class="slider-h2">
+                    Find your next meal
+                </h2>
+            </div>
+        </li>
+        <li>
+            <img src="{{ url_for('static', filename='images/tom-salad.jpg') }}" alt="tomato-salad-image">
+        </li>
+        <li>
+            <img src="{{ url_for('static', filename='images/meatball.jpg') }}" alt="meatball-image">
+        </li>
+        <li>
+            <img src="{{ url_for('static', filename='images/tiramisu.jpg') }}" alt="tiramisu-image">
+        </li>
+        <li>
+            <img src="{{ url_for('static', filename='images/gnoc.jpg') }}" alt="gnocchi-image">
+        </li>
     </ul>
-  </div>
-
-    <main class="container">
-                  <button onclick="backButton()" class="back-btn profile"><i class="fas fa-arrow-left"></i></button>
-        <!-- Page Title -->
-        <h3 class="center-align page-heading">{{ category_name|capitalize }}</h3>
-        <!-- Recipes by Category -->
+</div>
+<main class="container">
+    <!-- Back Button -->
+    <button onclick="backButton()" class="back-btn profile"><i class="fas fa-arrow-left"></i></button>
+    <!-- Page Title -->
+    <h3 class="center-align page-heading">{{ category_name|capitalize }}</h3>
+    <!-- Recipes by Category -->
     <div class="container">
         <div class="row hide-on-med-and-down">
             {% for recipe in recipes %}
             <div class="col s12">
                 <a href="{{ url_for('get_recipe', recipe_id=recipe._id) }}">
                     <div class="card horizontal">
+                        <!-- Recipe image -->
                         <div class="card-image">
-                            <img src="{{ recipe.image_url }}">
+                            <img src="{{ recipe.image_url }}" alt="recipe-image">
                         </div>
                         <div class="card-stacked">
+                            <!-- Recipe title -->
                             <div class="card-content content-bac">
                                 <h5>{{ recipe.recipe_title }}</h5>
+                                <!-- Recipe description -->
                                 <p class="card-descrip">{{ recipe.recipe_description }}</p>
                                 <p>
+                                    <!-- Recipe info -->
                                     Difficulty: {{ recipe.difficulty }}
                                     <span class="card-serve">
-                                        Serves: {{ recipe.serves }}
+                                    Serves: {{ recipe.serves }}
                                     </span>
                                 </p>
+                                <!-- Vege icon -->
                                 {% if recipe.is_vegetarian == "on" %}
                                 <i class="fab fa-vimeo-v"><span class="dietry">Vegetarian</span></i>
                                 {% endif %}
+                                <!-- Gluten icon -->
                                 {% if recipe.is_gluten_free == "on" %}
                                 <i class="fab fa-glide-g"><span class="dietry">Gluten-Free</span></i>
                                 {% endif %}
@@ -68,7 +76,9 @@
             <a href="{{ url_for('get_recipe', recipe_id=recipe._id) }}">
                 <div class="card hoverable">
                     <div class="card-image">
-                        <img src="{{ recipe.image_url }}" class="responsive-img">
+                        <!-- Recipe image -->
+                        <img src="{{ recipe.image_url }}" class="responsive-img" alt="recipe-image">
+                        <!-- Recipe title -->
                         <div class="card-overlay">
                             {{ recipe.recipe_title }}
                         </div>
@@ -78,6 +88,5 @@
         </div>
         {% endfor %}
     </div>
-    </main>
-
+</main>
 {% endblock %}

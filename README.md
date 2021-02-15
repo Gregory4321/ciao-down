@@ -364,7 +364,7 @@ Similar to the login page design, just a more complex form and different tagline
 This page is provided for the user to clearly see their submitted recipes. Only registered users can see this page
 
 * Upon signing up or logging in, a user is taken to this page with a welcome flash message.
-* If no recipes have been added, a user is notified of this, and offered the option to add a recipe.
+* If no recipes have been added, a user is offered the option to add a recipe.
 * If there are submitted recipes, an accordion is displayed to the user.
 * The accordion title provides the recipes title, a link to go to the recipe, and edit/delete buttons.
 * The accordion body gives the category name, recipe description, and the date it was added.
@@ -413,13 +413,13 @@ This page is provided for the user to clearly see their submitted recipes. Only 
 * Perhaps an extension of the users profile page, in the form of a my account section, where the user has the abilitly to change their username and password, email account associated with the account, and delete their profile if wanted.
 * Having a more personalised feeling with the users profile page. Allowing a user to upload an image as a profile picture. A 
 
-
 #### Other
 
 * A communtiy page where users can communicate with one another, creating friendships and sharing cooking tips directly.
 * A way of following other users if their recipes are the ones you like the most.
 * A newsletter that any user can sign up to.
 * Implementing emailJS so after a user has created an account, they get an email confirming this action.
+* More detailed footer, containing navigation and call to action links.
 
 Some of these features I wanted to implement for deployment of this project but unfortuantely time was not on my side and I was not able to complete all of the features that potentially could have been implemtented at this time. There is a lot of potential for this site for further development.
 

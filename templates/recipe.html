@@ -1,91 +1,98 @@
 {% extends "base.html" %}
-
 {% block content %}
-
-    <section>
-        <!-- flash messages-->
-        {% with messages = get_flashed_messages(with_categories=true) %}
-            {% if messages %}
-                {% for category, message in messages %}
-                    <div class="row flashes">
-                        <h4 class="center-align custom-flash {{ category}}">{{ message }}</h4>
-                    </div>
-                {% endfor %}
+<section>
+    <!-- flash messages -->
+    {% with messages = get_flashed_messages(with_categories=true) %}
+    {% if messages %}
+    {% for category, message in messages %}
+    <div class="row flashes">
+        <h4 class="center-align custom-flash {{ category}}">{{ message }}</h4>
+    </div>
+    {% endfor %}
+    {% endif %}
+    {% endwith %}
+</section>
+<main class="container recipe-container">
+    <!-- Back button -->
+    <button onclick="backButton()" class="back-btn profile"><i class="fas fa-arrow-left"></i></button>
+    <div class="row recipe-heading center-text">
+        <!-- Recipe image -->
+        <div class="col s12 m5 rec-img">
+            <img src="{{ recipe.image_url }}" class="responsive-img recipe-img" alt="Image">
+        </div>
+        <div class="col s12 m6 offset-m1">
+            <!-- Recipe creator -->
+            <p class="posted-by">
+                Posted by: {{ recipe.created_by }}
+                {% if recipe.date_added is not none %}
+                on {{ recipe.date_added }} 
+                {% endif %}
+                in {{ recipe.category_name }}
+            </p>
+            <!-- Recie details -->
+            <h3>{{ recipe.recipe_title }}</h3>
+            <p>{{ recipe.recipe_description }}</p>
+            {% if recipe.is_vegetarian == "on" %}
+            <i class="fab fa-vimeo-v"><span class="dietry">Vegetarian</span></i>
             {% endif %}
-        {% endwith %}
-    </section>
-
-    <main class="container recipe-container">
-                 <button onclick="backButton()" class="back-btn profile"><i class="fas fa-arrow-left"></i></button>
-        <div class="row recipe-heading center-text">
-            <div class="col s12 m5 rec-img">
-                <img src="{{ recipe.image_url }}" class="responsive-img recipe-img" alt="Image">
-            </div>
-            <div class="col s12 m6 offset-m1">
-                <p class="posted-by">
-                    Posted by: {{ recipe.created_by }}
-                    {% if recipe.date_added is not none %}
-                    on {{ recipe.date_added }} 
-                    {% endif %}
-                    in {{ recipe.category_name }}
-                </p>
-                <h3>{{ recipe.recipe_title }}</h3>
-                <p>{{ recipe.recipe_description }}</p>
-                {% if recipe.is_vegetarian == "on" %}
-                    <i class="fab fa-vimeo-v"><span class="dietry">Vegetarian</span></i>
-                {% endif %}
-                {% if recipe.is_gluten_free == "on" %}
-                    <i class="fab fa-glide-g"><span class="dietry">Gluten-Free</span></i>
-                {% endif %}
-            </div>
+            {% if recipe.is_gluten_free == "on" %}
+            <i class="fab fa-glide-g"><span class="dietry">Gluten-Free</span></i>
+            {% endif %}
         </div>
-        <div class="row rec-info">
-            <div class="col s6 m3 rec-info-bottom">
-                Prep Time <span class="user-rec-info">{{ recipe.prep_time }}</span>
-            </div>
-            <div class="col s6 m3 rec-info-bottom">
-                Cooking Time <span class="user-rec-info">{{ recipe.cooking_time }}</span>
-            </div>
-            <div class="col s6 m3">
-                Serves <span class="user-rec-info">{{ recipe.serves }}</span>
-            </div>
-            <div class="col s6 m3">
-                Difficulty <span class="user-rec-info">{{ recipe.difficulty }}</span>
-            </div>
+    </div>
+    <!-- Recipe info -->
+    <div class="row rec-info">
+        <div class="col s6 m3 rec-info-bottom">
+            Prep Time <span class="user-rec-info">{{ recipe.prep_time }}</span>
         </div>
-        <div class="row">
-            <div class="col s12 m3 center-text">
-                <h4>Ingredients</h4>
-                {% for list in recipe.recipe_ingredients.splitlines() %}
-                <p>{{ list }}</p>
-                {% endfor %}
-            </div>
-            <div class="col s12 m8 offset-m1 center-text">
-                <h4>Method</h4>
-                {% for list in recipe.recipe_method.splitlines() %}
-                <p>{{ list }}</p>
-                {% endfor %}
-            </div>
+        <div class="col s6 m3 rec-info-bottom">
+            Cooking Time <span class="user-rec-info">{{ recipe.cooking_time }}</span>
         </div>
-        {% if session.user|lower == recipe.created_by|lower or session.user|lower == "admin"|lower %}
-        <div class="row">
-            <div class="col s12 center">
-                <a href="{{ url_for('edit_recipe', recipe_id=recipe._id) }}" class="rec-btn edit-btn">Edit</a>
-                <a href="#modal1" class="rec-btn delete-btn modal-trigger">Delete</a>
-            </div>
+        <div class="col s6 m3">
+            Serves <span class="user-rec-info">{{ recipe.serves }}</span>
         </div>
-        {% endif %}
-        <!-- Modal Structure -->
-        <div id="modal1" class="modal center">
-            <div class="modal-content">
-                <h4>Delete this recipe?</h4>
-                <p class="modal-para">Are you sure you want to delete <b class="green-text">{{ recipe.recipe_title }}</b>? Once you do you will not be able to undo this action.</p>
-            </div>
-            <div class="modal-footer">
-                <a href="#!" class="modal-close edit-btn">Cancel</a>
-                <a href="{{ url_for('delete_recipe', recipe_id=recipe._id) }}" class="modal-close delete-btn">Delete</a>
-            </div>
+        <div class="col s6 m3">
+            Difficulty <span class="user-rec-info">{{ recipe.difficulty }}</span>
         </div>
-    </main>
-
+    </div>
+    <div class="row">
+        <!-- Recipe ingredients -->
+        <div class="col s12 m3 center-text">
+            <h4>Ingredients</h4>
+            {% for list in recipe.recipe_ingredients.splitlines() %}
+            <p>{{ list }}</p>
+            {% endfor %}
+        </div>
+        <!-- Recipe method -->
+        <div class="col s12 m8 offset-m1 center-text">
+            <h4>Method</h4>
+            {% for list in recipe.recipe_method.splitlines() %}
+            <p>{{ list }}</p>
+            {% endfor %}
+        </div>
+    </div>
+    {% if session.user|lower == recipe.created_by|lower or session.user|lower == "admin"|lower %}
+    <div class="row">
+        <!-- Edit button -->
+        <div class="col s12 center">
+            <a href="{{ url_for('edit_recipe', recipe_id=recipe._id) }}" class="rec-btn edit-btn">Edit</a>
+            <!-- Delete button | Modal trigger -->
+            <a href="#modal1" class="rec-btn delete-btn modal-trigger">Delete</a>
+        </div>
+    </div>
+    {% endif %}
+    <!-- Modal Structure -->
+    <div id="modal1" class="modal center">
+        <div class="modal-content">
+            <h4>Delete this recipe?</h4>
+            <p class="modal-para">Are you sure you want to delete <b class="green-text">{{ recipe.recipe_title }}</b>? Once you do you will not be able to undo this action.</p>
+        </div>
+        <div class="modal-footer">
+            <!-- Cancel modal button -->
+            <a href="#!" class="modal-close edit-btn">Cancel</a>
+            <!-- Delete recipe confirm button -->
+            <a href="{{ url_for('delete_recipe', recipe_id=recipe._id) }}" class="modal-close delete-btn">Delete</a>
+        </div>
+    </div>
+</main>
 {% endblock %}

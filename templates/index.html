@@ -1,73 +1,56 @@
 {% extends "base.html" %}
 {% block content %}
-
-        <section>
-        <!-- flash messages-->
-        {% with messages = get_flashed_messages(with_categories=true) %}
-            {% if messages %}
-                {% for category, message in messages %}
-                    <div class="row flashes">
-                        <h4 class="center-align custom-flash {{ category}}">{{ message }}</h4>
-                    </div>
-                {% endfor %}
-            {% endif %}
-        {% endwith %}
-    </section>
-
-    <!-- Hero Image -->
-    <div class="hero-img-1">
-        <div class="row">
-            <div class="col">
-                <h2 class="home-head">Find a Recipe</h2>
-                <div class="search-bar">
-                    <form action="{{ url_for('search') }}" method="POST">
-                        <input type="text" name="query" id="query" placeholder="Search" class="search-input" minlength="3" required>
-                        <label for="query"></label>
-                             <a href="{{ url_for('index') }}" class="btn-small reset-btn">Reset</a>
-                             <button type="submit" class="btn-small search-btn">Search</button>
-                    </form>
-                </div>
-            </div>
-
-        </div>
-            <!-- <div class="row card-panel">
-        <form class="col s12" method="POST" action="{{ url_for('search') }}">
-            <div class="row center-align valign-wrapper">
-                <div class="col s12 input-field">
-                    <input type="text" name="query" id="query" class="validate" minlength="3" required>
-                    <label for="query">Search Recipes</label>
-                </div>
-                <div class="col s12">
-                     <a href="{{ url_for('index') }}" class="red btn">Reset</a>
-                     <button type="submit" class="blue btn">Submit</button>
-                </div>
-            </div>
-        </form>
-    </div> -->
+<section>
+    <!-- flash messages-->
+    {% with messages = get_flashed_messages(with_categories=true) %}
+    {% if messages %}
+    {% for category, message in messages %}
+    <div class="row flashes">
+        <h4 class="center-align custom-flash {{ category}}">{{ message }}</h4>
     </div>
-
-    <main>
-        <!-- Page Title -->
-        <h3 class="center-align page-heading">Featured Recipes</h3>
-        <!-- Featured Recipes -->
-        <div class="container">
-            <div class="row feat-cards">
-                {% for recipe in recipes %}
-                    <div class="col s12 m6 l4">
-                        <a href="{{ url_for('get_recipe', recipe_id=recipe._id) }}">
-                            <div class="card hoverable">
-                                <div class="card-image">
-                                    <img src="{{ recipe.image_url }}" class="responsive-img">
-                                    <div class="card-overlay">
-                                        {{ recipe.recipe_title }}
-                                    </div>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-                {% endfor %}
+    {% endfor %}
+    {% endif %}
+    {% endwith %}
+</section>
+<!-- Hero Image -->
+<div class="hero-img-1">
+    <div class="row">
+        <div class="col">
+            <!-- Page heading -->
+            <h2 class="home-head">Find a Recipe</h2>
+            <!-- Search bar -->
+            <div class="search-bar">
+                <form action="{{ url_for('search') }}" method="POST">
+                    <input type="text" name="query" id="query" placeholder="Search" class="search-input" minlength="3" required>
+                    <label for="query"></label>
+                    <a href="{{ url_for('index') }}" class="btn-small reset-btn">Reset</a>
+                    <button type="submit" class="btn-small search-btn">Search</button>
+                </form>
             </div>
         </div>
-    </main>
-
+    </div>
+</div>
+<main>
+    <!-- Page Title -->
+    <h3 class="center-align page-heading">Featured Recipes</h3>
+    <!-- Featured recipe cards -->
+    <div class="container">
+        <div class="row feat-cards">
+            {% for recipe in recipes %}
+            <div class="col s12 m6 l4">
+                <a href="{{ url_for('get_recipe', recipe_id=recipe._id) }}">
+                    <div class="card hoverable">
+                        <div class="card-image">
+                            <img src="{{ recipe.image_url }}" class="responsive-img" alt="recipe-image">
+                            <div class="card-overlay">
+                                {{ recipe.recipe_title }}
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</main>
 {% endblock %}
